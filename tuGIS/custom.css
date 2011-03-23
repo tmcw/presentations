@@ -1,0 +1,45 @@
+html {
+    background: #000;
+}
+
+body {
+    background: #000;
+    font: 20px/30px "Aller" sans-serif;
+}
+
+div.bullets ul li {
+    font-size:50px;
+    line-height:70px;
+    padding:0px;
+}
+
+em {
+    font-weight: bold;
+    font-style: normal;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    text-shadow: #fff 1px -1px 2px;
+}
+
+#preso, .slide {
+    background: #000;
+    color: #dad9d4;
+}
+
+#footer {
+  background-color: #000;
+  color: #777;
+}
+
+/**
+ * Presentation-specific
+ */
+span.pink {
+    color:#ed4b46;
+}
