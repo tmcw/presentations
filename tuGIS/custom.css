@@ -7,6 +7,11 @@ body {
     font: 20px/30px "Aller" sans-serif;
 }
 
+div.center ul li {
+    font-size:30px;
+    line-height:40px;
+}
+
 div.bullets ul li {
     font-size:50px;
     line-height:70px;
@@ -26,6 +31,11 @@ a {
 h1, h2, h3 {
     text-shadow: #fff 1px -1px 2px;
 }
+
+h1 {
+    font: 80px/90px "Aller" sans-serif;
+}
+    
 
 #preso, .slide {
     background: #000;
