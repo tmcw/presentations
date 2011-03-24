@@ -47,6 +47,16 @@ h1 {
   color: #777;
 }
 
+pre {
+  background-color: #242424;
+  padding:20px;
+  border:2px solid #dad9d4;
+  }
+
+pre code {
+  font: 30px/40px "M+ 1mn";
+  }
+
 /**
  * Presentation-specific
  */
