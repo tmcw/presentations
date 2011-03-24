@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Presentation</title>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+    <link rel="stylesheet" href="file/custom.css" type="text/css"/>
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+    setupPreso(false, './');
+  });
+  </script>
+</head>
+
+<body>
+
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">&larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">z</td><td>toggle help (this)</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/1">
+<ul>
+<li>mapmaking is complicated and difficult</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/2">
+<h1>beautiful maps even without AJ?</h1>
+
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/aj.png" width="897" height="394" alt="AJ"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/3">
+<ul>
+<li>OSM/CSVs -&gt; Shapefiles</li>
+<li>...</li>
+<li>Cascadenik or Mapnik XML -&gt; TileLite to preview</li>
+<li>...</li>
+<li>Finished stylesheet -&gt; TileCache to generate tiles</li>
+<li>...</li>
+<li>Tiles -&gt; S3 to serve tiles</li>
+<li>...</li>
+<li>S3 -&gt; OpenLayers to view tiles on the web</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/4">
+<ul>
+<li>What the heck are projections?</li>
+<li>Why is a shapefile three files?</li>
+<li>It costs that much?</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/5">
+<ul>
+<li>and installing all of that stuff.</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/6">
+<h1>we didn't buy: we built</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/7">
+<h1>and open source was already awesome</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/8">
+<h3>Mapnik Renders Our Maps</h3>
+
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/mapnik_speed.jpg" width="634" height="409" alt="Mapnik"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/9">
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/osm_mapnik.png" width="640" height="480" alt="OpenStreetMap"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/10">
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/mapquest.png" width="500" height="500" alt="MapQuest"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/11">
+<h3>Styling</h3>
+
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/carto.jpg" width="300" height="500" alt="Carto"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/12">
+<ul>
+<li>plus <em>node.js</em>, <em>backbone.js</em>, <em>sqlite</em>, <em>openlayers</em>, <em>jquery</em>, <em>express</em>, <em>s3</em>, <em>wax</em>, and more.</li>
+<li>and <span class="pink">hot sauce</span></li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="one/slide/13">
+<h1>TileMill</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/14">
+<ul>
+<li>Take a spin in TileMill</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/15">
+<h1>Carto!</h1>
+
+<ul>
+<li>Space-age CSS for maps</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/16">
+<pre><code>#world {
+    polygon-fill: #f00;
+}
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/17">
+<pre><code>#world[zoom &gt; 5] {
+    polygon-fill: #f00;
+}
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/18">
+<pre><code>#world[zoom &gt; 5] {
+    [NAME="United States"] {
+        polygon-fill: #f00;
+    }
+    polygon-fill: #00f;
+}
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/19">
+<pre><code>#world[zoom &gt; 5] {
+    [NAME="United States"] {
+        polygon-fill: #f00;
+    }
+    polygon-fill: #00f;
+}
+.streets {
+    line-width: 1;
+}
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/20">
+<pre><code>@red: #f00;
+#world[zoom &gt; 5] {
+    [NAME="United States"] {
+        polygon-fill: @red;
+    }
+    polygon-fill: @red + #222;
+}
+.streets {
+    line-width: 1;
+}
+</code></pre>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/21">
+<ul>
+<li>And there are a few other options</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/22">
+<p>background-color,background-image,srs,buffer,font-directory,polygon-fill,polygon-gamma,polygon-opacity,polygon-meta-output,polygon-meta-writer,line-color,line-width,line-opacity,line-join,line-cap,line-gamma,line-dasharray,line-meta-output,line-meta-writer,marker-file,marker-opacity,marker-line-color,marker-line-width,marker-line-opacity,marker-placement,marker-type,marker-width,marker-height,marker-fill,marker-allow-overlap,marker-spacing,marker-max-error,marker-transform,marker-meta-output,marker-meta-writer,shield-name,shield-face-name,shield-size,shield-fill,shield-min-distance,shield-spacing,shield-spacing,shield-line-spacing,shield-file,shield-width,shield-height,shield-type,shield-text-dx,shield-text-dy,shield-dx,shield-dy,shield-meta-output,shield-meta-writer,line-pattern-file,line-pattern-width,line-pattern-height,line-pattern-type,line-pattern-meta-output,line-pattern-meta-writer,polygon-pattern-file,polygon-pattern-width,polygon-pattern-height,polygon-pattern-type,polygon-pattern-meta-output,polygon-pattern-meta-writer,raster-opacity,raster-mode,raster-scaling,point-file,point-width,point-height,point-type,point-allow-overlap,point-placement,point-transform,point-meta-output,point-meta-writer,text-name,text-face-name,text-size,text-ratio,text-wrap-width,text-spacing,text-character-spacing,text-line-spacing,text-label-position-tolerance,text-max-char-angle-delta,text-fill,text-halo-fill,text-halo-radius,text-dx,text-dy,text-vertical-alignment,text-avoid-edges,text-min-distance,text-min-padding,text-allow-overlap,text-placement,text-transform,text-meta-output,text-meta-writer,building-fill,building-fill-opacity,building-height</p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/23">
+<ul>
+<li>(but again, don't be afraid. let's take a spin)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/24">
+<h1>Data!</h1>
+
+<ul>
+<li>groan</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/25">
+<ul>
+<li>Shapefiles</li>
+<li>GeoJSON &amp; KML</li>
+<li>GeoTIFF</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/26">
+<ul>
+<li>let's add some data.</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/27">
+<ul>
+<li><strong>PostGIS</strong> and <strong>Spatialite</strong> are on deck.</li>
+<li>What do you want?</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/28">
+<h1>Interactivity</h1>
+
+<ul>
+<li>no flash</li>
+<li>tons of speed</li>
+<li>works on the web, iPad, elsewhere</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/29">
+<ul>
+<li>output</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/30">
+<ul>
+<li>PDF, PNG, MBTiles</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/31">
+<h1>MBTiles</h1>
+
+<ul>
+<li>based on SQLite</li>
+<li>can export to disk (as TMS)</li>
+<li>or host on the web</li>
+<li>or put on an iPad or iPhone</li>
+<li>one file</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/32">
+<h1>TileStream</h1>
+
+<ul>
+<li>Drag-and-drop tile hosting</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/33">
+<ul>
+<li>let's put tiles on a website.</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/34">
+<ul>
+<li>Use TileMill! No Really!</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/35">
+<ul>
+<li>OSX 10.6 w/ XCode installed</li>
+<li>Ubuntu</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/36">
+<ul>
+<li>you'll find bugs</li>
+<li>(and invent features)</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content center" ref="one/slide/37">
+<p><img src="file:///Users/tmcw/Documents/DS/presentations/tuGIS/one/tracker.png" width="1280" height="800" alt="Issue tracker"/></p>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/38">
+<h1>Limitations</h1>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/39">
+<h1>TileMill Will Not Analyze Your Watersheds</h1>
+
+<ul>
+<li>It's a map design tool: QGIS, OGR, and other tools are great for analysis</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/40">
+<h1>TileMill will not project the world in the shape of a <span class="pink">&#x2665;</span></h1>
+
+<ul>
+<li>For now, it's for the web and keeps things simple.</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/41">
+<h1>TileMill will not run on Windows</h1>
+
+<ul>
+<li>But you can access it from a Windows computer</li>
+</ul>
+
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="one/slide/42">
+<h1>Thanks!</h1>
+
+<ul>
+<li>tilemill.com</li>
+<li><code>@tmcw</code></li>
+<li><code>@mapbox</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
