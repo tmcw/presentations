@@ -1,0 +1,15 @@
+body {
+  font-family: 'Helvetica';
+  background:#000;
+  color:#fff;
+  margin:0;
+  font-weight:bold;
+}
+
+em {
+  color:#34d0e7;
+}
+
+img {
+  width:100%;
+}
