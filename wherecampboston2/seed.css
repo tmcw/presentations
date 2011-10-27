@@ -1,0 +1,40 @@
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  font-weight:bold;
+  background:#000;
+  color:#fff;
+  margin:0;
+  padding:0;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#64FFA0;
+}
+
+ins {
+  font-style:italic;
+}
+
+a {
+  color:#64FFA0;
+  text-decoration:none;
+  border-bottom:0.05em solid #64FFA0;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
