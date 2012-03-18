@@ -1,0 +1,39 @@
+body {
+  background:#FFF;
+  color:#7E0065;
+  font-family:'Helvetica';
+  font-weight:bold;
+  font-size:130px;
+  line-height:150px;
+}
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+em {
+  background:rgba(255, 255, 0, 0.3);
+  color:#333;
+}
+
+pre {
+  font-size:70px;
+  line-height:75px;
+}
+
+strong {
+  font-weight:normal;
+  color:#FFF707;
+}
+
+a {
+  color:#FFF707;
+  text-decoration:none;
+}
+
+div.invert {
+  color:#fff;
+}
+
+div.invert em {
+  color:#FFFFCF;
+}

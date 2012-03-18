@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link href='medium.css' rel='stylesheet' type='text/css' />
+    <meta charset='utf8' />
+    <script src='medium.js'></script>
+  </head>
+<body>
+<div>big data with node.js, sqlite, redis, polymaps</div>
+<div>big<em>-ish</em> data with node.js, sqlite, redis, polymaps, <em>and maps</em><br />by me, @tmcw</div>
+<div><em>problem:</em> openstreetmap is not quite complete</div>
+<div><img src='streets.png' /><em>problem:</em> openstreetmap is not quite complete</div>
+<div><img src='foursquare.png' />and <em>people notice when it's their town that's missing</em></div>
+<div><em>'MapBox Streets'<br />~240 gigabyte<br /></em> SQLite database of tile images</div>
+<div>&rarr; 4.6MB SQLite database of street density</div>
+<div>Lessons:</div>
+<div>Lessons:<br />Flow-control stuff breaks usually</div>
+<div>Lessons:<br />you can't keep track of all callback arg-results</div>
+<div><pre>function run(s) {
+  asyncFn(function(err, rows) {
+    <em>// do stuff</em>
+    if (step < stepend) {
+      step++; run(step);
+    }
+  });
+} run(step = 0);
+</pre></div>
+<div>recursion!</div>
+<div>crossing the bindings gap</div>
+<div><pre>for (var i = 0;
+  i < 1e9; i++) {
+  var x = callToCLib(i, {
+    start: i,
+    limit: 1
+  });
+  <em>// do stuff with x</em>
+}
+</pre></div>
+<div><pre>for (var i = 0;
+  i < 1e9; <em>i += 100</em>) {
+  var x = callToCLib(i, {
+    start: i,
+    <em>limit: 100</em>
+  });
+  <em>// do stuff with x</em>
+}
+</pre></div>
+<div>(aka loop unrolling, duff's device, batching)</div>
+<div><em>redis</em> is a darn good hammer</div>
+<div>for this project: needed a big hash of incremented numbers</div>
+<div><pre><em>write</em>
+rclient.incrby(key, val);
+rclient.sadd('keys', key);
+</pre>
+</div><div>
+<pre>
+<em>read</em>
+rclient.spop('keys',
+  function(err, k) {
+    rclient.get(k, function() {
+  });
+});
+</pre></div>
+<div>aka a hacky list-indexable hash table</div>
+<div>redis ♥ numbers and is super-fast for prototyping</div>
+<div><img src='noidea.jpg' /></div>
+<div>next: prototyping a visualization</div>
+<div class='invert'><img src='prototype' />next: prototyping a visualization (aka <em>doing it live</em>)</div>
+<div><img src='canvas.jpg' />tactic: use canvas</div>
+<div>tactic: use canvas<br />abstract only when necessary</div>
+<div>tactic: use canvas<br />with <em>node-canvas</em> as your escape hatch to other sorts of output</div>
+<div><em>node-canvas!</em>: <br />fast enough, pixel-perfect, easy-ish to use</div>
+<div><em>polymaps</em> stays out of your way.
+<pre><em>// this is a valid layer</em>
+po.layer(function(tile) { }))
+</pre>
+</div>
+<div>iterate in-browser: colors &amp; scales are finicky</div>
+<div><em>iteration speed &gt; screen speed</em></div>
+<div>when you're done: baking.</div>
+<div>porting stuff to node: only stickler is <em>d3</em></div>
+<div>but it's <em>so worth it</em><pre>var scale = d3.scale.linear()
+  .range([0, 1]).clamp(true)
+  .domain([0, 10000]);
+scale(5000);</pre></div>
+<div>follow the dependencies, and <pre>var d3 = require('./d3_compat.js')</pre></div>
+<div>bake tiles: using <em>node-sqlite3</em> for dbing, <em>node-canvas</em> for rastering</div>
+<div class='invert'><img src='oven.jpg' />a few hours later</div>
+<div>pictures!<iframe width='100%' height='500' frameBorder='0' src='http://a.tiles.mapbox.com/v3/tmcw.map-i7lpivnh.html#5/44.134/19.006'></iframe></div>
