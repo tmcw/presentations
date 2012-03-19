@@ -7,11 +7,13 @@
     <script src='medium.js'></script>
   </head>
 <body>
-<div><img src='all2k11.gif' />big data with node.js, sqlite, redis, polymaps</div>
+<div class='invert'><img src='all2k11.gif' />big data with node.js, sqlite, redis, polymaps</div>
 <div>big<em>-ish</em> data with node.js, sqlite, redis, polymaps, <em>and maps</em><br />by me, @tmcw</div>
 <div><em>problem:</em> openstreetmap is not quite complete</div>
 <div><img src='streets.png' /><em>problem:</em> openstreetmap is not quite complete</div>
 <div><img src='foursquare.png' />and <em>people notice when it's their town that's missing</em></div>
+<div>so: take our global base layer, find its density at a 3mi resolution</div>
+<div>aka a hacky list-indexable hash table <img src='flow.jpg' /></div>
 <div><em>'MapBox Streets'<br />~240 gigabyte<br /></em> SQLite database of tile images</div>
 <div>&rarr; 4.6MB SQLite database of street density</div>
 <div>Lessons:</div>
@@ -62,7 +64,6 @@ rclient.spop('keys',
   });
 });
 </pre></div>
-<div>aka a hacky list-indexable hash table <img src='flow.jpg' /></div>
 <div>redis ♥ numbers and is super-fast for prototyping</div>
 <div><img src='noidea.jpg' /></div>
 <div>next: prototyping a visualization</div>
