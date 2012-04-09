@@ -27,6 +27,12 @@ em {
   color:#002788;
 }
 
+small {
+  font-style:italic;
+  font-size:40%;
+  line-height:60%;
+}
+
 .invert-fancy {
   color:#222;
   text-shadow:
