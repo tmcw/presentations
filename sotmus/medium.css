@@ -1,0 +1,77 @@
+body {
+  font-family: 'Helvetica', sans-serif;
+  font-weight:bold;
+  background-size:100%;
+  background-repeat:no-repeat;
+  text-shadow:0px 0px 20px #fff;
+  color:#444;
+  margin:0;
+  padding:0;
+  -webkit-image-rendering:-webkit-optimize-contrast;
+  -moz-image-rendering:pixelated;
+}
+
+sub {
+    font-size:50%;
+    line-height:50%;
+}
+
+a { color:#222; text-decoration:none; }
+
+body.has-bg div {
+  -webkit-animation-name: blinker;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-duration: 800ms;
+}
+
+@-webkit-keyframes blinker {
+  0% { opacity: 1.0; }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; }
+}
+
+pre {
+    color:#000;
+    font-weight:normal;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+strong {
+    opacity:0.8;
+}
+
+em {
+  font-style:normal;
+  color:#0A6592;
+}
+
+a {
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  vertical-align:middle;
+  top:0;
+  left:0;
+}
+
+.name-0 {
+    color:black;
+}
+.name-1 {
+    color:#555;
+}
+
+abbr {
+    border-bottom:10px dotted #777;
+}
