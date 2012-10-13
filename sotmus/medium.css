@@ -75,3 +75,12 @@ div {
 abbr {
     border-bottom:10px dotted #777;
 }
+
+.cue {
+    background:rgba(255, 255, 255, 0.8);
+    font-size:14px;
+    position:absolute;
+    bottom:5px;
+    left:5px;
+    color:#666;
+}

@@ -16,8 +16,14 @@
 <div id='names' style='text-align:justify'>123421 gpslib-ru doroga tv Lost GPX Traces sc_auto_import norcTracks GPSies_com -jha- yasu747 AkMeR sprok RomaniaTracks mfvl MAXimall OldIvantey Johnny Carlsen Eugene120 Nikolya Roman_GRE Andrey Tolstoy AHTOH osm-belarus Ben Alban DevineMe dolphinpix Chip Chef chnav RodrigoMoya Gregory Williams *Martin* blaz John68 Petter Reinholdtsen blackadder docsam malenki amck sonk Teddy73 VK1RE RandalSchwartz Tallguy MichaelCollinson AlexAR Nahainec kao Toi Aleksey Ovchinnikov alex-map NLCanvec NLCanvec NLCanvec CorineBH CorineBH CorineBH azub mcheckimport czechreg Pierre Gagné Pierre Gagné mcheckimport TexasNHD azub CanvecImports DarkSwan_Import CanvecImports sammuell_imports u_kubota TexasNHD TexasNHD Hjart osapon osapon drijvis azubimport Pierre Gagné yamasan DarkSwan_Import bdustan IENC-Import nodekiller alenmahovic Felis Pimeja drijvis Константин Коцев geodreieck4711 sammuell_imports Heinz_V slpt doocky soranokawa_import pnorman_reverts soranokawa azub Ycarus Heinz_V Plop76_imports Heinz_V hotelsierra</div>
 <div>95%</div>
 <div>5%</div>
-
 <div><img src='homepage.png' />Software</div>
+<div>
+    <ul>
+        <li><em>WTF is it</em></li>
+        <li>7 years of change</li>
+        <li>the future</li>
+    </ul>
+</div>
 <div><img src='car.png' /></div>
 <div><img src='mcqueen.png' /></div>
 <div>Functional Software</div>
@@ -30,6 +36,15 @@
     <li>Ruby on Rails</li>
     <li>PostgreSQL</li>
     </ul>
+</div>
+<div><pre class='prettyprint'># i won't bite!
+def index
+    unless STATUS == :database_readonly or
+      STATUS == :database_offline
+      session[:location] ||=
+        OSM::IPLocation(request.env['REMOTE_ADDR'])
+    end
+end</pre>
 </div>
 <div><img src='whatisit-2.png' /></div>
 <div><ul>
@@ -54,6 +69,14 @@
 <div>OSM is <em>a lot of stuff</em></div>
 
 <div>
+    <ul>
+        <li>WTF is it</li>
+        <li><em>7 years of change</em></li>
+        <li>the future</li>
+    </ul>
+</div>
+
+<div>
 <pre>From: Steve Coast steve@asklater.com
 Date: Fri, 28 Jul 2006 21:41:39 +0000 (+0000)
 Subject: beginning of osm on rails
@@ -65,22 +88,23 @@ beginning of osm on <strong>rails</strong></pre></div>
 <div><img src='osm-contributors-month.png' /></div>
 
 <div>(2 minute history*) <sub>for most of this i wasn't there</sub></div>
-<div>Osmarender &raquo; <em>Mapnik</em></div>
+<div>Some Slow Ruby Renderer &rarr; <em>Osmarender</em></div>
+<div>Osmarender &rarr; <em>Mapnik</em></div>
 <div>the winningest renderer</div>
 <div>OpenStreetMap MapQuest Stamen MapBox</div>
 
 <div><img src='octocat.png'></div>
-<div>SVN &raquo; <em>GitHub</em></div>
+<div>SVN &rarr; <em>GitHub</em></div>
 <div><img src='svn.png'></div>
 <div><img src='github-interface.png'></div>
 <div>github.com/ openstreetmap/ openstreetmap-website</div>
 
-<div>Rails 2 &raquo; <em>Rails 3</em></div>
-<div>rakefiles and whatever &raquo; <em>Bundler</em></div>
+<div>Rails 2 &rarr; <em>Rails 3</em></div>
+<div>rakefiles and whatever &rarr; <em>Bundler</em></div>
 <div>Easier to set up!</div>
 <div><pre>bundle install</pre></div>
 
-<div>API 0.6</div>
+<div>API Whatever &rarr; <em>API 0.6</em></div>
 <div>(everyone knows about that)</div>
 
 <div>Translatable</div>
@@ -88,9 +112,26 @@ beginning of osm on <strong>rails</strong></pre></div>
 <div><img src='osm-ar.png' />WHOAH</div>
 <div><img src='osm-ar.png' />نجاح باهر</div>
 
+<div>same story as all software:</div>
+<div>everything gets better</div>
+
+<div>
+    <ul>
+        <li>WTF is it</li>
+        <li>7 years of change</li>
+        <li><em>the future</em></li>
+    </ul>
+</div>
+
+<!-- .................................... -->
 <div>'The Website'</div>
 <div><img src='osm_design.gif' /></div>
-
+<div>Redesigns</div>
+<div><img src='wikipedia-2009.png' /></div>
+<div><img src='wikipedia.png' /></div>
+<div><img src='wikipedia-redesign.png' /></div>
+<div>Design is hard</div>
+<div>Good enough = <br />Good enough</div>
 <div><img src='ants.gif' />MOCKUPS</div>
 <div><em>"Design" = </em> Wart Removal</div>
 <div><img src='potlatch-1.png' /></div>
@@ -100,15 +141,34 @@ beginning of osm on <strong>rails</strong></pre></div>
 <div>*is not mutually exclusive with design for nerds</div>
 <div><img src='flickr-photo.png' /></div>
 <div><img src='flickr-detail.png' /></div>
+<div>&lt;therefore&gt;</div>
+<div>osm.org is slow to change, but will evolve.</div>
 
+<!-- .................................... -->
+<div>(back to nerd stuff)</div>
 <div><abbr title='application programming interface'>API</abbr> aka DATA</div>
 <div><strong>OpenStreetMap</strong> is like <strong>Google Maps</strong> Except The API Gives You <em>Data</em></div>
+<div>How?</div>
+<div><em>Licensing</em> (the big part)</div>
+<div><em>Infrastructure</em> (the other part)</div>
+
+<!-- .................................... -->
+<div>Small data</div>
 <div><img src='export-data.png' /></div>
 <div><img src='export-data.png' /><em>THIS IS INCREDIBLE</em></div>
 <div><img src='too-many.png' /></div>
 <div><img src='too-many.png' /><em>NOOOO</em></div>
 
+<!-- .................................... -->
+<div>Big data</div>
+<div><img src='bigdata.png' />you must be kidding me</div>
+<div><img src='planet.png' /></div>
+<div>Read-only APIs:<br /> XAPI jXAPI Overpass</div>
+<div>Extracts &amp; Dumps:<br /> Planet.osm Metro Extracts Geofabrik CloudMade</div>
+<div>Read/write API:<br /> Rails Port + cgimap</div>
 <div><abbr title='application programming interface'>API</abbr> aka PLATFORM</div>
+<div>MapBox / Stamen / MapQuest Open / CloudMade / skobbler</div>
+<div><img src='yelp.png' />None of this exists yet</div>
 <div><pre class='prettyprint'>// none of this exists yet
 var osmapi = OSM();
 if (!osmapi.user()) {
@@ -126,35 +186,30 @@ getLocation(function(location) {
 });
 </pre>
 </div>
-<div><img src='link-add-foursquare.png' />None of this exists yet</div>
 
 <div>'<abbr title='you know, like apps made by hackers. not the old kind, the new kind, and by that i mean the older kind'>hacks</abbr>'
 are possible already.</div>
 <div>we just need to make them less scary / more reliable</div>
 
-<div>THE FUTURE</div>
-
-<div><img src='anarchism.png' />Part one: tear it all down!</div>
-<div>No</div>
+<div>what to do next</div>
+<div><img src='anarchism.png' />Don't tear it all down</div>
 <div><img src='ruby-easy.png' /></div>
 <div>(ruby will probably stay)</div>
 <div>(mapnik will probably stay)</div>
 <div>(mapnik will probably stay)</div>
 <div>OpenLayers (will probably) &rarr; <em>Leaflet</em></div>
-<div>Everything gets <em>better</em></div>
 
-<div>Part two: <em>the people's revolution</em></div>
-
+<div>more contributors!</div>
 <div><img src='osm-contributors-month.png' /></div>
 <div><img src='mediawiki.png' />MediaWiki</div>
 <div>Community Glue</div>
 
 <div>
-    <ul>
-        <li>Nice People</li>
-        <li>Goals</li>
-        <li>Learning curve</li>
-    </ul>
+  <ul>
+    <li>Nice People</li>
+    <li>Goals</li>
+    <li>Learning curve</li>
+  </ul>
 </div>
 
 <div>Nice people</div>
@@ -165,27 +220,36 @@ are possible already.</div>
 
 <div>Goals</div>
 <div>
-    <ul>
-        <li>wishlist</li>
-        <li>top 10 tasks</li>
-        <li>ewg</li>
-        <li>blog posts</li>
-    </ul>
+  <ul>
+    <li>wishlist</li>
+    <li>top 10 tasks</li>
+    <li>ewg</li>
+    <li>blog posts</li>
+  </ul>
 </div>
 
 <div>Learning curve</div>
 <div>
-    <ul>
-        <li>Bundler</li>
-        <li>IRC &amp; GitHub</li>
-        <li>Vagrant</li>
-        <li>Docs</li>
-        <li>Staging Servers</li>
-    </ul>
+  <ul>
+    <li>Bundler</li>
+    <li>IRC &amp; GitHub</li>
+    <li>Vagrant</li>
+    <li>Docs</li>
+    <li>Staging Servers</li>
+  </ul>
 </div>
 
-<div></div>
-
+<div>Where to start</div>
+<div>github.com/ openstreetmap/ openstreetmap-website</div>
+<div>lists.openstreetmap.org/listinfo</div>
+<div><ul>
+        <li><em>when in doubt bug me</em></li>
+        <li>@tmcw</li>
+        <li>tom@macwright.org</li>
+        <li>#tmcw</li>
+        <li><em>I am going to regret making this slide</em></li>
+    </ul>
+</div>
 <div>bit.ly/sotmus</div>
 <div>thanks</div>
 <div>@tmcw</div>

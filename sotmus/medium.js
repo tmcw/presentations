@@ -13,6 +13,7 @@ window.onload = function() {
         document.body.style.backgroundImage = 'url(' +
             c.toDataURL() + ')';
     }
+    var cue = document.body.appendChild(document.createElement('span'));
     function go(n) {
         cur = n;
         var i = 1e3, e = s[n];
@@ -34,6 +35,10 @@ window.onload = function() {
             e.offsetHeight > window.innerHeight) {
             e.style.fontSize = (i -= 10) + 'px';
             e.style.lineHeight = (i) + 'px';
+        }
+        if (s[n + 1]) {
+            cue.className = 'cue';
+            cue.innerHTML = (s[n + 1].innerText || s[n + 1].textContent).slice(0, 25);
         }
         // if (!bg) bgImage(i);
         e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
