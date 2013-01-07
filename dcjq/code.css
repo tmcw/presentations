@@ -1,0 +1,42 @@
+.purple,
+.html .value,
+.javascript .string,
+.javascript .regexp {
+  color: #9e9ac8;
+}
+
+.blue,
+.html .tag,
+.css .tag,
+.javascript .keyword {
+  color: #6baed6;
+}
+
+.grey,
+.comment {
+  color: #969696;
+}
+
+.green,
+.html .doctype,
+.javascript .number {
+  color: #74c476;
+}
+
+.orange,
+.html .attribute,
+.css .attribute,
+.javascript .class,
+.javascript .special {
+  color: #fd8d3c;
+}
+ul, pre {
+  margin: 0;
+}
+pre, code {
+  font-family: "Menlo", monospace;
+}
+
+pre {
+  font-size: 48px;
+}

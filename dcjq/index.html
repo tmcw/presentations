@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+
+@import url(stack.css);
+@import url(code.css);
+
+.big {
+  font-size: 128px;
+}
+
+.caption {
+  font-size: 96px;
+  text-align: center;
+  text-shadow: 0px 2px 6px rgba(0,0,0,.5);
+}
+
+</style>
+<body class="overview">
+
+<section>
+  <p><b>d3</b>, the king of the javascript visualization world
+  <p class="grey">(d3 is by @mbostock and crew. I'm @tmcw)</p>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+<p><strong>/me: I try not to use jQuery nowadays</strong></p>
+</section>
+
+<section>
+<p><strong>What is d3?</strong></p>
+</section>
+
+<section>
+<p><strong>Not a chart library</strong> (though you can make charts with it)</p>
+<p><strong>Not a map library</strong> (though you can make maps with it)</p>
+</section>
+
+<section>
+<p><strong>Not a compatibility layer</strong> (it doesn't work with bad browsers)</p>
+<p><strong>Not about SVG or HTML or Canvas</strong> (though you can use it with them)</p>
+</section>
+
+<section>
+<p>(let's reiterate here: <strong>not an SVG abstraction layer</strong>. it doesn't
+make SVG easier to use. If you want that, use Raphael, Processing.js, or
+Paper.js, but plz don't)</p>
+</section>
+
+<section>
+<p><strong>d3 is a library for manipulating documents based on data</strong>.
+The big aha moment is the fact that it does <em>joins</em> between data
+and actions.</p>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+<p><strong>1: Cool Stuff Made With d3</strong></p>
+</section>
+
+<section>
+<iframe frameborder=0 width=1000 height=600 src='http://bl.ocks.org/d/1256572/'></iframe>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+  <p>d3 from the perspective of $</p>
+</section>
+
+<section>
+<pre><code>
+d3.select('#foo')
+  .style('background', '#000')
+  .on('click', function() {})
+  .append($('&ltdiv&gt;&lt;/div&gt;'));
+
+$('#foo')
+  .css('background', '#000')
+  .click(function() {})
+  .append('div');
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+d3.json('foo.json',
+  function(err, data) { });
+
+$.getJSON('foo.json',
+  function(data) { });
+</code></pre>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+<p>d3 is wildly different than $ because it is <strong>mostly about data</strong></p>
+</section>
+
+<section>
+<pre><code>
+d3.selectAll('div')
+  .data([1, 2, 3])
+  .enter()
+  .append('div')
+  .text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// an empty selection.
+// looking for instantiations of data
+d3.selectAll('div')
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// data, which would be bound to a
+// selection
+.data([1, 2, 3])
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// for every time that we see data
+// but we do not see an element
+.enter()
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// append an element
+.append('div')
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and fill it with text
+.text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and fill it with text
+.text(String);
+// wait what
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// what's going on here?
+.text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+d3.selectAll('div')
+  .data([1, 2, 3])
+  .enter()
+  .append('div')
+  .text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// d3 has a few different
+// functions that set stuff
+.text()
+.property()
+.style()
+.attr()
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// each takes a function
+.attr('foo', function() { })
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and that function gets data
+// from your .data()
+.attr('foo', function(d) {
+  return d.foo;
+})
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// if you provide a static argument,
+// it becomes a functor
+.attr('foo', 5)
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// here's what a functor is
+function functor(x) {
+  return function() {
+    return x;
+  };
+}
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and what it does
+var val = functor(10);
+
+// val is now a function that
+// always returns 10
+assert.equal(val(), 10);
+</code></pre>
+</section>
+
+<section>
+<strong>end tangent</strong>
+</section>
+
+<section>
+<p>but what did you mean by .enter()?</p>
+<p>d3 is all about <strong>enter, exit, and update</strong></p>
+</section>
+
+<section>
+<pre><code>// this is an empty selection
+var selection = d3.selectAll('div')
+  .data([1, 2, 3]);
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the data which
+// is not joined to an element in
+// the selection,
+// add an element
+selection
+  .enter()
+  .append('div');
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the selection
+// that is no longer in the data,
+// remove it
+selection
+  .exit()
+  .remove();
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the selection,
+// update some attribute
+selection
+  .text(function(d) {
+    return d.bar;
+  });
+</code></pre>
+</section>
+
+<section>
+<p><strong>Why must everything be so hard!?</strong></p>
+</section>
+
+<section>
+<ol>
+    <li>Changing the DOM is <strong>mad expensive</strong></li>
+</ol>
+</section>
+
+<section>
+<ol>
+    <li>Changing the DOM is <strong>usually the most expensive part
+    of your code unless you're a horrible Javascript coder</strong></li>
+</ol>
+</section>
+
+<section>
+<ol>
+    <li>Changing the DOM is <strong>mad expensive</strong></li>
+    <li>This makes animated transitions way slicker</li>
+    <li>Post-eureka moment, it makes code way more compact</li>
+    <li>Data updates, like real-time data or history viewers, become obvious</li>
+</ol>
+</section>
+
+<!-- ..................................................................... -->
+<section>
+<p><strong>4: Postscript, Where to Go From Here</strong>
+</section>
+
+<section>
+<p><strong>Buy <a href='http://www.amazon.com/Grammar-Graphics-Statistics-Computing/dp/0387245448'>The Grammar of Graphics</a></strong></p>
+<p>It is not about d3.</p>
+<p>d3 is about it.</p>
+</section>
+
+<section>
+<p><strong>See <a href='http://bl.ocks.org/mbostock'>Mike's bits of code</a></strong></p>
+<p>It's zany.</p>
+</section>
+
+<script src="d3.v2.js?2.7.3"></script>
+<script src="stack.v0.js"></script>
+<script src="highlight.v0.js"></script>
