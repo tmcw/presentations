@@ -1,0 +1,134 @@
+<!DOCTYPE html><html><head><title>minute, windchime, and heard</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Times New Roman';
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:normal;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+div.invert {
+  color:#000;
+  text-shadow:0 0 20px #fff,
+    0 0 10px #fff,
+    0 0 10px #fff;
+}
+div.semi {
+   color:#555;
+   }
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>minute, heard, <br />and windchime</div>
+<div>'quantified self'</div>
+<div>why</div>
+<div class='invert'><img src='6495230835_cc9c044f60_o.jpg' />i am a space cadet</div>
+<div>life is long</div>
+<div>the idea of computers doing things</div>
+<div>/</div>
+<div>(minute) <a href='http://bit.ly/read-minute'>bit.ly/read-minute</a></div>
+<div class='invert'><img src='onedim.png' /> keystrokes</div>
+<div><img src='7093585173_6d57bfe39c_o.png' /></div>
+<div><img src='7093585173_6d57bfe39c_o.png' /></div>
+<div class='semi'><img src='6692153935_9b44a7565e_b.jpg' />a few days</div>
+<div><img src='gel.jpg' /></div>
+<div class='semi'><img src='8123037480_a3c6af9f04_b.jpg' />a few weeks</div>
+<div>subpatterns</div>
+<div><img src='6943235334_6824ff2bb2_o.png' /></div>
+<div><img src='week2.png' /></div>
+<div><img src='anim.gif' /></div>
+<div><img src='sleep.jpeg' /></div>
+
+<div>native, objective-c, <br />open source from the beginning</div>
+<div>github.com<br />/tmcw/minute-agent<br />/tmcw/minute</div>
+
+<div>(heard) <a href='http://bit.ly/read-heard'>bit.ly/read-heard</a></div>
+<div>like last.fm, but for me</div>
+<div><img src='heard.png' /></div>
+<div><img src='chain.png' /></div>
+<div><img src='tree.png' /></div>
+<div><img src='song_length.png' /></div>
+
+<div>native, objective-c, <br />open source from the beginning</div>
+<div>github.com<br />/tmcw/heard</div>
+
+<div>(windchime) <a href='http://bit.ly/read-windchime'>bit.ly/read-windchime</a></div>
+<div><center>
+        <iframe src="http://player.vimeo.com/video/52421539" width="720" height="500" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+</center></div>
+<div>native, objective-c, <br />open source from the beginning</div>
+<div>github.com<br />/tmcw/windchime</div>
