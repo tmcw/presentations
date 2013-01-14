@@ -45,41 +45,40 @@
 </section>
 
 <section>
-<p>(let's reiterate here: <strong>not an SVG abstraction layer</strong>. it doesn't
-make SVG easier to use. If you want that, use Raphael, Processing.js, or
-Paper.js, but plz don't)</p>
+<p><strong>not an SVG abstraction layer</strong></p>
+<p>it doesn't have its own way of making a line or a circle. it makes
+you deal with svg elements as svg elements.</p>
 </section>
 
 <section>
-<p><strong>d3 is a library for manipulating documents based on data</strong>.
-The big aha moment is the fact that it does <em>joins</em> between data
-and actions.</p>
+<p><strong>not an SVG abstraction layer</strong></p>
+<p>If you want a soft, friendly wrapper, use Raphael, Processing.js, or
+Paper.js</p>
 </section>
 
 <section>
-<p><strong>the core problems jQuery fixes</strong><br />
-how do we make the DOM safer?<br />
+<p><strong>d3 is a library for manipulating documents based on data</strong></p>
+<p>The big aha moment is the fact that it does <em>joins</em> between data
+and actions</p>
+</section>
+
+<section>
+<p><strong>what $ does</strong></p>
+<p>how do we make the DOM safer?<br />
 how do we make fancy things easier?<br />
 </p>
 </section>
 
 <section>
-<p><strong>the core problems d3 fixes</strong><br />
-how do we make transformation of data into documents safer?</p>
+<p><strong>what d3 does</strong></p>
+<p>how do we make <em>transformation</em> of data into documents safer?</p>
 </section>
 
 <!-- ..................................................................... -->
 
 <section>
 <p><strong>1: Cool Stuff Made With d3</strong></p>
-</section>
-
-<section>
-<iframe frameborder=0 width=1000 height=600 src='http://bl.ocks.org/d/1256572/'></iframe>
-</section>
-
-<section>
-<iframe frameborder=0 width=1000 height=600 src='http://www.geowiki.com/iD/'></iframe>
+<p>(switch tabs)</p>
 </section>
 
 <!-- ..................................................................... -->
@@ -89,8 +88,7 @@ how do we make transformation of data into documents safer?</p>
 </section>
 
 <section>
-<pre><code>
-d3.select('#foo')
+<pre><code>d3.select('#foo')
   .style('background', '#000')
   .on('click', function() {})
   .append($('&ltdiv&gt;&lt;/div&gt;'));
@@ -103,8 +101,7 @@ $('#foo')
 </section>
 
 <section>
-<pre><code>
-d3.json('foo.json',
+<pre><code>d3.json('foo.json',
   function(err, data) { });
 
 $.getJSON('foo.json',
@@ -115,7 +112,33 @@ $.getJSON('foo.json',
 <!-- ..................................................................... -->
 
 <section>
-<p>d3 is wildly different than $ because it is <strong>mostly about data</strong></p>
+<p>that's just the silly stuff, though</p>
+</section>
+
+<section>
+<pre><code>// a fully-featured jquery replacement
+function $(x) {
+  return document.querySelectorAll(x);
+}
+</pre></code>
+</section>
+
+<section>
+<pre><code>// a fully-featured jquery replacement
+$.ajax = function(url, callback) {
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+  xhr.onload = callback;
+  xhr.send();
+}
+</pre></code>
+</section>
+
+<section style='background-image:url(oz.jpg)' />
+</section>
+
+<section>
+<p>let's get to the hard stuff, then</p>
 </section>
 
 <section>
@@ -348,10 +371,13 @@ selection
 </section>
 
 <section>
-<p><strong>People who write about this <a href='http://macwright.org'>macwright.org (me)</a>,
-    <a href='http://www.jasondavies.com/'>jasondavies.com</a>,
-    <a href='http://alignedleft.com/tutorials/'>alignedleft.com/tutorials</a>
-</strong></p>
+<p><strong>People who write about this</strong>
+<ul>
+    <li><a href='http://macwright.org'>macwright.org (me)</a>,
+    <li><a href='http://www.jasondavies.com/'>jasondavies.com</a>,
+    <li><a href='http://alignedleft.com/tutorials/'>alignedleft.com/tutorials</a>
+</ul>
+</p>
 </section>
 
 <script src="d3.v2.js?2.7.3"></script>
