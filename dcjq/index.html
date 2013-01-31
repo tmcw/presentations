@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<script src="js/rickshaw.min.js"></script>
+<script src="js/d3.v3.min.js"></script>
 <style>
 
 @import url(stack.css);
@@ -23,6 +25,25 @@
   <p><b>d3</b>, the king of the javascript visualization world
   <p class="grey">(d3 is by @mbostock and crew. I'm @tmcw)</p>
 </section>
+
+<!--
+
+* 5 minutes of 'stuff that's cool with d3 that should pique your interest'
+
+* 1: primer: the difference between == and ===
+
+* 2 minutes of how abstractions hurt and help you
+
+* 5 minutes of stuff that d3 does that jquery did
+
+* 1: primer: the difference between == and ===
+
+* 10 minutes of dummy3 with == and === diff
+
+* 5 minutes of how d3 actually does this
+
+-->
+
 
 <!-- ..................................................................... -->
 
@@ -84,7 +105,7 @@ how do we make fancy things easier?<br />
 <!-- ..................................................................... -->
 
 <section>
-  <p>d3 from the perspective of $</p>
+<p><strong>2: d3 from the perspective of $</strong></p>
 </section>
 
 <section>
@@ -139,6 +160,30 @@ $.ajax = function(url, callback) {
 
 <section>
 <p>let's get to the hard stuff, then</p>
+</section>
+
+<section>
+<p>Let's review some Javascript (1x)</p>
+</section>
+
+<section>
+<a target='second' href='http://macwright.org/mistakes/#4679917'>what is the difference between == and ===?</a>
+</section>
+
+<section>
+<p>cool!</p>
+</section>
+
+<section>
+<p>now let's understand the hardest part of d3 by building it from scratch.</p>
+</section>
+
+<section>
+<a target='second' href='http://macwright.org/mistakes/#4679425'>the final dish</a>
+</section>
+
+<section>
+<p>you have the knowledge! time to d3.</p>
 </section>
 
 <section>
@@ -367,12 +412,50 @@ selection
 </section>
 
 <section>
-<p><strong>d3-bootstrap</strong></p>
+<p><strong>charts</strong></p>
 </section>
 
 <section>
-<p><strong>rickshaw</strong></p>
+<p>want an abstraction? <strong>rickshaw</strong></p>
+<div style='width:70%' id='rick'></div>
+<script>
+var graph = new Rickshaw.Graph({
+    element: document.querySelector("#rick"),
+    renderer: 'bar',
+    series: [{
+        data: [{ x:0, y:40 }, { x:1, y:49 }],
+        color: 'steelblue'
+    }, {
+        data: [{ x:0, y:20 }, { x:1, y:24 }],
+        color: 'lightblue'
+    }]
+});
+
+graph.renderer.unstack = true;
+graph.render();
+</script>
 </section>
+
+<section>
+<code><pre>var graph = new Rickshaw.Graph({
+  element: document.querySelector("#rick"),
+  renderer: 'bar',
+  series:[{
+    data:[{ x:0, y:40 }, { x:1, y:49 }],
+    color:'steelblue'
+  }, {
+    data:[{ x:0, y:20 }, { x:1, y:24 }],
+    color:'lightblue'
+}]});
+</pre></code>
+</section>
+
+
+
+<section>
+<p><strong>d3-bootstrap</strong></p>
+</section>
+
 
 <!-- ..................................................................... -->
 
@@ -401,6 +484,5 @@ selection
 </p>
 </section>
 
-<script src="d3.v2.js?2.7.3"></script>
 <script src="stack.v0.js"></script>
 <script src="highlight.v0.js"></script>
