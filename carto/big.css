@@ -2,7 +2,8 @@ body {
   font-family: 'Helvetica';
   letter-spacing:-5px;
   background:#000;
-  background-size:100%;
+  background-size:cover;
+  background-repeat:no-repeat;
   color:#fff;
   margin:0;
   padding:0;
@@ -52,4 +53,29 @@ div {
   position:absolute;
   top:0;
   left:0;
+}
+
+.threed {
+    text-shadow: 0px 1px 0px #999,
+    0px 2px 0px #888,
+    0px 4px 0px #777,
+    0px 17px 0px #666,
+    0px 25px 0px #555,
+    0px 30px 0px #444,
+    0px 35px 0px #333,
+    0px 40px 7px #001135;
+}
+
+inv {
+    color:#444;
+    opacity:0.8;
+}
+
+.lots {
+    text-align:center;
+    text-shadow:
+        20px 20px 0px red,
+        40px 40px 0px green,
+        60px 60px 0px cyan,
+        80px 80px 0px orange;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head><title></title><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href='big.css' rel='stylesheet' type='text/css' /><script src='big.js'></script></head><body>
-<div>CartoCSS</div>
+        <div><span class='threed'>CartoCSS</span></div>
 
 <div>@tmcw</div>
 <div>MapBox</div>
@@ -65,16 +65,24 @@
 <div><img src='pretending.png' />do not be afraid</div>
 <div><img src='pretending.png' />do not be <strong>afraid</strong></div>
 
-<div><pre><code>~/src/carto〉git shortlog -s -n
+<div>stuff that is not css</div>
+
+<div><pre>@variables: 'yes';</pre></div>
+<div><pre>.nesting { .selectors { } }</pre></div>
+<div><pre>// c++ style comments</pre></div>
+<div><pre>spin(2, 2, 2);</pre></div>
+
+<div>(from <strong>less.js</strong> but not everything from less.js and i do not advise or disadvise the use of less.js but cloudhead did write a <strong>darn fine css parser</strong>)</div>
+
+<div><pre><code>〉git shortlog -s -n
    591  Tom MacWright
-   481  cloudhead
    244  Konstantin Käfer
     97  Dane Springmeyer
     67  Young Hahn
     23  AJ Ashton
     12  Konstantin Käfer
     8  Will White</code></pre></div>
-<div>why is this so hard? <img src='hard.gif'/></div>
+<div><img src='why_so_difficult.png' />why is this so hard?</div>
 
 <div>style is multi-dimensional</div>
 <div><pre><code>#foo { color: red; }
@@ -83,19 +91,64 @@
 #foo:hover { color: black; }
 </code><pre></div>
 
-<div>1: <strong>scale</strong></div>
+<div><span class='threed'>scale</span></div>
+<div><span class='threed'>(zoom)</span></div>
 <div><img src='all-streets.jpg' /></div>
 <div>(fathom)</div>
 <div><img src='all-streets.jpg' /></div>
+<div><img src='streets.png' /></div>
+
+<div><pre><code>#foo[zoom &gt; 3] {
+  color: red;
+}
+</code><pre></div>
+
+<div><pre><code>@minfoo: 3;
+#foo[zoom &lt;= @minfoo] {
+  color: red;
+}
+</code><pre></div>
 
 <div><img src='casings.png' /></div>
+<div><img src='npmap.png' /></div>
 
-<div>2: <strong>zindex</strong></div>
+<div><span class='threed'>zindex</span></div>
 <div><img src='map_css_gif.gif' /></div>
 <div>(stuff on top of each other)</div>
-<div><img src='map_css_gif.gif' /></div>
+<div><img src='map_css_gif.gif' /><inv>(road trip)</inv></div>
 
-<div></div>
+<div><pre><code>#a { marker-width: 2; }
+#b { marker-width: 3; }
+#c { marker-width: 4; }
+#d { marker-width: 5; }
+</code></pre></div>
+
+<div>roads</div>
+<div><img src='roads.png' /></div>
+<div><img src='roads_2.png' /></div>
+<div><img src='casings_google.png' /></div>
+<div><img src='roads_3.png' /></div>
+<div><img src='roads_4.png' /></div>
+
+<div><pre><code>// cascadenik
+#road {
+  line-width: 2;
+  outline-width: 4;
+}
+</code></pre></div>
+
+<div><pre><code>// carto
+#road {
+  line-width: 2;
+  ::outline {
+    line-width: 4;
+  }
+}
+</code></pre></div>
+
+<div>⎈<span></div>
+<div>ART</div>
+<div><span class='lots'>⎈<span></div>
 
 <div>(stuff made with carto)</div>
 <div><img src='maps/1.png' /></div>
