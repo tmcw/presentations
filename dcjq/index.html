@@ -22,8 +22,8 @@
 <body class="overview">
 
 <section>
-  <p><b>d3</b>, the king of the javascript visualization world
-  <p class="grey">(d3 is by @mbostock and crew. I'm @tmcw)</p>
+  <p><b>d3</b>
+  <p class="grey">(by @mbostock and crew. I'm @tmcw)</p>
 </section>
 
 <!--
@@ -48,10 +48,6 @@
 <!-- ..................................................................... -->
 
 <section>
-<p><strong>/me: I try not to use jQuery nowadays</strong></p>
-</section>
-
-<section>
 <p><strong>What is d3?</strong></p>
 </section>
 
@@ -68,7 +64,8 @@
 <section>
 <p><strong>not an SVG abstraction layer</strong></p>
 <p>it doesn't have its own way of making a line or a circle. it makes
-you deal with svg elements as svg elements.</p>
+you deal with svg elements as svg elements. plus, you can deal with HTML
+elements and Canvas elements!</p>
 </section>
 
 <section>
@@ -369,6 +366,17 @@ selection
   .text(function(d) {
     return d.bar;
   });
+</code></pre>
+</section>
+
+<section>
+<pre><code>// WE NEED TO GO DEEPER
+// WHAT IS REALLY HAPPENING
+
+&lt;div class='joined-elem'&gt;&lt;/div&gt;
+// a joined element like this has
+// a __data__ property where
+// WE KEEP THE DATA
 </code></pre>
 </section>
 
