@@ -1,7 +1,8 @@
 <!DOCTYPE html><html><head><title></title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href='big.css' rel='stylesheet' type='text/css' /><script src='big.js'></script></head><body>
-        <div><span class='threed'>CartoCSS</span></div>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><link href='big.css' rel='stylesheet' type='text/css' /><script src='big.js'></script></head><body>
+
+<div><span class='threed'>CartoCSS</span></div>
 
 <div>@tmcw</div>
 <div>MapBox</div>
@@ -33,6 +34,9 @@
 #dots {
   marker-width:1;
 }</pre></div>
+
+<div>(stuff made with carto)</div>
+<div><img src='maps/1.png' /></div>
 
 <div>why☞</div>
 <div>CartoCSS is <strong>code</strong></div>
@@ -77,16 +81,16 @@
 <div>(from <strong>less.js</strong> but not everything from less.js and i do not advise or disadvise the use of less.js but cloudhead did write a <strong>darn fine css parser</strong>)</div>
 
 <div><pre><code>〉git shortlog -s -n
-   591  Tom MacWright
-   244  Konstantin Käfer
-    97  Dane Springmeyer
-    67  Young Hahn
-    23  AJ Ashton
-    12  Konstantin Käfer
-    8  Will White</code></pre></div>
+591  Tom MacWright
+244  Konstantin Käfer
+ 97  Dane Springmeyer
+ 67  Young Hahn
+ 23  AJ Ashton
+ 12  Konstantin Käfer
+ 8  Will White</code></pre></div>
 <div><img src='why_so_difficult.png' />why is this so hard?</div>
 
-<div>style is multi-dimensional</div>
+<div><img src='hypercube.gif' />style is multi-dimensional</div>
 <div><pre><code>#foo { color: red; }
 
 // ENTER THE TIME DIMENSION
@@ -95,21 +99,17 @@
 
 <div><span class='threed'>scale</span></div>
 <div><span class='threed'>(zoom)</span></div>
-<div><img src='all-streets.jpg' /></div>
-<div>(fathom)</div>
-<div><img src='all-streets.jpg' /></div>
+<div><img src='all-streets.jpg' /> <span class='slight'>(fathom)</span></div>
 <div><img src='streets.png' /></div>
 
 <div><pre><code>#foo[zoom &gt; 3] {
   color: red;
-}
-</code><pre></div>
+}</code><pre></div>
 
 <div><pre><code>@minfoo: 3;
 #foo[zoom &lt;= @minfoo] {
   color: red;
-}
-</code><pre></div>
+}</code><pre></div>
 
 <div><img src='casings.png' /></div>
 <div><img src='npmap.png' /></div>
@@ -117,7 +117,7 @@
 <div><span class='threed'>zindex</span></div>
 <div><img src='map_css_gif.gif' /></div>
 <div>(stuff on top of each other)</div>
-<div><img src='map_css_gif.gif' /><inv>(road trip)</inv></div>
+<div><img src='map_css_gif.gif' /><span class='slight'>(road trip)</span></div>
 
 <div><pre><code>#a { marker-width: 2; }
 #b { marker-width: 3; }
@@ -153,8 +153,27 @@
 <div><span class='lots'>⎈<span></div>
 
 <div>(stuff made with carto)</div>
-<div><img src='maps/1.png' /></div>
 <div><img src='maps/2.png' /></div>
+
+<div><span class='threed'>"DESIGN PRINCIPLES" OF CARTO</span> aka ANOTHER PERFECT CODE</div>
+
+<div>1. Carto is <strong>friendly</strong></div>
+<div><img src='tilemill.png' /></div>
+<div>Carto suggests</div>
+<div><img src='tilemill.png' /></div>
+<div>Carto does not forgive</div>
+
+<div>2. Carto is <strong>complete</strong></div>
+<div><img src='carto-options.png' /></div>
+<div>If you can do it in Mapnik, you can do it in Carto</div>
+<div><img src='nda.png' /></div>
+<div><img src='nda.png' /><span class='blink'>SIGN THIS NDA WITH YOUR EYES</span></div>
+<div><img src='mb-streets-code.png' /></div>
+
+<div>2. Carto is <strong>supported</strong></div>
+<div><img src='pretending.png' />do not be <strong>afraid</strong></div>
+<div>vim syntax, codemirror syntax, pre-processing tools, <strong>documentation</strong></div>
+
 <div><img src='maps/3.png' /></div>
 <div><img src='maps/4.png' /></div>
 <div><img src='maps/5.png' /></div>
@@ -162,6 +181,7 @@
 <div><img src='maps/7.png' /></div>
 <div><img src='maps/8.png' /></div>
 
+<script src='//localhost:3001/receive.js'></script>
 <script type="text/javascript">
   var _gauges = _gauges || [];
   (function() {

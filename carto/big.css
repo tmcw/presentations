@@ -34,8 +34,9 @@ strong {
 
 em, a {
   font-style:normal;
-  color:#8dbd0c;
+  color:#fff;
 }
+
 
 a {
   background: #34d0e7;
@@ -78,4 +79,30 @@ inv {
         40px 40px 0px green,
         60px 60px 0px cyan,
         80px 80px 0px orange;
+}
+
+span.slight {
+    opacity:0.4;
+    font-weight:normal;
+    color:#000;
+}
+
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+.blink {
+    color:#000;
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1000ms; 
+  text-shadow: 0px 1px 0px #fff,
+    0px 2px 0px #eee,
+    0px 4px 0px #fff,
+    0px 17px 0px #aaa,
+    0px 25px 0px #aaa,
+    0px 30px 0px #fff,
+    0px 35px 0px #333,
+    0px 40px 7px #001135;
 }

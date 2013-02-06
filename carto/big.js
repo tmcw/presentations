@@ -29,8 +29,9 @@ window.onload = function() {
         go(++cur % (s.length));
     };
     document.onkeydown = function(e) {
-        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
-        (e.which === 37) && go(Math.max(0, --cur));
+        console.log(e);
+        ((e.which || e.keyCode) === 39) && go(Math.min(s.length - 1, ++cur));
+        ((e.which || e.keyCode) === 37) && go(Math.max(0, --cur));
     };
     function parse_hash() {
         return Math.max(Math.min(
