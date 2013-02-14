@@ -370,6 +370,11 @@ selection
 </section>
 
 <section>
+<p>so data is bound to the DOM</p>
+<p><strong>but what does that mean?</strong></p>
+</section>
+
+<section>
 <pre><code>// WE NEED TO GO DEEPER
 // WHAT IS REALLY HAPPENING
 
@@ -378,6 +383,10 @@ selection
 // a __data__ property where
 // WE KEEP THE DATA
 </code></pre>
+</section>
+
+<section>
+<img src='bound_data.png' />
 </section>
 
 <section>
@@ -393,23 +402,23 @@ selection
 
 <section>
 <ol>
-    <li>Changing the DOM is <strong>mad expensive</strong></li>
+  <li>Changing the DOM is <strong>mad expensive</strong></li>
 </ol>
 </section>
 
 <section>
 <ol>
-    <li>Changing the DOM is <strong>usually the most expensive part
-    of your code unless you're a horrible Javascript coder</strong></li>
+  <li>Changing the DOM is <strong>usually the most expensive part
+  of your code unless you're a horrible Javascript coder</strong></li>
 </ol>
 </section>
 
 <section>
 <ol>
-    <li>Changing the DOM is <strong>mad expensive</strong></li>
-    <li>This makes animated transitions way slicker</li>
-    <li>Post-eureka moment, it makes code way more compact</li>
-    <li>Data updates, like real-time data or history viewers, become obvious rather than awful</li>
+  <li>Changing the DOM is <strong>mad expensive</strong></li>
+  <li>This makes animated transitions way slicker</li>
+  <li>Post-eureka moment, it makes code way more compact</li>
+  <li>Data updates, like real-time data or history viewers, become obvious rather than awful</li>
 </ol>
 </section>
 
@@ -428,15 +437,15 @@ selection
 <div style='width:70%' id='rick'></div>
 <script>
 var graph = new Rickshaw.Graph({
-    element: document.querySelector("#rick"),
-    renderer: 'bar',
-    series: [{
-        data: [{ x:0, y:40 }, { x:1, y:49 }],
-        color: 'steelblue'
-    }, {
-        data: [{ x:0, y:20 }, { x:1, y:24 }],
-        color: 'lightblue'
-    }]
+element: document.querySelector("#rick"),
+renderer: 'bar',
+series: [{
+  data: [{ x:0, y:40 }, { x:1, y:49 }],
+  color: 'steelblue'
+}, {
+  data: [{ x:0, y:20 }, { x:1, y:24 }],
+  color: 'lightblue'
+}]
 });
 
 graph.renderer.unstack = true;
@@ -445,15 +454,23 @@ graph.render();
 </section>
 
 <section>
+<p>want an abstraction? <strong>NVD3</strong></p>
+<p>want an abstraction? <strong>xCharts</strong></p>
+<p>want an abstraction? <strong>PolyChart</strong></p>
+</section>
+
+
+
+<section>
 <code><pre>var graph = new Rickshaw.Graph({
-  element: document.querySelector("#rick"),
-  renderer: 'bar',
-  series:[{
-    data:[{ x:0, y:40 }, { x:1, y:49 }],
-    color:'steelblue'
-  }, {
-    data:[{ x:0, y:20 }, { x:1, y:24 }],
-    color:'lightblue'
+element: document.querySelector("#rick"),
+renderer: 'bar',
+series:[{
+  data:[{ x:0, y:40 }, { x:1, y:49 }],
+  color:'steelblue'
+}, {
+  data:[{ x:0, y:20 }, { x:1, y:24 }],
+  color:'lightblue'
 }]});
 </pre></code>
 </section>
@@ -485,9 +502,10 @@ graph.render();
 <section>
 <p><strong>People who write about this</strong>
 <ul>
-    <li><a href='http://macwright.org'>macwright.org (me)</a>,
-    <li><a href='http://www.jasondavies.com/'>jasondavies.com</a>,
-    <li><a href='http://alignedleft.com/tutorials/'>alignedleft.com/tutorials</a>
+  <li><a href='http://www.jasondavies.com/'>jasondavies.com</a>,
+  <li><a href='http://mbostock.github.com/'>mbostock.github.com</a>,
+  <li><a href='http://alignedleft.com/tutorials/'>alignedleft.com/tutorials</a>
+  <li><a href='http://macwright.org'>macwright.org (me)</a>,
 </ul>
 </p>
 </section>
