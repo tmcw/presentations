@@ -18,12 +18,29 @@
   text-shadow: 0px 2px 6px rgba(0,0,0,.5);
 }
 
+h1 {
+    font-size:100px;
+    line-height:140px;
+    margin:0;
+}
+
+b {
+    color:pink;
+}
+
+a {
+    color:#FF83E2;
+}
+
+.join {
+    background:#580044;
+}
+
 </style>
 <body class="overview">
 
 <section>
-  <p><b>d3</b>
-  <p class="grey">(by @mbostock and crew. I'm @tmcw)</p>
+    <h1>a fun, difficult introduction to <b>d3</b></h1>
 </section>
 
 <!--
@@ -48,20 +65,23 @@
 <!-- ..................................................................... -->
 
 <section>
-<p><strong>What is d3?</strong></p>
+<h1>what is <b>d3?</b></h1>
 </section>
 
 <section>
+<h1>what is d3 <b>not?</b></h1>
 <p><strong>Not a chart library</strong> (though you can make charts with it)</p>
 <p><strong>Not a map library</strong> (though you can make maps with it)</p>
 </section>
 
 <section>
+<h1>what is d3 <b>not?</b></h1>
 <p><strong>Not a compatibility layer</strong> (it doesn't work with bad browsers)</p>
 <p><strong>Not about SVG or HTML or Canvas</strong> (though you can use it with them)</p>
 </section>
 
 <section>
+<h1>what is d3 <b>not?</b></h1>
 <p><strong>not an SVG abstraction layer</strong></p>
 <p>it doesn't have its own way of making a line or a circle. it makes
 you deal with svg elements as svg elements. plus, you can deal with HTML
@@ -69,27 +89,7 @@ elements and Canvas elements!</p>
 </section>
 
 <section>
-<p><strong>not an SVG abstraction layer</strong></p>
-<p>If you want a soft, friendly wrapper, use Raphael, Processing.js, or
-Paper.js</p>
-</section>
-
-<section>
-<p><strong>d3 is a library for manipulating documents based on data</strong></p>
-<p>The big aha moment is the fact that it does <em>joins</em> between data
-and actions</p>
-</section>
-
-<section>
-<p><strong>what $ does</strong></p>
-<p>how do we make the DOM safer?<br />
-how do we make fancy things easier?<br />
-</p>
-</section>
-
-<section>
-<p><strong>what d3 does</strong></p>
-<p>how do we make <em>transformation</em> of data into documents safer?</p>
+<h1>d3 <b>is data&rarr;documents</b></h1>
 </section>
 
 <!-- ..................................................................... -->
@@ -102,7 +102,7 @@ how do we make fancy things easier?<br />
 <!-- ..................................................................... -->
 
 <section>
-<p><strong>2: d3 from the perspective of $</strong></p>
+<h1>overlap of d3 and jQuery (<b>there's a bit</b>)</h1>
 </section>
 
 <section>
@@ -159,24 +159,39 @@ $.ajax = function(url, callback) {
 <p>let's get to the hard stuff, then</p>
 </section>
 
-<section>
+<section class='js'>
 <p>Let's review some Javascript (1x)</p>
 </section>
 
-<section>
-<a target='second' href='http://macwright.org/mistakes/#4679917'>what is the difference between == and ===?</a>
+<section class='js'>
+<a target='second' href='http://localhost:3001/#equals.js'>what is the difference between == and ===?</a>
 </section>
 
-<section>
+<section class='js'>
 <p>cool!</p>
+<p>why did we learn that? because identifying objects is one of the biggest parts of the join</a>
 </section>
 
-<section>
+<section class='join'>
 <p>now let's understand the hardest part of d3 by building it from scratch.</p>
 </section>
 
-<section>
-<a target='second' href='http://macwright.org/mistakes/#4679425'>the final dish</a>
+<section class='join'>
+<h1>the join</h1>
+<ul>
+<li>pairs an object and an element
+<li>keeps track of new and old objects
+<li>lets you animate differences between new &amp; old
+</section>
+
+<section class='join'>
+<center>
+<img src='bill.jpeg' style='height:600px' />
+</center>
+</section>
+
+<section class='join'>
+<a target='second' href='http://localhost:3001/#join.js'>the final dish</a>
 </section>
 
 <section>
@@ -292,7 +307,11 @@ d3.selectAll('div')
 </code></pre>
 </section>
 
-<section>
+<section class='js'>
+<h1>what's a functor? what a closure? time for <b>javascript</b></h1>
+</section>
+
+<section class='js'>
 <pre><code>
 // here's what a functor is
 function functor(x) {
@@ -303,7 +322,7 @@ function functor(x) {
 </code></pre>
 </section>
 
-<section>
+<section class='js'>
 <p>
 we just used a closure.<br />
 don't know what a closure is?<br />
@@ -320,10 +339,6 @@ var val = functor(10);
 // always returns 10
 assert.equal(val(), 10);
 </code></pre>
-</section>
-
-<section>
-<strong>end tangent</strong>
 </section>
 
 <section>
