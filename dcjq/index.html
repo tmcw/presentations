@@ -41,6 +41,7 @@ a {
 
 <section>
     <h1>a fun, difficult introduction to <b>d3</b></h1>
+    <p>Tom MacWright, dev at <a href='http://mapbox.com/'>MapBox</a></p>
 </section>
 
 <!--
@@ -61,6 +62,24 @@ a {
 
 -->
 
+
+<!-- ..................................................................... -->
+
+<section>
+<h1>(pretty things)</h1>
+</section>
+
+<section style='background:url(minute.png)'>
+<p><a href='http://macwright.org/2012/02/15/minute.html'>minute</a> (keystrokes)</p>
+</section>
+
+<section style='background:url(jenks.png)'>
+<p><a href='http://macwright.org/2013/02/18/literate-jenks.html'>maps</a></p>
+</section>
+
+<section style='background:url(map3d.png)'>
+<p><a href='http://bl.ocks.org/dwtkns/4973620'>maps</a></p>
+</section>
 
 <!-- ..................................................................... -->
 
@@ -90,13 +109,6 @@ elements and Canvas elements!</p>
 
 <section>
 <h1>d3 <b>is data&rarr;documents</b></h1>
-</section>
-
-<!-- ..................................................................... -->
-
-<section>
-<p><strong>1: Cool Stuff Made With d3</strong></p>
-<p>(switch tabs)</p>
 </section>
 
 <!-- ..................................................................... -->
@@ -159,6 +171,21 @@ $.ajax = function(url, callback) {
 <p>let's get to the hard stuff, then</p>
 </section>
 
+<!--  .................................................................... -->
+
+<section class='js'>
+<h1>d3 requires <b>deep proficiency in javascript</b><h1>
+</section>
+
+<section class='js'>
+<h1>Javascript Primer</h1>
+<ul>
+    <li><a href='http://macwright.org/enable-web-developer-extensions/'>macwright.org/enable-web-developer-extensions/</a>
+    <li><a href='http://eloquentjavascript.net/'>eloquentjavascript.net</a>
+    <li><a href='https://developer.mozilla.org/en-US/'>developer.mozilla.org</a>
+</ul>
+</section>
+
 <section class='js'>
 <p>Let's review some Javascript (1x)</p>
 </section>
@@ -168,9 +195,11 @@ $.ajax = function(url, callback) {
 </section>
 
 <section class='js'>
-<p>cool!</p>
+<h1>questions?</h1>
 <p>why did we learn that? because identifying objects is one of the biggest parts of the join</a>
 </section>
+
+<!--  .................................................................... -->
 
 <section class='join'>
 <p>now let's understand the hardest part of d3 by building it from scratch.</p>
@@ -193,6 +222,12 @@ $.ajax = function(url, callback) {
 <section class='join'>
 <a target='second' href='http://localhost:3001/#join.js'>the final dish</a>
 </section>
+
+<section class='js'>
+<h1>questions?</h1>
+</section>
+
+<!--  .................................................................... -->
 
 <section>
 <p>you have the knowledge! time to d3.</p>
@@ -298,6 +333,25 @@ d3.selectAll('div')
 })
 </code></pre>
 </section>
+
+<section>
+<pre><code>
+// like jQuery, you can chain these
+blah
+  .attr('foo', 'bar')
+  .attr('boo', 'burr');
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// like jQuery, you can use them
+// to get an existing value
+var fooValue = blah.attr('foo');
+</code></pre>
+</section>
+
+<!--  .................................................................... -->
 
 <section>
 <pre><code>
@@ -411,6 +465,8 @@ selection
 </p>
 </section>
 
+<!--  .................................................................... -->
+
 <section>
 <p><strong>Why must everything be so hard!?</strong></p>
 </section>
@@ -437,18 +493,24 @@ selection
 </ol>
 </section>
 
+<!-- ..................................................................... -->
+
+<section>
+<h1>let's take a (pretty things) breather</h1>
+</section>
+
+<section style='background:url(voronoi.png)'>
+<p><a href='http://www.christophermanning.org/projects/voronoi-diagram-with-force-directed-nodes-and-delaunay-links/'>force directed voronoi</a></p>
+</section>
+
+<section style='background:url(chord.png)'>
+<p><a href='http://bost.ocks.org/mike/uberdata/'>chord diagram</a></p>
+</section>
 
 <!-- ..................................................................... -->
-<section>
-<p><strong>5: d3 isn't for charts or ui. let's use it for charts and ui</strong></p>
-</section>
 
 <section>
-<p><strong>charts</strong></p>
-</section>
-
-<section>
-<p>want an abstraction? <strong>rickshaw</strong></p>
+<h1>want an abstraction? <strong>rickshaw</strong></h1>
 <div style='width:70%' id='rick'></div>
 <script>
 var graph = new Rickshaw.Graph({
@@ -469,9 +531,12 @@ graph.render();
 </section>
 
 <section>
-<p>want an abstraction? <strong>NVD3</strong></p>
-<p>want an abstraction? <strong>xCharts</strong></p>
-<p>want an abstraction? <strong>PolyChart</strong></p>
+<p>want an abstraction?
+<ul>
+    <li><a href='http://nvd3.org/'>NVD3</a>
+    <li><a href='http://tenxer.github.com/xcharts/'>xCharts</a>
+    <li><a href='http://polychart.com/'>polychart</a>
+</ul>
 </section>
 
 
