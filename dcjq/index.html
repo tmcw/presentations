@@ -48,7 +48,13 @@ a {
 
 <section>
     <h1>a fun, difficult introduction to <b>d3</b></h1>
-    <p>Tom MacWright, dev at <a href='http://mapbox.com/'>MapBox</a></p>
+    <p>Tom MacWright / <a href='https://twitter.com/tmcw'>@tmcw</a> / <code><a href='http://github.com/tmcw'>tmcw</a></code>
+    <br />dev @<a href='http://mapbox.com/'>MapBox</a>
+    <br />writing/hackin @<a href='http://macwright.org/'>macwright.org</a></p>
+</section>
+
+<section>
+  <h1><a href='http://macwright.org/presentations/dcjq/'>macwright.org/ presentations/dcjq/</a></h1>
 </section>
 
 <!--
@@ -146,6 +152,14 @@ elements and Canvas elements!</p>
 
 <section>
 <h1>the transformation of data into <b>elements</b></h2>
+</section>
+
+
+<section style='background:url(break.gif)' class='shadowy'><h1>pretty things break</h1></section>
+
+<section>
+<a href='http://bl.ocks.org/tmcw/4945177' target='second'>challenge 1</a>,
+<a href='http://bl.ocks.org/tmcw/4949593' target='second'>challenge 2</a>
 </section>
 
 <!-- ..................................................................... -->
@@ -504,8 +518,16 @@ selection
 
 <!--  .................................................................... -->
 
+<section style='background:url(break.gif)' class='shadowy'><h1>pretty things break</h1></section>
+
 <section>
-<p><strong>Why must everything be so hard!?</strong></p>
+<a href='http://geowiki.com/iD/#layer=Bing&map=20.00/38.90085/-77.02271'>iD</a>
+</section>
+
+<!--  .................................................................... -->
+
+<section>
+<h1>Why must everything be so hard!?</h1>
 </section>
 
 <section>
@@ -560,9 +582,7 @@ var px projection([lon, lat]);
 
 <!-- ..................................................................... -->
 
-<section>
-<h1>let's take a <b>(pretty things)</b> breather</h1>
-</section>
+<section style='background:url(break.gif)' class='shadowy'><h1>pretty things break</h1></section>
 
 <section style='background:url(voronoi.png)'>
 <p><a href='http://www.christophermanning.org/projects/voronoi-diagram-with-force-directed-nodes-and-delaunay-links/'>force directed voronoi</a></p>
@@ -570,6 +590,27 @@ var px projection([lon, lat]);
 
 <section style='background:url(chord.png)'>
 <p><a href='http://bost.ocks.org/mike/uberdata/'>chord diagram</a></p>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+<h1>how to write 'good' d3</h1>
+</section>
+
+<section>
+<h1>Reuse your selections</h1>
+<p>Same rule as jQuery's reusing <code>$blah = $('#blah')</code></p>
+<code><pre>var fooSelection = d3.selectAll('#foo');
+// do not turn around and do
+d3.selectAll('#foo')
+// again
+</pre></code>
+</section>
+
+<section>
+<h1>Write reusable components (if any)</h1>
+<a href='http://bost.ocks.org/mike/chart/'>http://bost.ocks.org/mike/chart/</a>
 </section>
 
 <!-- ..................................................................... -->
@@ -596,6 +637,11 @@ var px projection([lon, lat]);
 
 <section style='background:url(circlepack.png);'>
 <h1><a href='http://bl.ocks.org/mbostock/4063530'>(for visualization)</a></h1>
+</section>
+
+<section>
+<h1>d3 also has <b>old school visualization whizzes</b></h1>
+<p>and they love math</p>
 </section>
 
 <!-- ..................................................................... -->
@@ -641,14 +687,29 @@ series:[{
 </section>
 
 <section>
-<p><strong>People who write about this</strong>
+<h1>Tools for writing d3</h1>
+<ul>
+  <li><a href='http://macwright.org/enable-web-developer-extensions/'>web developer extension</a></li>
+  <li><a href='https://github.com/mbostock/d3/wiki'>the documentation</a></li>
+  <li><a href='http://livecoding.io/'>livecoding.io</a> and <a href='http://tributary.io/'>tributary.io</a> and
+  <a href='http://bl.ocks.org/'>bl.ocks.org</a></li>
+  <li>determination clear eyes don't fail</li>
+</ul>
+</section>
+
+<section>
+<h1>People who write about this</h1>
 <ul>
   <li><a href='http://www.jasondavies.com/'>jasondavies.com</a>,
   <li><a href='http://mbostock.github.com/'>mbostock.github.com</a>,
   <li><a href='http://alignedleft.com/tutorials/'>alignedleft.com/tutorials</a>
   <li><a href='http://macwright.org'>macwright.org (me)</a>,
 </ul>
-</p>
+</section>
+
+<section>
+<h1>Thank you!</h1>
+(ask me about MapBox and/or your inability to have a digital copy of DC's code of law)
 </section>
 
 <script src="stack.v0.js"></script>
