@@ -36,6 +36,13 @@ a {
     background:#580044;
 }
 
+.shadowy {
+    text-shadow: 0 0 15px #000,
+        0 0 15px #000,
+        0 0 15px #000,
+        0 0 15px #000;
+}
+
 </style>
 <body class="overview">
 
@@ -107,8 +114,38 @@ you deal with svg elements as svg elements. plus, you can deal with HTML
 elements and Canvas elements!</p>
 </section>
 
+<!-- ..................................................................... -->
+
 <section>
 <h1>d3 <b>is data&rarr;documents</b></h1>
+</section>
+
+<section>
+<h1>d3 is a general purpose visualization library</h1>
+</section>
+
+<section>
+<h1>d3 is a <b>general purpose</b> visualization library</h1>
+</section>
+
+<section style='background:url(gallery.png);' class='shadowy'>
+<h1>d3 is a <b>general purpose</b> visualization library</h1>
+</section>
+
+<section>
+<h1>what is general purpose about <b>visualizations?</b></h2>
+</section>
+
+<section>
+<h1>the transformation of data into <b>information</b></h2>
+</section>
+
+<section>
+<h1>the transformation of data into <b>documents</b></h2>
+</section>
+
+<section>
+<h1>the transformation of data into <b>elements</b></h2>
 </section>
 
 <!-- ..................................................................... -->
@@ -493,10 +530,38 @@ selection
 </ol>
 </section>
 
+<!--  .................................................................... -->
+
+<section>
+<p>Joining data to elements is the trickiest part of d3. Here are some
+less-tricky transformations</p>
+</section>
+
+<section>
+<h1><a target='second' href='http://localhost:3001/#scale.js'>The Scale</a></h1>
+<pre><code>
+d3.scale.linear()
+    // data comes in
+    .domain([0, 100])
+    // representation comes out
+    .range([0, 1]);
+</pre></code>
+</section>
+
+<section>
+<h1><a target='second' href='http://localhost:3001/#geo.js'>Geo Stuff</a></h1>
+<pre><code>
+var projection = d3.geo.mercator();
+// data goes in
+// representation comes out
+var px projection([lon, lat]);
+</pre></code>
+</section>
+
 <!-- ..................................................................... -->
 
 <section>
-<h1>let's take a (pretty things) breather</h1>
+<h1>let's take a <b>(pretty things)</b> breather</h1>
 </section>
 
 <section style='background:url(voronoi.png)'>
@@ -510,36 +575,39 @@ selection
 <!-- ..................................................................... -->
 
 <section>
-<h1>want an abstraction? <strong>rickshaw</strong></h1>
-<div style='width:70%' id='rick'></div>
-<script>
-var graph = new Rickshaw.Graph({
-element: document.querySelector("#rick"),
-renderer: 'bar',
-series: [{
-  data: [{ x:0, y:40 }, { x:1, y:49 }],
-  color: 'steelblue'
-}, {
-  data: [{ x:0, y:20 }, { x:1, y:24 }],
-  color: 'lightblue'
-}]
-});
+<h1>back to d3</h1>
+</section>
 
-graph.renderer.unstack = true;
-graph.render();
-</script>
+<section style='background-image:url(wolf.jpg);background-sizing:100%;' class='shadowy'>
+<h1>d3 is <b>filled with algorithms</b></h1>
 </section>
 
 <section>
-<p>want an abstraction?
+<h1>voronoi, quadtrees, convex hull, projections, circle fitting</h1>
+</section>
+
+<section>
+<h1><b>why?</b></h1>
+</section>
+
+<section>
+<h1>data &rarr; representation requires <b>thinking</b></h1>
+</section>
+
+<section style='background:url(circlepack.png);'>
+<h1><a href='http://bl.ocks.org/mbostock/4063530'>(for visualization)</a></h1>
+</section>
+
+<!-- ..................................................................... -->
+
+<section>
+<h1>want an abstraction?</h1>
 <ul>
     <li><a href='http://nvd3.org/'>NVD3</a>
     <li><a href='http://tenxer.github.com/xcharts/'>xCharts</a>
     <li><a href='http://polychart.com/'>polychart</a>
 </ul>
 </section>
-
-
 
 <section>
 <code><pre>var graph = new Rickshaw.Graph({
@@ -554,13 +622,6 @@ series:[{
 }]});
 </pre></code>
 </section>
-
-
-
-<section>
-<p><strong>d3-bootstrap</strong></p>
-</section>
-
 
 <!-- ..................................................................... -->
 
