@@ -172,12 +172,12 @@ elements and Canvas elements!</p>
 <pre><code>d3.select('#foo')
   .style('background', '#000')
   .on('click', function() {})
-  .append($('&ltdiv&gt;&lt;/div&gt;'));
+  .append('div');
 
 $('#foo')
   .css('background', '#000')
   .click(function() {})
-  .append('div');
+  .append($('&ltdiv&gt;&lt;/div&gt;'));
 </code></pre>
 </section>
 
