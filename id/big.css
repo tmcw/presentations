@@ -1,0 +1,50 @@
+body {
+  font-family: 'Helvetica';
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+  background:#111;
+  background-size:cover;
+  text-align:center;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+small {
+}
+
+em {
+    font-style:normal;
+}
+
+em, a {
+  margin:10px 0;
+  background: #34d0e7;
+  color:#000;
+  display:inline-block;
+  padding:10px;
+  border-radius:20px;
+  text-decoration:none;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 5px #fff,
+    0 0 15px #fff,
+    0 0 15px #fff;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
