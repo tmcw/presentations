@@ -1,0 +1,59 @@
+body {
+  font-family:'Helvetica';
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+.invert {
+    color:#000;
+}
+
+.title {
+  font-family: 'Bebas Neue';
+  font-weight:normal;
+}
+
+.prose {
+    font-family: 'Georgia';
+    background:#eee;
+    color:#000;
+    font-weight:normal;
+    padding:10px;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+.prose em, a {
+  font-style:normal;
+  background:yellow;
+  color:#000;
+}
+
+em, a {
+  font-style:normal;
+  color:yellow;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
