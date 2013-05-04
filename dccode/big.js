@@ -25,9 +25,23 @@ window.onload = function() {
         document.title = e.textContent || e.innerText;
     }
     document.onclick = function() {
+        if (editing) return;
         go(++cur % (s.length));
     };
+    var editing = false;
+    function goeditable() {
+        for (var k = 0; k < s.length; k++) s[k].setAttribute('contenteditable', 'true');
+        editing = true;
+    }
+    function stopedit(e) {
+        editing = false;
+        for (var k = 0; k < s.length; k++) s[k].removeAttribute('contenteditable');
+        e.preventDefault();
+    }
     document.onkeydown = function(e) {
+        (e.keyCode == 73) && goeditable();
+        (e.keyCode == 27) && stopedit(e);
+        if (editing) return;
         (e.which === 39) && go(Math.min(s.length - 1, ++cur));
         (e.which === 37) && go(Math.max(0, --cur));
     };
