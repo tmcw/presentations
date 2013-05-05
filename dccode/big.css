@@ -12,9 +12,8 @@ body {
     color:#000;
 }
 
-.title {
-  font-family: 'Bebas Neue';
-  font-weight:normal;
+.wp {
+    background:darkblue;
 }
 
 .prose {
