@@ -1,0 +1,108 @@
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:cover;
+  background-repeat:no-repeat;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+/* http://www.colourlovers.com/palette/1473/Ocean_Five */
+.a { background-color:#00a0b0; }
+.b { background-color:#6a4a3c; }
+.c { background-color:#cc333f; }
+.d { background-color:#eb6841; }
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+pre {
+    text-shadow:
+        0 0 2px #000,
+        0 0 10px #000;
+    font-weight:normal;
+    font-family: 'M+', 'Menlo', monospace;
+}
+
+strong {
+    background:rgba(255, 255, 255, 0.3);
+}
+
+em, a {
+  font-style:normal;
+  color:#fff;
+}
+
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+
+.threed {
+    text-shadow: 0px 1px 0px #999,
+    0px 2px 0px #888,
+    0px 4px 0px #777,
+    0px 17px 0px #666,
+    0px 25px 0px #555,
+    0px 30px 0px #444,
+    0px 35px 0px #333,
+    0px 40px 7px #001135;
+}
+
+inv {
+    color:#444;
+    opacity:0.8;
+}
+
+.lots {
+    text-align:center;
+    text-shadow:
+        20px 20px 0px red,
+        40px 40px 0px green,
+        60px 60px 0px cyan,
+        80px 80px 0px orange;
+}
+
+span.slight {
+    opacity:0.4;
+    font-weight:normal;
+    color:#000;
+}
+
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.0; }
+}
+.blink {
+    color:#000;
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 1000ms; 
+  text-shadow: 0px 1px 0px #fff,
+    0px 2px 0px #eee,
+    0px 4px 0px #fff,
+    0px 17px 0px #aaa,
+    0px 25px 0px #aaa,
+    0px 30px 0px #fff,
+    0px 35px 0px #333,
+    0px 40px 7px #001135;
+}
