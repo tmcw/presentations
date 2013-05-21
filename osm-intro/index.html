@@ -1,0 +1,214 @@
+<!DOCTYPE html><html><head><title></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='pig.css' rel='stylesheet' type='text/css' />
+<link href='highlight.css' rel='stylesheet' type='text/css' />
+<script src='pig.js'></script>
+</head>
+<body>
+<canvas id='scroll-chart'></canvas>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>OpenStreetMap</h1>
+        <p>✍ <em>a short introduction</em></p>
+        <p>@tmcw + @aj_ashton / MapBox</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>OpenStreetMap is a <em>free</em> world map created
+        and <em>owned</em> by volunteers.</h1>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'Created by Volunteers'</h1>
+        <ol>
+            <li>GPS Traces</li>
+            <li>Data Imports</li>
+            <li>'Armchair Mapping'<em>*</em></li>
+        </ol>
+        <hr />
+        <small><em>*what we're going to do</em></small>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'Worldwide'</h1>
+        <p>OpenStreetMap data rivals commercial providers.
+        In some areas, it's more complete - and in some it's
+        less. But unlike other maps, this one you can improve.
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'Owned by Volunteers'</h1>
+        <p>
+        You can download the whole thing:
+        <a href='http://planet.openstreetmap.org'>planet.openstreetmap.org</a>
+        <hr />
+        Or just cities:
+        <a href='http://metro.teczno.com/'>metro.teczno.com</a>
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'Free'</h1>
+        <p>
+        Free as in: not only <em>$0</em>, but you can <em>adapt</em>
+        it, download it, print it, and more.
+        <hr />
+        Without asking for permission.
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>So OpenStreetMap is a free world map owned and created by volunteers.</h1>
+        <p>
+        What's in it?
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <table>
+            <tr>
+                <td>
+                    <h3>Yes</h3>
+                    <ul>
+                        <li>Transport
+                        <li>Buildings
+                        <li>Rivers
+                        <li>POIs
+                        <li>Borders
+                    </ul>
+                </td>
+                <td>
+                    <h3>No</h3>
+                    <ul>
+                        <li>Ratings
+                        <li>Opinions
+                        <li>Historical Data
+                        <li>Rasters
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<div class='slide'>
+    <h1>everyone sees the same map</h1>
+    <p>the key to understanding openstreetmap: it's a single, global
+    effort. not just a dumping ground for data.</p>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Structure</h1>
+        <ol>
+            <li><em>nodes, ways, and relations</em>: primitive types
+            <li><em>tags</em>: all data storage
+            <li><em>changesets</em>: history
+        </ol>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>nodes are <em>points</em></h1>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>ways are <em>lines</em> &amp; <em>areas</em></h1>
+        <p>made up of nodes</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>relations are <em>groups</em></h1>
+        <p>a group of ways &rarr; <em>a multipolygon</em></p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>tags are <em>data</em></h1>
+        <p>the basic form of a tag:
+        <pre><code>key:value</code></pre>
+        <pre><code>amenity:cafe</code></pre>
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>so nodes, ways, and relations are the basic elements
+        of OpenStreetMap, and each can have data attached to them
+        via tags</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>one last thing</p>
+        <h1>Changesets</h1>
+        <p>are our version of <em>history</em></p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>a changeset is a <em>group of changes</em></p>
+        <hr />
+        <p>user <code>tmcw</code> changed way #1000, adding
+        a tag and removing a node.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>responsibility and reversibility</h1>
+        <hr />
+        <p>this answers the question of vandalism: yes,
+        it happens, but <em>we know who does it and we can reverse the
+        changes</em></p>
+    </div>
+</div>
+
+<script src='scrollchart.js'>
+</script>
+<script>
+scrollChart.barChart(document.getElementById('scroll-chart'), {
+    fg: '#22aa33',
+    bg: '#eee'
+});
+</script>
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
