@@ -1,0 +1,142 @@
+<!DOCTYPE html><html><head><title></title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='pig.css' rel='stylesheet' type='text/css' />
+<link href='highlight.css' rel='stylesheet' type='text/css' />
+<script src='pig.js'></script>
+</head>
+<body>
+<canvas id='scroll-chart'></canvas>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>iD editor <em>for OSM</em></h1>
+        <p>✍ @tmcw / MapBox</p>
+    </div>
+</div>
+
+<div class='slide dialog'>
+    <div class='overlay pad1'>
+        <h1>let's start with a demo</h1>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>iD</h1>
+        <p>
+        is a <em>pure-javascript</em>, complete map editor for OpenStreetMap
+        designed to be <em>easy to learn and simple to use</em>
+        </p>
+        <hr />
+        <p>
+        we* wrote it in the past ~7 months at <em>MapBox</em> under a
+        <em>Knight News Grant</em>
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>we*</h1>
+        <p>
+        John Firebaugh, Ansis Bramannis,
+        Saman Bemel-Benrud, myself, and many volunteers
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Pure JavaScript</h1>
+        <p>
+        a relatively major <em class='js'>js</em> application:
+        <em>10,258 lines</em>
+        </p>
+        <hr />
+        <p>
+        let's see how we did that
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'JavaScript is not maintainable'<br />lol no, jfdi</h1>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Code Quality</h1>
+        <ul>
+            <li>use/write a style guide</li>
+            <li><em>jshint</em> always like you mean it</li>
+            <li>review &amp; advise every pull request</li>
+        </ul>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Tests</h1>
+        <ul>
+            <li>mocha + expect.js + happen</li>
+            <li>test everything always</li>
+            <li>travis-ci runs <em>all tests on every commit with phantomjs</em></li>
+            <li>and shame-emails you when they fail</li>
+        </ul>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Frameworks</h1>
+        <p>this one may surprise you</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Frameworks: <em>ZNOPE</em></h1>
+        <p>No Backbone, Ember, Angular, or whatever
+        you kids are all talking about nowadays.</p>
+        <hr />
+        <p>We don't even use jQuery</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>'You're not going to need it'</h1>
+        <p>Built agile. We created simple patterns for the UI
+        and algorithm chunks that an editor required. <em>d3</em>
+        provided the SVG-bridging and data-assigning glue.</p>
+    </div>
+</div>
+
+
+
+
+<script src='scrollchart.js'>
+</script>
+<script>
+scrollChart.barChart(document.getElementById('scroll-chart'), {
+    fg: 'yellow',
+    bg: '#000'
+});
+</script>
+
+<script type="text/javascript">
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
