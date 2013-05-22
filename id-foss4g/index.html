@@ -103,6 +103,34 @@
 
 <div class='slide'>
     <div class='overlay pad1'>
+        <h1>Open Translations Work</h1>
+        <p>Better than 'open source' sometimes. We have tons of eager
+        translators, high-quality translations.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <h1 class='pad1'>With the smallest Locale Framework Ever</h1>
+    <img src='img/locale.png' />
+</div>
+
+<div class='slide'>
+    <img src='img/gpx.png' />
+</div>
+
+<div class='slide'>
+    <div class='pad1'>
+        <h1>toGeoJSON: Tiny libraries that work</h1>
+        <p><em>Just convert GPX and KML to GeoJSON.</em></p>
+    </div>
+</div>
+
+
+
+
+
+<div class='slide'>
+    <div class='overlay pad1'>
         <h1>Pure JavaScript</h1>
         <p>
         a relatively major <em class='js'>js</em> application:
@@ -137,7 +165,7 @@
         <h1>Tests</h1>
         <ul>
             <li>mocha + expect.js + happen</li>
-            <li>test everything always</li>
+            <li>phantomjs for headless</li>
             <li>travis-ci runs <em>all tests on every commit with phantomjs</em></li>
             <li>and shame-emails you when they fail</li>
         </ul>
@@ -176,6 +204,8 @@
         <h1>Libraries for the needs we have</h1>
         <p><code>rtree.js</code> for indexes.</p>
         <p><code>d3.*.js</code> for d3 extensions.</p>
+        <p><code>togeojson.js</code> for GPX parsing.</p>
+        <p><code>kmeans.js</code> for orthogonalizing.</p>
     </div>
 </div>
 
@@ -202,8 +232,9 @@
 <script src='scrollchart.js'>
 </script>
 <script>
-scrollChart.barChart(document.getElementById('scroll-chart'), {
+scrollChart.pie(document.getElementById('scroll-chart'), {
     fg: 'yellow',
+    face: '#111',
     bg: '#000'
 });
 </script>
