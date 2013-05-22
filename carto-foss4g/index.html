@@ -21,6 +21,7 @@ hljs.initHighlightingOnLoad();
 </div>
 
 <div class='slide'>
+    <div class='overlay pad1'>
     <pre><code>/* hello, this is carto */
 #dots {
   marker-width: 1;
@@ -28,44 +29,71 @@ hljs.initHighlightingOnLoad();
   marker-line-width: 0;
 }</code></pre>
 </div>
+</div>
 
 <div class='slide'>
-    <h1>Is it easy in comparison to...</h1>
+    <div class='overlay pad1'>
+        <h1>Is it easy in comparison to...</h1>
+    </div>
 </div>
 
 <div class='slide'>
     <img src='arc.jpg' />
 </div>
 
-<div class='slide'>
-    <p>CartoCSS is <em>code</em>, so you can use your friends</p>
-    <h1>⌘C and ⌘V</h1>
-    <p>because that is <em>how we learn</em></p>
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <p>CartoCSS is <em>code</em>, so you can use your friends</p>
+        <h1>⌘C and ⌘V</h1>
+        <p>because that is <em>how we learn</em></p>
+    </div>
 </div>
 
-<div class='slide'>how it got did</div>
-
-<div class='slide'>
-    <h1>CartoCSS descends from <em>Cascadenik</em></h1>
-    <p>Cascadenik descends from CSS</p>
-    <p>CSS descends from *</p>
-    <hr />
-    <small>* 'stylesheet languages' are a black sheep of PL theory and are only
-        really covered by a single phd thesis: <a href='http://bit.ly/css-thesis'>bit.ly/css-thesis</a></small>
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>what we've made / how it got did</h1>
+    </div>
 </div>
 
 <div class='slide'>
-    <h1>CartoCSS is <em>not designed as an interoperable standard</em></h1>
-    <hr />
-    <p>It was designed <em>for Mapnik, it's one and only</em></p>
+    <div class='overlay pad1'>
+        <h1>CartoCSS descends from <em>Cascadenik</em></h1>
+        <p>Cascadenik descends from CSS</p>
+        <p>CSS descends from *</p>
+        <hr />
+        <small>* 'stylesheet languages' are a black sheep of PL theory and are only
+            really covered by a single phd thesis: <a href='http://bit.ly/css-thesis'>bit.ly/css-thesis</a></small>
+    </div>
 </div>
 
 <div class='slide'>
-    <p>CartoCSS <em>resembles CSS</em> to avoid the <em>Gumption Trap</em></p>
-    <p>'Can I Approach This?'</p>
+    <div class='overlay pad1'>
+        <h1>CartoCSS is <em>not designed as an interoperable standard</em></h1>
+        <hr />
+        <p>It was designed <em>for Mapnik, it's one and only</em></p>
+    </div>
 </div>
 
-<div class='slide'><pre><code>#world {
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>Because Standards Can't Be Designed a Vacuum</h1>
+        <hr />
+        <p><em>don't tempt me, you know where this could go</em></p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+            <p>CartoCSS <em>resembles CSS</em> to avoid the <em>Gumption Trap</em></p>
+        </h1>
+        <p>'Can I Approach This?'</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+    <pre><code>#world {
   ::foo {
     polygon-opacity:1;
   }
@@ -74,29 +102,47 @@ hljs.initHighlightingOnLoad();
     vs
 <pre><code>div {
   background:#f00;
-}</code></pre></div>
-
-<div class='slide'>
-    <h1>CartoCSS does more than just CSS</h1>
+}</code></pre>
+</div>
 </div>
 
-<div class='slide'><pre><code>@variables: 'yes';</code></pre></div>
-<div class='slide'><pre><code>.nesting { .selectors { } }</code></pre></div>
-<div class='slide'><pre><code>// c++ style comments</code></pre></div>
-<div class='slide'><pre><code>spin(2, 2, 2);</code></pre></div>
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>CartoCSS does more than just CSS</h1>
+    </div>
+</div>
 
-<div class='slide'>(from <strong>less.js</strong> but not everything from less.js and i do not advise or disadvise the use of less.js but cloudhead did write a <strong>darn fine css parser</strong>)</div>
+<div class='slide'><pre class='pad1'><code>@variables: 'yes';</code></pre></div>
+<div class='slide'><pre class='pad1'><code>.nesting { .selectors { } }</code></pre></div>
+<div class='slide'><pre class='pad1'><code>// c++ style comments</code></pre></div>
+<div class='slide'><pre class='pad1'><code>spin(2, 2, 2);</code></pre></div>
 
-<div class='slide'><span class='threed'>scale</span></div>
-<div class='slide'><span class='threed'>(zoom)</span></div>
-<div class='slide'><img src='all-streets.jpg' /> <span class='slight'>(fathom)</span></div>
-<div class='slide'><img src='streets.png' /></div>
+<div class='slide'>
+    <div class='pad1'>
+        (from <strong>less.js</strong> but not everything from less.js and i do not advise or disadvise the use of less.js but cloudhead did write a <strong>darn fine css parser</strong>)
+    </div>
+</div>
 
-<div class='slide'><pre><code>#foo[zoom &gt; 3] {
+<div class='slide'>
+    <div class='pad1'>
+        <span class='threed'>scale</span>
+    </div>
+</div>
+<div class='slide'>
+    <div class='pad1'>
+        <span class='threed'>(zoom)</span>
+    </div>
+</div>
+<div class='slide'>
+    <img src='all-streets.jpg' /> <span class='slight'>(fathom)</span></div>
+<div class='slide'>
+    <img src='streets.png' /></div>
+
+<div class='slide'><pre class='pad1'><code>#foo[zoom &gt; 3] {
   color: red;
 }</code><pre></div>
 
-<div class='slide'><pre><code>@minfoo: 3;
+<div class='slide'><pre class='pad1'><code>@minfoo: 3;
 #foo[zoom &lt;= @minfoo] {
   color: red;
 }</code><pre></div>
@@ -104,59 +150,39 @@ hljs.initHighlightingOnLoad();
 <div class='slide'><img src='casings.png' /></div>
 <div class='slide'><img src='npmap.png' /></div>
 
-<div class='slide'><span class='threed'>zindex</span></div>
+<div class='slide'><div class='pad1'><h1>zindex</h1></div></div>
 <div class='slide'><img src='map_css_gif.gif' /></div>
-<div class='slide'>(stuff on top of each other)</div>
+<div class='slide'><div class='pad1'><h1>(stuff on top of each other)</h1></div></div>
 <div class='slide'><img src='map_css_gif.gif' /><span class='slight'>(road trip)</span></div>
 
-<div class='slide'><pre><code>#a { marker-width: 2; }
+<div class='slide'><pre class='pad1'><code>#a { marker-width: 2; }
 #b { marker-width: 3; }
 #c { marker-width: 4; }
 #d { marker-width: 5; }
 </code></pre></div>
 
-<div class='slide'>roads</div>
+<div class='slide'><div class='pad1'><h1>roads</h1></div></div>
 <div class='slide'><img src='roads.png' /></div>
 <div class='slide'><img src='roads_2.png' /></div>
 <div class='slide'><img src='casings_google.png' /></div>
 <div class='slide'><img src='roads_3.png' /></div>
 <div class='slide'><img src='roads_4.png' /></div>
 
-<div class='slide'><pre><code>// cascadenik
-#road {
-  line-width: 2;
-  outline-width: 4;
-}
-</code></pre></div>
-
-<div class='slide'><pre><code>// carto
-#road {
-  line-width: 2;
-  ::outline {
-    line-width: 4;
-  }
-}
-</code></pre></div>
-
-<div class='slide'>(stuff made with carto)</div>
+<div class='slide'><div class='pad1'><h1>stuff made with CartoCSS</h1></div></div>
 <div class='slide'><img src='maps/2.png' /></div>
 
-<div class='slide'>1. Carto is <strong>friendly</strong></div>
+<div class='slide major'>CartoCSS is <strong>friendly</strong></div>
 <div class='slide'><img src='tilemill.png' /></div>
-<div class='slide'>Carto suggests</div>
+<div class='slide major'>CartoCSS suggests</div>
 <div class='slide'><img src='tilemill.png' /></div>
-<div class='slide'>Carto does not forgive</div>
+<div class='slide major'>CartoCSS does not forgive</div>
 
-<div class='slide'>2. Carto is <strong>complete</strong></div>
+<div class='slide major'>CartoCSS is <strong>complete</strong></div>
 <div class='slide'><img src='carto-options.png' /></div>
-<div class='slide'>If you can do it in Mapnik, you can do it in Carto</div>
-<div class='slide'><img src='nda.png' /></div>
-<div class='slide'><img src='nda.png' /><span class='blink'>SIGN THIS NDA WITH YOUR EYES</span></div>
-<div class='slide'><img src='mb-streets-code.png' /></div>
+<div class='slide major'>If you can do it in <em>Mapnik</em>, you can do it in <em>Carto</em></div>
 
-<div class='slide'>2. Carto is <strong>supported</strong></div>
-<div class='slide'><img src='pretending.png' />do not be <strong>afraid</strong></div>
-<div class='slide'>vim syntax, codemirror syntax, pre-processing tools, <strong>documentation</strong></div>
+<div class='slide major'>CartoCSS is <strong>supported</strong></div>
+<div class='slide major'>vim syntax, codemirror syntax, pre-processing tools, <strong>documentation</strong></div>
 
 <div class='slide'><img src='maps/3.png' /></div>
 <div class='slide'><img src='maps/4.png' /></div>
@@ -164,6 +190,17 @@ hljs.initHighlightingOnLoad();
 <div class='slide'><img src='maps/6.png' /></div>
 <div class='slide'><img src='maps/7.png' /></div>
 <div class='slide'><img src='maps/8.png' /></div>
+
+<canvas id='scroll-chart'></canvas>
+
+<script src='scrollchart.js'>
+</script>
+<script>
+scrollChart.barChart(document.getElementById('scroll-chart'), {
+    fg: '#000',
+    bg: '#fff'
+});
+</script>
 
 <script type="text/javascript">
   var _gauges = _gauges || [];

@@ -1,3 +1,13 @@
+#scroll-chart {
+    position:fixed;
+    top:0;
+    right:0;
+    left:0;
+    height:10px;
+    width:100%;
+    z-index:-10;
+}
+
 body {
   font-family: 'Georgia', serif;
   background:#fff;
@@ -27,10 +37,16 @@ p {
 
 .pad1 {
     padding:20px;
+    margin-top:100px;
 }
 
 .overlay {
     background:#fff;
+}
+
+div.major {
+    padding:10% !important;
+    font-size:60px !important;
 }
 
 em, a {
@@ -45,7 +61,7 @@ a {
 img { width:100%; }
 
 div.slide {
-  padding:10%;
+  padding:0%;
   box-sizing:border-box;
   -moz-box-sizing:border-box;
   cursor:pointer;
