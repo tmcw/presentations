@@ -74,6 +74,7 @@ hljs.initHighlightingOnLoad();
     </div>
 </div>
 
+
 <div class='slide'>
     <div class='overlay pad1'>
         <h1>Because Standards Can't Be Designed a Vacuum</h1>
@@ -118,8 +119,67 @@ hljs.initHighlightingOnLoad();
 <div class='slide'><pre class='pad1'><code>spin(2, 2, 2);</code></pre></div>
 
 <div class='slide'>
-    <div class='pad1'>
-        (from <strong>less.js</strong> but not everything from less.js and i do not advise or disadvise the use of less.js but cloudhead did write a <strong>darn fine css parser</strong>)
+    <div class='overlay pad1'>
+        <h1>N*E*R*D / 2 MINUTES</h1>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>CartoCSS is written in Javascript and runs primarily under
+        node.js.
+        </p>
+        <p>It can and has run in browsers instead, but there
+        are no good renderers written for browsers yet and I'm not going to
+        get into it.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>CartoCSS tokenizes source, turns it into an AST, 'flattens' that
+        AST, doing the work of inheritance, descendent selectors, expression
+        evaluation, and so on.</p>
+        <p>The end result of this hard work is a flattened AST. Which is converted
+        into the XML format <em>Mapnik</em>, the only supported renderer, uses.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>We used the less.js parser because it had great error-catching support
+        and a fast parser. It's likely the best JavaScript CSS parser around,
+        though css-parser by TJ Holowaychuk is simpler and cooler.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>CartoCSS has been partially ported to C++ in the <em>carto-parser</em>
+        project. It's a long-term to get CartoCSS support into Mapnik itself.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>We've had many discussions about standardizing the 'CartoCSS language'
+        and probably the best product is at github.com/nvkelso/carto-css-map-styling</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>CartoCSS is different from GeoServer CSS because it's not related
+        to SLD and tries very hard to support everything in Mapnik.</p>
+        <p>It's also written in Javascript and has a bunch of neat features.</p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <p>CartoCSS is different from MapCSS because it tries very hard to
+        support everything in Mapnik, and does not try to do multiple platforms.</p>
+        <p>But it <em>does</em> aim to support all datasources, not just OSM.</p>
     </div>
 </div>
 
