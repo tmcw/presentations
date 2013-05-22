@@ -17,8 +17,24 @@ body {
   color:#111;
 }
 
+heart::after {
+    content:'♥';
+    color:magenta;
+    font-size:200%;
+}
+
 div {
     box-sizing:border-box;
+}
+
+.slide.blackout {
+    background:#000;
+    color:#fff;
+    padding:10%;
+}
+
+.center {
+    text-align:center;
 }
 
 h1, h2, h3, p, pre { margin:0; }

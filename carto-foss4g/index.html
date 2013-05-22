@@ -20,6 +20,56 @@ hljs.initHighlightingOnLoad();
     </div>
 </div>
 
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>vs / GeoServer CSS &amp; SLD?</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1 class='center'>CartoCSS <heart></heart> Mapnik</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1 class='center'>CartoCSS <heart></heart> Beautiful Maps</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1 class='center'>CartoCSS <heart></heart> Assumptions</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1 class='center'>CartoCSS <heart></heart> Completion</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>You may have seen CartoCSS in...</h1>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <img src='tilemill_ui.png' />
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+        <h1>But you can also...</h1>
+        <pre># npm install -g carto
+carto project.mml</pre>
+    </div>
+</div>
+
+
+
 <div class='slide'>
     <div class='overlay pad1'>
     <pre><code>/* hello, this is carto */
@@ -58,8 +108,6 @@ hljs.initHighlightingOnLoad();
 <div class='slide'>
     <div class='overlay pad1'>
         <h1>CartoCSS descends from <em>Cascadenik</em></h1>
-        <p>Cascadenik descends from CSS</p>
-        <p>CSS descends from *</p>
         <hr />
         <small>* 'stylesheet languages' are a black sheep of PL theory and are only
             really covered by a single phd thesis: <a href='http://bit.ly/css-thesis'>bit.ly/css-thesis</a></small>
@@ -74,10 +122,9 @@ hljs.initHighlightingOnLoad();
     </div>
 </div>
 
-
 <div class='slide'>
     <div class='overlay pad1'>
-        <h1>Because Standards Can't Be Designed a Vacuum</h1>
+        <h1>Because Standards Shouldn't Be Designed a Vacuum</h1>
         <hr />
         <p><em>don't tempt me, you know where this could go</em></p>
     </div>
@@ -128,15 +175,9 @@ hljs.initHighlightingOnLoad();
     <div class='overlay pad1'>
         <p>CartoCSS is written in Javascript and runs primarily under
         node.js.
-        </p>
         <p>It can and has run in browsers instead, but there
         are no good renderers written for browsers yet and I'm not going to
         get into it.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
         <p>CartoCSS tokenizes source, turns it into an AST, 'flattens' that
         AST, doing the work of inheritance, descendent selectors, expression
         evaluation, and so on.</p>
@@ -145,97 +186,51 @@ hljs.initHighlightingOnLoad();
     </div>
 </div>
 
-<div class='slide'>
-    <div class='overlay pad1'>
-        <p>We used the less.js parser because it had great error-catching support
-        and a fast parser. It's likely the best JavaScript CSS parser around,
-        though css-parser by TJ Holowaychuk is simpler and cooler.</p>
-    </div>
-</div>
+<div class='slide'><img src='all-streets.jpg' /> <span class='slight'>(fathom)</span></div>
+<div class='slide'><img src='streets.png' /></div>
 
-<div class='slide'>
-    <div class='overlay pad1'>
-        <p>CartoCSS has been partially ported to C++ in the <em>carto-parser</em>
-        project. It's a long-term to get CartoCSS support into Mapnik itself.</p>
-    </div>
-</div>
+<div class='slide'><pre class='pad1'><code>/* can you see the assumption? */
 
-<div class='slide'>
-    <div class='overlay pad1'>
-        <p>We've had many discussions about standardizing the 'CartoCSS language'
-        and probably the best product is at github.com/nvkelso/carto-css-map-styling</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <p>CartoCSS is different from GeoServer CSS because it's not related
-        to SLD and tries very hard to support everything in Mapnik.</p>
-        <p>It's also written in Javascript and has a bunch of neat features.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <p>CartoCSS is different from MapCSS because it tries very hard to
-        support everything in Mapnik, and does not try to do multiple platforms.</p>
-        <p>But it <em>does</em> aim to support all datasources, not just OSM.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='pad1'>
-        <span class='threed'>scale</span>
-    </div>
-</div>
-<div class='slide'>
-    <div class='pad1'>
-        <span class='threed'>(zoom)</span>
-    </div>
-</div>
-<div class='slide'>
-    <img src='all-streets.jpg' /> <span class='slight'>(fathom)</span></div>
-<div class='slide'>
-    <img src='streets.png' /></div>
-
-<div class='slide'><pre class='pad1'><code>#foo[zoom &gt; 3] {
+#foo[zoom &gt; 3] {
   color: red;
 }</code><pre></div>
 
-<div class='slide'><pre class='pad1'><code>@minfoo: 3;
-#foo[zoom &lt;= @minfoo] {
+<div class='slide'><pre class='pad1'><code>/* the assumption: */
+/* 3 = a zoom level
+  in spherical mercator */
+#foo[zoom &gt; 3] {
   color: red;
 }</code><pre></div>
 
-<div class='slide'><img src='casings.png' /></div>
-<div class='slide'><img src='npmap.png' /></div>
-
-<div class='slide'><div class='pad1'><h1>zindex</h1></div></div>
 <div class='slide'><img src='map_css_gif.gif' /></div>
-<div class='slide'><div class='pad1'><h1>(stuff on top of each other)</h1></div></div>
-<div class='slide'><img src='map_css_gif.gif' /><span class='slight'>(road trip)</span></div>
 
-<div class='slide'><pre class='pad1'><code>#a { marker-width: 2; }
-#b { marker-width: 3; }
-#c { marker-width: 4; }
-#d { marker-width: 5; }
-</code></pre></div>
-
-<div class='slide'><div class='pad1'><h1>roads</h1></div></div>
+<!--
 <div class='slide'><img src='roads.png' /></div>
 <div class='slide'><img src='roads_2.png' /></div>
 <div class='slide'><img src='casings_google.png' /></div>
 <div class='slide'><img src='roads_3.png' /></div>
 <div class='slide'><img src='roads_4.png' /></div>
+-->
 
-<div class='slide'><div class='pad1'><h1>stuff made with CartoCSS</h1></div></div>
-<div class='slide'><img src='maps/2.png' /></div>
+<div class='slide blackout'><h1>WHAT IS IMPORTANT ABOUT CARTOCSS</h1></div>
 
-<div class='slide major'>CartoCSS is <strong>friendly</strong></div>
+<div class='slide striped'>
+    <div class='overlay pad1'>
+    <h1>CartoCSS is <strong>fast</strong></h1>
+    <p>many tears have been shed making sure your <em>save</em> click does not <em>pause</em> your mind</p>
+    </div>
+</div>
+
+<div class='slide striped'>
+    <div class='overlay pad1'>
+    <h1>CartoCSS is <strong>friendly</strong></h1>
+    <p><em>error reporting is the most underrated part of interpreters in general.</em></p>
+    </div>
+</div>
+
 <div class='slide'><img src='tilemill.png' /></div>
-<div class='slide major'>CartoCSS suggests</div>
-<div class='slide'><img src='tilemill.png' /></div>
-<div class='slide major'>CartoCSS does not forgive</div>
+<div class='slide'><img src='carto-error.png' /></div>
+<div class='slide'><img src='carto-complete.png' /></div>
 
 <div class='slide major'>CartoCSS is <strong>complete</strong></div>
 <div class='slide'><img src='carto-options.png' /></div>
