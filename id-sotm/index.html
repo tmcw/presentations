@@ -9,14 +9,14 @@
 
 <div class='slide striped'>
     <div class='overlay pad1'>
-        <h1>iD editor <em>for OSM</em></h1>
+        <h1>iD: <em>a new editor for OSM</em></h1>
         <p>✍ @tmcw / MapBox</p>
     </div>
 </div>
 
 <div class='slide striped'>
     <div class='overlay pad1'>
-        <h1>bit.ly/id-foss4g</h1>
+        <h1>bit.ly/id-sotmus</h1>
     </div>
 </div>
 
@@ -29,7 +29,7 @@
 
 <div class='slide'>
     <div class='overlay pad1'>
-        <h1>let's start with a demo</h1>
+        <h1>(demo)</h1>
     </div>
 </div>
 
@@ -70,6 +70,99 @@
 
 <div class='slide'>
     <div class='overlay pad1'>
+        <h1>
+        iD tries to be well-designed from day one.
+        </h1>
+        <p>
+        Details like icons,
+        custom cursors, and color schemes were made from scratch and developed
+        inline with code changes.
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+        The Goal
+        </h1>
+        <p>
+        <em>Replace Potlatch 2 as the default editor on OpenStreetMap
+            for Internet Explorer 10+</em>
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+        Progress
+        </h1>
+        <p>
+        v0.x: the basic skeleton
+        </p>
+        <p>
+        v1.0: presets, details, documentation, translations
+        </p>
+        <p>
+        v1.1: relations editing + performance
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+        Performance
+        </h1>
+        <p>
+        Good in Chrome, buggy in Opera, weak in Firefox
+        </p>
+        <p>
+        Low-hanging-performance fruit is mostly eaten
+        </p>
+        <p>
+        Browser vendors are helping! We have multiple bugs fixed &amp;
+        optimizations queued in WebKit + Gecko.
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+            What's Next
+        </h1>
+        <ul>
+            <li>
+                The Default! We Hope.
+            </li>
+            <li>
+                Modularity
+            </li>
+            <li>
+                Plugins
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
+        <h1>
+            Plugins*
+        </h1>
+        <p>
+        Very important. There are no bounds on what people expect an editor
+        to do. Chat, alignment fixes, WMS, conflation, kitchen sink, etc.
+        If we implemented all requested features we would be 'done'
+        (never)
+        </p>
+    </div>
+</div>
+
+<div class='slide'>
+    <div class='overlay pad1'>
         <img src='img/josm.png' />
     </div>
 </div>
@@ -83,14 +176,6 @@
 <div class='slide'>
     <div class='overlay pad1'>
         <img src='img/tabs.png' />
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Details</h1>
-        <p>iD is <em>all details</em></p>
-        <p>it is <em>miles deep</em></p>
     </div>
 </div>
 
@@ -120,128 +205,6 @@
 
 <div class='slide'>
     <img src='img/translations.png' />
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Open Translations Work</h1>
-        <p>Better than 'open source' sometimes. We have tons of eager
-        translators, high-quality translations.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <h1 class='pad1'>With the smallest Locale Framework Ever</h1>
-    <img src='img/locale.png' />
-</div>
-
-<div class='slide'>
-    <img src='img/gpx.png' />
-</div>
-
-<div class='slide'>
-    <div class='pad1'>
-        <h1>toGeoJSON: Tiny libraries that work</h1>
-        <p><em>Just convert GPX and KML to GeoJSON.</em></p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Pure JavaScript</h1>
-        <p>
-        a relatively major <em class='js'>js</em> application:
-        <em>10,258 lines</em>
-        </p>
-        <hr />
-        <p>
-        let's see how we did that
-        </p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>'JavaScript is not maintainable'<br />lol no, JFDI</h1>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Code Quality</h1>
-        <ul>
-            <li>use/write a style guide</li>
-            <li><em>jshint</em> always like you mean it</li>
-            <li>review &amp; advise every pull request</li>
-        </ul>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Tests</h1>
-        <ul>
-            <li>mocha + expect.js + happen</li>
-            <li>phantomjs for headless</li>
-            <li>travis-ci runs <em>all tests on every commit with phantomjs</em></li>
-            <li>and shame-emails you when they fail</li>
-        </ul>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Frameworks</h1>
-        <p>this one may surprise you</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Frameworks: <em>ZNOPE</em></h1>
-        <p>No Backbone, Ember, Angular, or whatever
-        you kids are all talking about nowadays.</p>
-        <p>Not 'built on' Leaflet, OpenLayers, Modest Maps, or whatever.</p>
-        <hr />
-        <p>We don't even use jQuery</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>'You're not going to need it'</h1>
-        <p>Built agile. We created simple patterns for the UI
-        and algorithm chunks that an editor required. <em>d3</em>
-        provided the SVG-bridging and data-assigning glue.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Libraries for the needs we have</h1>
-        <p><code>rtree.js</code> for indexes.</p>
-        <p><code>d3.*.js</code> for d3 extensions.</p>
-        <p><code>togeojson.js</code> for GPX parsing.</p>
-        <p><code>kmeans.js</code> for orthogonalizing.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Libraries for the needs we find</h1>
-        <p><code>ohauth</code> for low-level OAuth.</p>
-        <p><code>osm-auth</code> for high-level auth.</p>
-        <hr />
-        <p><code>osm-stream</code>, <code>leaflet-osm</code>, <code>osm-gpx</code>
-        are beings on their way to becoming.</p>
-    </div>
-</div>
-
-<div class='slide'>
-    <div class='overlay pad1'>
-        <h1>Everything as a library soon</h1>
-        <p><em><code>var id = require('id')</code></em></p>
-    </div>
 </div>
 
 <div class='slide striped'>
