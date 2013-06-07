@@ -1,0 +1,44 @@
+body {
+  font-family: 'Bree Serif';
+  background:#604d96;
+  background-size:100%;
+  background-repeat:no-repeat;
+  color:#fff;
+  margin:0;
+  padding:0;
+  text-shadow: 0px 0em 5px #6D4E6A, 1px 1px 0px #1B0C32;
+  text-align:center;
+}
+
+h1, h2, h3, p {
+  margin:0;
+  font-size:inherit !important;
+}
+
+h1 {
+    white-space: nowrap;
+}
+
+em, a {
+  font-style:normal;
+  color:#ffb;
+  background:rgba(255, 255, 255, 0.1);
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
