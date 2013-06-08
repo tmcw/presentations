@@ -20,29 +20,65 @@
 <div>sound familiar?</div>
 <div><img src='stats_wiki.png' /></div>
 <div>a question of <em>making things beautiful</em></div>
-<div>so they're <em>conversations</em></div>
+<div>so they are <em>conversations</em></div>
 <div>here's what we made</div>
 <div>road updates</div>
 <div><img src='road-updates.png' /></div>
 <div>Chicago</div>
 <div><img src='chicago.png' /></div>
-<div>two images,<br /> a javascript slider, <br />and so on</div>
 <div>'Inequality'</div>
 <div><img src='inequality.png' /></div>
+<div>bot-mode name expansion</div>
+<div>St &rarr; Street</div>
+<div><img src='bot-mode.png' /></div>
+<div>21 million miles of roads</div>
+<div><img src='trips.png' /></div>
+<div><img src='a.png' /></div>
+<div><img src='b.png' /></div>
+<div><img src='c.png' /></div>
+<div><iframe src='http://www.mapbox.com/show-me-the-way/' width='100%' height='100%'></iframe></div>
+<div>toolz!</div>
 <div>sometimemachine &rarr; d3</div>
+<div>planet.osm &rarr; python &rarr; sqlite &rarr; node.js + node-canvas</div>
 <div>github.com/ tmcw/sometimemachine</div>
+<div>github.com/ tmcw/sometime-scripts</div>
+<div><pre>
+var fs = require('fs');
+var moment = require('moment');
+var argv = require('optimist').argv;
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database(argv._[0]);
+var bboxes = [];
+
+db.each(('select * from osm_changeset where user_id=451693;'),
+    function(err, row) {
+    bboxes.push([
+        row.min_lon,
+        row.min_lat,
+        row.max_lon,
+        row.max_lat]);
+}, function() {
+    fs.writeFileSync('bboxes.json', JSON.stringify(bboxes));
+});</pre>
+</div>
+<div>inkscape</div>
+<div>/but the real graphic is/</div>
 <div>Growth</div>
 <div><img src='growth.png' /></div>
 <div>what is growth?</div>
 <div>signups?</div>
 <div>contributors?</div>
 <div>contributions?</div>
-<div><img src='between.jpg' />(somewhere in between)</div>
 <div>ideally it's signups &rarr; contributors</div>
 <div>at best...</div>
 <div><h1>we're presenting</h1> <em>an honest but limited facet of the truth</em></div>
 <div><img src='stripes.jpg' /><h1>conclusions</h1></div>
 <div>the volume of OpenStreetMap is <em>dominated by experts</em></div>
-<div>but the volume of new mappers is significant and increasing</div>
-<div>bots &amp; imports are vital for making things work</div>
+<div>but the volume of <em>new mappers</em> is significant and increasing</div>
+<div><em>bots &amp; imports</em> are vital for making things work</div>
 <div><em>the hope</em> is that tools like iD will increase conversion rates</div>
+<div>/cutting room floor/</div>
+<div><img src='before-changes.png' /></div>
+<div><img src='user-lives.png' /></div>
+<div>/tabs/</div>
+<div>thanks!</div>
