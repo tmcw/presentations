@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+<style>
+
+body {
+    background:#222;
+    font:normal 40px/50px sans-serif;
+    margin:0;
+    padding:0;
+}
+
+section {
+    text-align:center;
+    line-height:500px;
+    color:#fff;
+    background:#000;
+    height:500px;
+    margin-bottom:100px;
+}
+
+b {
+    color:magenta;
+}
+
+h1, h2, h3, h4 { margin:0; }
+
+pre {
+    line-height:40px;
+    text-align:left;
+    margin:0 auto;
+}
+
+
+</style>
+<body class="overview">
+
+<section>
+    <h1>#1 the point of <b>d3</b></h1>
+</section>
+
+<section>
+<h1>d3 <b>is data&rarr;documents</b></h1>
+</section>
+
+<section>
+<h1>d3 is a general purpose visualization library</h1>
+</section>
+
+<section>
+<h1>d3 is a <b>general purpose</b> visualization library</h1>
+</section>
+
+<section>
+<h1>what is general purpose about <b>visualizations?</b></h1>
+</section>
+
+<section>
+<h1>the transformation of data into <b>information</b></h1>
+</section>
+
+<section>
+<h1>the transformation of data into <b>documents</b></h1>
+</section>
+
+<section>
+<h1>the transformation of data into <b>elements</b></h1>
+</section>
+
+<section>
+<pre><code>d3.select('#foo')
+  .style('background', '#000')
+  .on('click', function() {})
+  .append('div');
+
+$('#foo')
+  .css('background', '#000')
+  .click(function() {})
+  .append($('&ltdiv&gt;&lt;/div&gt;'));
+</code></pre>
+</section>
+
+<section>
+<pre><code>d3.json('foo.json',
+  function(err, data) { });
+
+$.getJSON('foo.json',
+  function(data) { });
+</code></pre>
+</section>
+
+<section class='join'>
+<p>the core</p>
+</section>
+
+<section>
+<pre><code>
+d3.selectAll('div')
+  .data([1, 2, 3])
+  .enter()
+  .append('div')
+  .text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// an empty selection.
+// looking for incarnations of data
+d3.selectAll('div')
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// data, which would be bound to a
+// selection
+.data([1, 2, 3])
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// for every time that we see data
+// but we do not see an element
+.enter()
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// append an element
+.append('div')
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and fill it with text
+.text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and fill it with text
+.text(String);
+// wait what
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// what's going on here?
+.text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+d3.selectAll('div')
+  .data([1, 2, 3])
+  .enter()
+  .append('div')
+  .text(String);
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// d3 has a few different
+// functions that set stuff
+.text()
+.property()
+.style()
+.attr()
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// each takes a function
+.attr('foo', function() { })
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// and that function gets data
+// from your .data()
+.attr('foo', function(d) {
+  return d.foo;
+})
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// like jQuery, you can chain these
+blah
+  .attr('foo', 'bar')
+  .attr('boo', 'burr');
+</code></pre>
+</section>
+
+<section>
+<pre><code>
+// like jQuery, you can use them
+// to get an existing value
+var fooValue = blah.attr('foo');
+</code></pre>
+</section>
+
+<section>
+<p>but what did you mean by .enter()?</p>
+</section>
+
+<section>
+<p>d3 is all about <strong>enter, exit, and update</strong></p>
+</section>
+
+<section>
+<pre><code>// this is an empty selection
+var selection = d3.selectAll('div')
+  .data([1, 2, 3]);
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the data which
+// is not joined to an element in
+// the selection,
+// add an element
+selection
+  .enter()
+  .append('div');
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the selection
+// that is no longer in the data,
+// remove it
+selection
+  .exit()
+  .remove();
+</code></pre>
+</section>
+
+<section>
+<pre><code>// for each part of the selection,
+// update some attribute
+selection
+  .text(function(d) {
+    return d.bar;
+  });
+</code></pre>
+</section>
+
+<section>
+<p>so data is bound to the DOM</p>
+</section>
+<section>
+<p><strong>but what does that mean?</strong></p>
+</section>
+
+<section>
+<pre><code>// WE NEED TO GO DEEPER
+// WHAT IS REALLY HAPPENING
+
+&lt;div class='joined-elem'&gt;&lt;/div&gt;
+// a joined element like this has
+// a __data__ property where
+// WE KEEP THE DATA
+</code></pre>
+</section>
+
+<section>
+<img src='bound_data.png' />
+</section>
+
+<section>
+<h1>Why must everything be so hard!?</h1>
+</section>
+
+<section>
+Changing the DOM is <strong>mad expensive</strong>
+</section>
+
+<section>
+Changing the DOM is usually the most expensive part
+    of your code</section>
+<section>unless you're a horrible Javascript coder
+</section>
+
+<section>
+Changing the DOM is <strong>mad expensive</strong>
+</section><section>
+This makes animated transitions way slicker
+</section><section>
+Post-eureka moment, it makes code way more compact
+</section><section>
+Data updates, like real-time data or history viewers, become obvious rather than awful
+</section>
