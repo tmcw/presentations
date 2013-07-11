@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <pre style='font-size:50px'><code>// d3
+var divs = d3.select('#foo')
+  .selectAll('div')
+  .data([1, 2, 3])
+  .enter()
+  .append('div')
+  .text(String);
+    </code></pre>
+    <script src='hi.js'></script>
+  </body>
+</html>

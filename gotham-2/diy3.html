@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <style>
+    #foo {
+        background:#222;
+        padding:5px;
+        text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+  <pre style='font-size:30px'><code id='code'>function choice(msg) {
+  var event = d3.dispatch('click');
+  return d3.rebind(function(selection) {
+    selection.append('a').text(msg)
+      .on('click', function() {
+         event.click(msg);
+      });
+  }, event, 'on');
+}
+
+d3.select('#foo').call(choice('hii, you')
+  .on('click', function() {
+    alert('you clicked!');
+  }));</code></pre>
+  <div id='foo'></div>
+<script src='d3/d3.v3.min.js'></script>
+<script>
+eval(document.getElementById('code').innerHTML)
+</script>
+    <script src='hi.js'></script>
+  </body>
+</html>

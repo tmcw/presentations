@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <style>
+    #foo {
+        background:#222;
+        padding:5px;
+        text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+  <pre style='font-size:30px'><code id='code'>// a component
+function choice(msg) {
+  // an event emitter
+  var event = d3.dispatch('click');
+  // simple composition
+  return d3.rebind(function(selection) {
+    // the meat
+    selection.append('a').text(msg)
+      .on('click', function() {
+         event.click(msg);
+      });
+  }, event, 'on');
+}</code></pre>
+<script src='d3/d3.v3.min.js'></script>
+    <script src='hi.js'></script>
+  </body>
+</html>

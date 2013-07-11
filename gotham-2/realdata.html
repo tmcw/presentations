@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+  <h1>real data in the DOM</h1>
+    <pre style='font-size:40px'><code>.on('click', function(d) {
+  // real data
+  d3.select(this).text(d + ' hello');
+});
+    </code></pre>
+    <p>d3 uses an expando property, <code>__data__</code>, that
+    stores real data. no more stringified ids in data attributes.</p>
+    <script src='hi.js'></script>
+  </body>
+</html>

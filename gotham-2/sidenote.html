@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <style>
+    #foo {
+        background:#222;
+        padding:5px;
+        text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+  <h1>sidenote: this is our flow-control library</h1>
+  <pre style='font-size:28px'><code>iD.util.asyncMap = function(inputs, func, callback) {
+  var remaining = inputs.length,
+      results = [], errors = [];
+  inputs.forEach(function(d, i) {
+    func(d, function done(err, data) {
+      errors[i] = err;
+      results[i] = data;
+      remaining --;
+      if (!remaining) callback(errors, results);
+    });
+  });
+};
+  </code></pre>
+<script src='d3/d3.v3.min.js'></script>
+    <script src='hi.js'></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <style>
+    #foo {
+        background:#222;
+        padding:5px;
+        text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+  <p>let's diy a component in d3, iD-style</p>
+  <pre style='font-size:40px'><code id='code'>function choice(selection) {
+  selection.append('a').text('hi');
+}
+
+d3.select('#foo').call(choice);</code></pre>
+  <div id='foo'></div>
+<script src='d3/d3.js'></script>
+<script>
+eval(document.getElementById('code').innerHTML)
+</script>
+    <script src='hi.js'></script>
+  </body>
+</html>
