@@ -23,8 +23,8 @@
 }
 
 d3.select('#foo').call(choice('hii, you')
-  .on('click', function() {
-    alert('you clicked!');
+  .on('click', function(msg) {
+    alert(msg);
   }));</code></pre>
   <div id='foo'></div>
 <script src='d3/d3.v3.min.js'></script>
