@@ -9,9 +9,13 @@ window.onload = function() {
         e.style.fontSize = i + 'px';
         if (e.firstChild.nodeName === 'IMG') {
             document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            document.body.style.height =
+                document.body.offsetWidth /
+                (e.firstChild.naturalWidth / e.firstChild.naturalHeight) + 'px';
             e.firstChild.style.display = 'none';
             if ('classList' in e) e.classList.add('imageText');
         } else {
+            document.body.style.height = '';
             document.body.style.backgroundImage = '';
             document.body.style.backgroundColor = e.style.backgroundColor;
         }
