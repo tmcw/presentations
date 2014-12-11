@@ -1,0 +1,155 @@
+<!-- vim: set colorcolumn=40: -->
+<!DOCTYPE html>
+<html><head><title>40x12</title>
+<meta charset='utf-8'><script src='highlight.pack.js'></script>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
+<link href='40x12.css' rel='stylesheet' type='text/css' />
+<body>
+<pre>
+
+
+
+          <em>'Mapbox GL Online'</em>
+
+            Mapbox / @tmcw
+
+
+
+
+----------------------------------------
+
+ <em>STACK</em>
+
+ * React
+ * Flux
+ * React-router
+ * Immutable.js
+ * Written in ES6 w/ 6to5
+
+----------------------------------------
+
+ <em>BACKGROUND</em>
+
+ * JavaScript shop front &amp; back
+ * Backbone, jQuery, _ templates
+ * d3 for HTML
+ * Already taken the immutable leap
+ * Never transpiled / cross-compiled
+
+----------------------------------------
+
+ <em>REACT</em> is pretty good
+
+- Only found one bug in React core
+- Haven't needed to use shouldComponentUpdate
+- Tracebacks can be a little weak
+- Library size is a concern
+- React versions across deps sucks
+
+----------------------------------------
+
+ <em>IMMUTABLE</em> the only way to undo/redo
+
+```js newVersion(stylesheet =>
+      stylesheet.update(foo => 'bar'))```
+
+ actions create versions on a stack,
+ never changing data in-place
+
+----------------------------------------
+
+ <em>TEMPLATES</em> have always sucked
+
+ d3 was the first step for our template
+ avoidance.
+
+ <em>Dynamic pages should be updated
+ the same way they're bootstrapped</em>
+
+----------------------------------------
+
+ <em>ES6</em> eases the pain of writing
+ functional JavaScript
+
+```js var flip = (name) => (query) =>
+  xtend({}, query, {
+    [name]:
+      (query[name] === '0') ? 1 : 0 })```
+
+----------------------------------------
+
+ <em>USE</em>   Arrow functions
+       Template strings
+       Object syntax
+
+ <em>AVOID</em> List comprehensions
+       Data structures
+       Async syntax
+
+----------------------------------------
+
+  Avoiding Bugs
+
+  - propTypes <em>always</em>
+  - Flow annotations <em>asap</em>
+  - 'Pause on Caught Exceptions'
+  - Sentry
+  - jshint
+
+----------------------------------------
+
+  <em>TESTS</em> tape + karma-tap
+
+  Jest is cool but
+  - Jasmine + async = :(
+  - Doesn't test cross-browser bugs
+  - Won't work with WebGL
+  - Slow in our testing
+
+----------------------------------------
+
+  <em>FLUX</em>
+
+  We use the Facebook flux module.
+  Reflux mostly saves typing
+  (typing is not the problem)
+
+  Flux works well, except...
+
+----------------------------------------
+
+  <em>ASYNC</em>
+
+  NOBODY has solved async. There is no
+  example to follow, no good
+  documentation. Not a problem of
+  syntax, but of structure.
+
+
+----------------------------------------
+
+  <em>OUR APPROACH</em>
+
+  After many false starts, we do async
+  <em>in actions only</em> and return
+  Promises from some actions so they
+  can control React-router's transitions.
+
+
+----------------------------------------
+
+  <em>DRAWBACKS</em>
+
+- Promises fail quietly: nothing should
+  ever fail quietly.
+- Async makes dependent data even harder
+- Async is tied into routing
+
+
+----------------------------------------
+</pre>
+<script src='shorthand.js'></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
