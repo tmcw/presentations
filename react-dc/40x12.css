@@ -5,7 +5,6 @@ body {
   font:normal 4.02vw Inconsolata;
   line-height: 5.1vw;
 }
-
 pre, body { margin:0; padding:0; }
-
 em { color: yellow; font-weight:bold; }
+strong { color: cyan; font-weight:bold; }

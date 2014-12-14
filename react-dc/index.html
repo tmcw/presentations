@@ -10,10 +10,10 @@
 
 
 
+
           <em>'Mapbox GL Online'</em>
 
             Mapbox / @tmcw
-
 
 
 
@@ -42,10 +42,19 @@
  <em>REACT</em> is pretty good
 
 - Only found one bug in React core
-- Haven't needed to use shouldComponentUpdate
+- Avoiding shouldComponentUpdate
 - Tracebacks can be a little weak
 - Library size is a concern
 - React versions across deps sucks
+
+----------------------------------------
+
+   Obligatory React Question
+
+        <strong>STATE VS PROPS</strong>
+
+- Props: control from elsewhere
+- State: temporary internal self-control
 
 ----------------------------------------
 
@@ -92,10 +101,10 @@
   Avoiding Bugs
 
   - propTypes <em>always</em>
-  - Flow annotations <em>asap</em>
-  - 'Pause on Caught Exceptions'
+  - Pause on Caught Exceptions
   - Sentry
-  - jshint
+  - JSHint
+  - TBD: Flow annotations
 
 ----------------------------------------
 
@@ -113,7 +122,8 @@
 
   We use the Facebook flux module.
   Reflux mostly saves typing
-  (typing is not the problem)
+
+    typing is not the problem
 
   Flux works well, except...
 
@@ -129,13 +139,22 @@
 
 ----------------------------------------
 
+  <em>PROBLEMS WITH ASYNC</em>
+
+  * Async &amp; routing are app-wide
+    concerns for which bad solutions
+    affect all parts of your software
+  * Async is the one thing you will
+    always need to mock in your tests
+
+----------------------------------------
+
   <em>OUR APPROACH</em>
 
-  After many false starts, we do async
-  <em>in actions only</em> and return
-  Promises from some actions so they
-  can control React-router's transitions.
-
+  * Async <em>in actions only</em>
+  * Some actions return Promises
+  * We wait for async in react-router
+  * All AJAX is in one utility module.
 
 ----------------------------------------
 
@@ -143,10 +162,10 @@
 
 - Promises fail quietly: nothing should
   ever fail quietly.
-- Async makes dependent data even harder
 - Async is tied into routing
-
-
+- Who knows if this is <em>the way</em>
+  to do this: async is under-documented
+  and under-shared.
 ----------------------------------------
 </pre>
 <script src='shorthand.js'></script>
