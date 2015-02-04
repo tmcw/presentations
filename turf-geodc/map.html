@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html><head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <link rel="stylesheet" href="leaflet.css" />
+    <script src="leaflet-src.js"></script>
+    <script src="random.js"></script>
+    <script src="turf-2.js"></script>
+    <style>
+body {
+    font:30px normal 'Montserrat';
+}
+#map {
+    position:absolute;
+    top:0;
+    right:0; bottom:0; left:0;
+}
+
+#options {
+    position:absolute;
+    top:0;
+    right:0; bottom:0; left:0;
+    background:rgba(255, 255, 255, 0.8);
+    display:flex;
+    flex-wrap: wrap;
+    transform:translateY(-100%);
+    transition:400ms transform ease-in;
+}
+
+#options.show {
+    transform:translateY(0%);
+}
+
+#map.leaflet-container {
+    background:#2ecc71;
+}
+
+#options a {
+  flex-grow: 1;
+  font-size:5vh;
+  line-height:10vh;
+  box-sizing:border-box;
+  margin:0;
+  padding:10px;
+  border:10px solid #fff;
+}
+    </style>
+  </head>
+<body>
+<div id='map'></div>
+<div id='options'></div>
+<script src='map.js'></script>

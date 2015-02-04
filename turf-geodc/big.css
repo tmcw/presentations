@@ -1,0 +1,41 @@
+body {
+  background:#25a55c;
+  color:#fff;
+  font-family:'Montserrat';
+  white-space:nowrap;
+  background-size:cover;
+  font-weight:bold;
+}
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.8; }
+}
+.red {
+    background:#c0392b;
+}
+span.wrap {
+    white-space:normal !important;
+}
+em {
+  background:rgba(0, 0, 0, 0.2);
+  color:#fff;
+  font-style:normal;
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0.5,0.5,1.0);
+  -webkit-animation-duration: 800ms; 
+}
+i {
+  background:rgba(0, 0, 0, 0.4);
+  color:#fff;
+  font-style:normal;
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0.5,0.5,1.0);
+  -webkit-animation-duration: 800ms; 
+}
+code {
+    white-space:pre;
+  background:rgba(0, 0, 0, 0.7);
+    font-family:'M+ 1m';
+}
