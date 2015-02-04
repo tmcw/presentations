@@ -5,7 +5,7 @@ var map = L.map('map', {
     scrollWheelZoom: false
 }).setView([0, 0], 0);
 
-map.attributionControl.setPrefix('');
+map.attributionControl.setPrefix('(t) to toggle transforms, (e) to reset extent');
 
 var theLayer = L.layerGroup().addTo(map);
 
@@ -121,6 +121,9 @@ selectData(options[0].data);
 
 document.addEventListener('keydown', function(e) {
     if (e.which === 84) togglePanel();
+    if (e.which === 69) {
+        map.fitBounds(L.geoJson(logo).getBounds());
+    }
 });
 function togglePanel(e) {
     if (document.getElementById('options').className != 'show') {
