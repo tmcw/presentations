@@ -3,7 +3,17 @@ body {
   background:#000;
   color:#fff;
   font:normal 4.02vw Inconsolata;
-  line-height: 5.1vw;
+  line-height: 5.4vw;
+}
+#mask {
+  max-height:0;
+  border:1px solid #fff;
+  box-sizing:border-box;
+  padding:56.9% 0 0 0;
+  overflow:scroll;
+}
+#unmask {
+  margin-top:-56.9%;
 }
 pre, body { margin:0; padding:0; }
 em { color: yellow; font-weight:bold; }

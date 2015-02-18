@@ -6,16 +6,18 @@
 <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700' rel='stylesheet' type='text/css'>
 <link href='40x12.css' rel='stylesheet' type='text/css' />
 <body>
+<div id='mask'>
+<div id='unmask'>
 <pre>
+----------------------------------------
 
-
-
-
+   hi!
+             'codename'
           <em>'Mapbox GL Online'</em>
-
             Mapbox / @tmcw
 
-
+    a pretty big react app
+    (also uses flux, etc)
 
 ----------------------------------------
 
@@ -26,6 +28,16 @@
  * React-router
  * Immutable.js
  * Written in ES6 w/ 6to5
+
+----------------------------------------
+
+ <em>STATS</em>
+
+ * ~5 elite designvelopers
+ * 65 components
+ * 217 test assertions
+ * 20 dependencies
+ * 4 months in
 
 ----------------------------------------
 
@@ -55,6 +67,7 @@
 
 - Props: control from elsewhere
 - State: temporary internal self-control
+
 
 ----------------------------------------
 
@@ -125,7 +138,16 @@
 
     typing is not the problem
 
-  Flux works well, except...
+
+----------------------------------------
+
+
+
+
+  (pain points)
+
+
+
 
 ----------------------------------------
 
@@ -168,7 +190,29 @@
   to do this: async is under-documented
   and under-shared.
 ----------------------------------------
+
+  <em>TRANSITIONS</em>
+
+  Transitions on the internet are
+  rotten to the core. You can get
+  either control or performance
+  but never stability.
+
+
+----------------------------------------
+
+  <em>ES6 bleeding-edges</em>
+
+  Use use 6to5, which is better
+  than traceur, but toolchains suck:
+  source maps, jshint, tests,
+  node compatibility.
+  Bleeding edge = bleeding edge.
+
+----------------------------------------
 </pre>
+</div>
+</div>
 <script src='shorthand.js'></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
