@@ -1,0 +1,272 @@
+<!DOCTYPE html><html><head><title>Big</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<style>
+  .new-shiny { background: #aaaaaa; }
+</style>
+<script src='big.js'></script></head><body>
+
+<div>
+    beyond the <code>for</code> loop
+    <br />
+    <small class='small nobreak'>@tmcw / Tom MacWright / Mapbox</small>
+</div>
+
+<div>
+    loops are one of the bits of <em>fundamental magic</em> in programming
+</div>
+
+<div>
+    <pre>if { } else { }</pre> computers can <em>make decisions</em>
+</div>
+
+<div>
+    <pre>for (;;) { }</pre> computers can <em>do work</em>
+</div>
+
+<div>
+    using for
+<pre>var animals = ['cats', 'dogs'];
+
+for (var i = 0; i < animals.length; i++) {
+  animals[i] = animals[i] + ' rock';
+}</pre>
+</div>
+
+<div>
+    <code>for</code> is a way of saying <em>do this repeatedly</em>
+</div>
+
+<div>
+    equivalent to <code>while() { }</code> and <code>do { } while()</code>
+    and even <code>goto</code>
+</div>
+
+<div>
+    <code>for</code> loops have three basic elements
+</div>
+
+<div>
+where we usually make the loop counter
+<pre>
+for (<em>var i = 0</em>; i < animals.length; i++) {
+</pre>
+</div>
+
+<div>
+where we usually check if we're done
+<pre>
+for (var i = 0; <em>i < animals.length</em>; i++) {
+</pre>
+</div>
+
+<div>
+where we usually increment the loop counter
+<pre>
+for (var i = 0; i < animals.length; <em>i++</em>) {
+</pre>
+</div>
+
+<div>
+    <pre>the loop is <em>counting from 0 to 1</em></pre>
+</div>
+
+<div>
+    is that what i'm doing?
+</div>
+
+<div>
+    <table>
+        <tr><td>in</td><td class='two'>out</td></tr>
+        <tr>
+<td><pre>cats
+dogs</td>
+<td><pre class='two'>cats rock
+dogs rock</td>
+        </tr>
+    </table>
+</div>
+
+<div>
+    i'm not counting from 0 to 1, i'm <em>transforming data</em>
+</div>
+
+<div>
+<pre>function theyRock(creatures) {
+  return creatures + ' rock';
+}
+theyRock('cats'); // <em>cats rock</em>
+</pre>
+</div>
+
+<div>
+<pre>function theyRock(creatures) {
+  return creatures + ' rock';
+}
+// <em>feed ['cats', 'dogs'] into theyRock</em>
+</pre>
+</div>
+
+<div>
+    <em>daring thesis</em>: we should do that
+</div>
+
+<div>
+    let's meet the family
+</div>
+
+<div>
+    <pre>map, reduce, filter</pre>
+    there are others but these are the hits
+</div>
+
+<div>
+    they live <em>on arrays</em>
+    <pre>[].filter; // there it is</pre>
+</div>
+
+<div>
+    for IE8 and lower use <em>es5-shim</em>
+    <small class='small nobreak'>and weep legacy tears</small>
+</div>
+
+<div>
+    so what do they do?
+</div>
+
+<div>
+    <pre>map</pre>
+    creates a new array by calling a function on every element of an old array
+</div>
+
+<div>
+    that thing from earlier but with <code>map</code>
+</div>
+
+<div>
+<pre>var animals = ['cats', 'dogs'];
+function theyRock(creatures) {
+  return creatures + ' rock';
+}
+var rockinAnimals = animals<em>.map(theyRock)</em>;
+</pre>
+</div>
+
+<div>
+    this <em>says what it does</em>: we are turning an
+    array of animals into an array or rockin animals with
+    a named function
+</div>
+
+<div>
+    it also does not <em>change the original array</em>,
+    but creates a new one
+</div>
+
+<div>
+    aka 'mutation', <em>changing arrays in place breeds confusion</em>
+</div>
+
+<div class='bigger'>
+<pre>var animals = ['cats', 'dogs'];
+function makeEmRock(animals) {
+  for (var i = 0; i < animals.length; i++)
+    animals[i] = animals[i] + ' rock';
+  return animals;
+}
+var rockinAnimals = makeEmRock(animals);
+// rockinAnimals = [cats rock, dogs rock]
+<em>// animals = [cats rock, dogs rock] NOOOOOOO</em>
+</pre>
+</div>
+
+<div class='bigger'>
+<pre>var animals = ['cats', 'dogs'];
+function makeEmRock(animals) {
+  return animals.map(function(animal) {
+    return animal + ' rock';
+  });
+}
+var rockinAnimals = makeEmRock(animals);
+// rockinAnimals = [cats rock, dogs rock]
+<em>// animals = [cats, dogs]</em>
+</pre>
+</div>
+
+<div>
+    <pre>filter</pre>
+    create a new array with only the elements that <em>pass a test</em>
+</div>
+
+<div>
+<pre>var animals = ['cats', 'dogs'];
+var catsOnly = [];
+for (var i = 0; i < animals.length; i++)
+  if (animals[i] === 'cats')
+    catsOnly.push(animals[i]);
+
+<em>// catsOnly = ['cats']</em>
+</pre>
+</div>
+
+<div>
+    but we'd want to abstract the comparison because of those
+    cats that look like dogs because of their crazy cat show owners
+    doing weird haircuts or grooming or whatever
+</div>
+
+<div>
+    not judging, keep rocking cat show people
+</div>
+
+<div>
+<pre>
+function thatsACat(animal) {
+  return animal === 'cats';
+}</pre>
+</div>
+
+<div>
+<pre>var animals = ['cats', 'dogs'];
+var catsOnly = [];
+function thatsACat(animal) {
+  return animal === 'cats';
+}
+for (var i = 0; i < animals.length; i++)
+  if (thatsACat(animals[i]))
+    catsOnly.push(animals[i]);
+
+<em>// catsOnly = ['cats']</em>
+</pre>
+</div>
+
+<div>
+    filter to the rescue
+<pre>var animals = ['cats', 'dogs'];
+function thatsACat(animal) {
+  return animal === 'cats';
+}
+var catsOnly = animals.filter(thatsACat);
+<em>// catsOnly = ['cats']</em>
+</pre>
+</div>
+
+<div>
+    like map, filter creates a new array and doesn't mess with your old one
+</div>
+
+<script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+</body>
+</html>
