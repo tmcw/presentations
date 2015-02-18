@@ -1,7 +1,9 @@
 body {
   font-family: 'Helvetica';
   background:#000;
-  background-size:100%;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position: center center;
   color:#fff;
   margin:0;
   padding:0;
@@ -85,4 +87,18 @@ td.two {
 }
 pre.two {
     background-color:yellow;
+}
+@-webkit-keyframes blinker {  
+  from { opacity: 1.0; }
+  to { opacity: 0.5; }
+}
+.blink {
+  -webkit-animation-name: blinker;  
+  -webkit-animation-iteration-count: infinite;  
+  -webkit-animation-timing-function: cubic-bezier(1.0,0,0,1.0);
+  -webkit-animation-duration: 800ms; 
+}
+
+.deemphasize {
+    color:#777;
 }

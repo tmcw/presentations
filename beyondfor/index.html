@@ -24,6 +24,27 @@
 </div>
 
 <div>
+    <span class='small'>sparknotes</span>
+    <em class='nobreak'>arrays</em>
+</div>
+
+<div>
+    arrays <em>are collections of data</em>
+    <pre>var numbers = [1, 2, 3];</pre>
+</div>
+
+<div>
+    <span class='nobreak'>arrays <em>have a length property</em></span>
+    <pre>numbers.length; // 3</pre>
+</div>
+
+<div>
+    <span class='nobreak'>arrays <em>have methods</em></span>
+    <pre>numbers.push(4);
+// puts 4 into numbers</pre>
+</div>
+
+<div>
     using for
 <pre>var animals = ['cats', 'dogs'];
 
@@ -219,6 +240,9 @@ for (var i = 0; i < animals.length; i++)
 </div>
 
 <div>
+    this is a function that returns true or false.
+    <em>comparisons are values, liberate them from
+        <code>if</code> statements!</em>
 <pre>
 function thatsACat(animal) {
   return animal === 'cats';
@@ -253,6 +277,128 @@ var catsOnly = animals.filter(thatsACat);
 <div>
     like map, filter creates a new array and doesn't mess with your old one
 </div>
+
+<div class='blink'>
+    [questions]
+</div>
+
+<div>
+    <pre>map</pre>
+    <span class='nobreak'> array ⇢  array of <em>transformed values</em></span>
+    <pre>filter</pre>
+    <span class='nobreak'> array ⇢  array of <em>filtered values</em></span>
+</div>
+
+<div>
+    <span class='nobreak'>one last kind of loop: <em>aggregation</em></span>
+    <pre> array ⇢ <em>sum</em></pre>
+</div>
+
+<div>
+    <pre>reduce</pre>
+    given an array and a starting value, get a result by calling a function
+    with each element of the array and the value.
+</div>
+
+<div>
+    um, what?
+</div>
+
+<div>
+    reduce is <em>more general than the others.</em>
+    let's look at it two ways.
+</div>
+
+<div>
+    compute the sum of an array of numbers
+<pre>var numbers = [4, 8, 15, 16, 23];
+var sum = 0;
+for (var i = 0; i < numbers.length; i++) {
+  sum += numbers[i];
+}
+<em>// sum = 66</em>
+</pre>
+</div>
+
+<div>
+    the gist: <i>start off with a sum of 0, add each number to it</i>
+</div>
+
+<div>
+    <span class='nobreak'>1. starting value = 0</span>
+    <span class='nobreak'>2. add each number to current sum</span>
+    <span class='nobreak'>3. voila!</span>
+</div>
+
+<div>
+    here's the same thing with reduce!
+<pre>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(currentSum, value) {
+  return currentSum + value;
+}, 0);
+</pre>
+</div>
+
+<div>
+    first notice the <em>starting value of 0</em>,
+    given as the second argument
+<pre class='deemphasize'>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(currentSum, value) {
+  return currentSum + value;
+}, <em>0</em>);
+</pre>
+</div>
+
+<div>
+    this enters the function as <em>currentSum</em>
+<pre class='deemphasize'>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(<em>currentSum</em>, value) {
+  return currentSum + value;
+}, 0);
+</pre>
+</div>
+
+<div>
+    each loop returns a new value that is the new <em>currentSum</em>
+<pre class='deemphasize'>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(currentSum, value) {
+  return <em>currentSum + value;</em>
+}, 0);
+</pre>
+</div>
+
+<div>
+    so, for the first iteration it looks like
+<pre>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(<em>currentSum=0, value=4</em>) {
+  return 0 + 4;
+}, 0);
+</pre>
+</div>
+
+<div>
+    and then the second
+<pre>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(<em>currentSum=4, value=8</em>) {
+  return 4 + 8;
+}, 0);
+</pre>
+</div>
+
+<div>
+    and third
+<pre>var numbers = [4, 8, 15, 16, 23];
+var sum = numbers.reduce(function(<em>currentSum=12, value=15</em>) {
+  return 12 + 15;
+}, 0);
+</pre>
+</div>
+
+<div>
+    here's another way of putting it
+</div>
+
+<div><img src='juice.jpg' /></div>
 
 <script type='text/javascript'>
   var _gauges = _gauges || [];
