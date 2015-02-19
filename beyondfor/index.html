@@ -1,14 +1,14 @@
 <!DOCTYPE html><html><head><title>Big</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 <link href='big.css' rel='stylesheet' type='text/css' />
-<style>
-  .new-shiny { background: #aaaaaa; }
-</style>
 <script src='big.js'></script></head><body>
 
 <div>
     beyond the <code>for</code> loop
     <br />
     <small class='small nobreak'>@tmcw / Tom MacWright / Mapbox</small>
+    <notes>
+        this is a topic that’s close to my heart because it’s fundamental, difficult, and subtle: something as simple as a loop can expressed in vastly different ways. knowing which route to take for every situation will help you write straightforward code that reflects your ideas.
+    </notes>
 </div>
 
 <div>
@@ -70,6 +70,12 @@ for (var i = 0; i < animals.length; i++) {
 
 <div>
     <code>for</code> is a way of saying <em>do this repeatedly</em>
+    <notes>
+        for is a classic example of the concept of 'imperative programming':
+        a style that emphasizes telling computers what to do. there are other
+        styles, like declarative programming, which is telling computers
+        what you want - a big example of that is SQL.
+    </notes>
 </div>
 
 <div>
@@ -153,6 +159,10 @@ theyRock('cats'); // <em>cats rock</em>
 <div>
     <pre>map, reduce, filter</pre>
     there are others but these are the hits
+    <notes>
+    some of the others are .some(), which tells you if any element
+    of an array passes a test, .every(), which says if ever element does
+    </notes>
 </div>
 
 <div>
@@ -163,6 +173,12 @@ theyRock('cats'); // <em>cats rock</em>
 <div>
     for IE8 and lower use <em>es5-shim</em>
     <small class='small nobreak'>and weep legacy tears</small>
+    <notes>
+    some people use underscore or lodash for this. that's fine too,
+    but it's best to use tools that do exactly what you want: the mission
+    of underscore is to bring other functional programming goodies
+    to javascript, not to serve as a compatibility layer.
+    </notes>
 </div>
 
 <div>
@@ -295,6 +311,12 @@ var catsOnly = animals.filter(thatsACat);
 
 <div>
     like map, filter creates a new array and doesn't mess with your old one
+    <notes>
+    this concept, called 'immutability', is really deep. see immutable-js
+    for an example of it taken to the extreme. the benefits of immutability,
+    besides simpler code, extend into performance and the ability to
+    undo changes to data.
+    </notes>
 </div>
 
 
@@ -477,6 +499,12 @@ function filter(array, fn) {
 
 <div>
     so, use reduce always?
+    <notes>
+    for what it's worth, array.splice() is basically the reduce of
+    mutable array functions: you can use it instead of shift, unshift,
+    pop, push, and slice. but nobody ever remembers the order
+    of arguments and the name sounds weird so they don't.
+    </notes>
 </div>
 
 <div>

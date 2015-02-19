@@ -107,3 +107,7 @@ body.gainsboro {
     background:gainsboro;
     color:#000;
 }
+
+notes {
+    display:none;
+}

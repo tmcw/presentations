@@ -9,6 +9,8 @@ window.onload = function() {
         for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
         e.style.display = 'inline';
         e.style.fontSize = i + 'px';
+        var notes = e.getElementsByTagName('notes');
+        if (notes.length) console.log('%c'+n+': '+notes[0].innerHTML.trim(), 'padding:5px;font-family:serif;font-size:14px;line-height:150%;');
         if (e.firstChild && e.firstChild.nodeName === 'IMG') {
             document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
             document.body.style.height = window.innerHeight + 'px';
