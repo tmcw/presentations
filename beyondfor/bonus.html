@@ -1,0 +1,241 @@
+<!DOCTYPE html><html><head><title>Big</title><meta charset='utf-8'><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<script src='big.js'></script></head><body>
+
+<div>
+    let's talk <em>blocks vs functions</em> real quick
+</div>
+
+<div>
+    for loops are one kind of block:
+<pre>
+for <em>(var i = 0; i < 3; i++) {
+} </em>
+</pre>
+</div>
+
+<div>
+    blocks are in for loops,
+    switch statements, if / else
+</div>
+
+<div>
+    when you see <code>{ }</code> but no <code>function</code>,
+    you're looking at a block.
+</div>
+
+<div>
+    blocks are chunks of work: the code within them might run lots of times
+    <pre>for <em>(var i = 0; i < 3; i++) {
+  alert('annoy!')
+}</em></pre>
+</div>
+
+<div>
+    or it might never run
+    <pre>if <em>(false) {
+  alert('sad.')
+}</em></pre>
+</div>
+
+<div>
+    blocks and functions both have <code>{ }</code>
+    but have a big difference: <em>scope</em>
+</div>
+
+<div>
+    <em>scope</em> is <em>containingness</em>
+</div>
+
+<div>
+    variables are <em>contained in scopes</em>
+</div>
+
+<div>
+    this <em>saves us from conflict</em>.
+    without scope, every time you named a variable
+    you'd have to be sure it was <em>the only thing
+    named that everywhere</em>. that's crazy.
+</div>
+
+<div class='bigger'>
+    for instance,
+    <pre>
+function divide(a, b) {
+  var divided = a / b;
+  <em>divided only exists here!</em>
+  return divide;
+}
+var myResult = divide(1, 3);
+<em>divided doesnt exist here!</em>
+</div>
+
+<div>
+    so variables are <em>contained by scopes</em>
+    and <em>only functions</em> give you scopes
+</div>
+
+<div>
+    but, Tom, we were just talking about
+    loops, why does this matter?
+</div>
+
+<div>
+    <code>for</code> loops are blocks,
+    <code>map, filter, reduce</code> are functions.
+</div>
+
+<div>
+    example of disaster
+</div>
+
+<div class='bigger'>
+<pre>
+var numbers = [1,2,3];
+var sum = 0;
+<em>// i will leave my
+// important business here, yes</em>
+var importantBusiness = 42;
+
+<em>// copy &amp; pasted this - me</em>
+for (var i = 0; i < numbers.length; i++) {
+    sum = i += numbers[i];
+    <em>var importantBusiness = sum + 1</em>;
+}
+<em>importantBusiness is now equal to 6!?</em>
+</pre>
+</div>
+
+<div>
+    o no!
+</div>
+
+<div>
+    variables leak out &amp; in <code>for</code> loops.
+    another variable leaked out of that one:
+</div>
+
+<div class='bigger'>
+<pre>
+var numbers = [1,2,3];
+var sum = 0;
+// i will leave my
+// important business here, yes
+var importantBusiness = 42;
+
+// copy &amp; pasted this - me
+for (var i = 0; i < numbers.length; i++) {
+    sum = i += numbers[i];
+    var importantBusiness = sum + 1;
+}
+<em>// i = 16</em>
+</pre>
+</div>
+
+<div class='bigger'>
+    now see the functional version
+<pre>
+// i will leave my
+// important business here, yes
+var importantBusiness = 42;
+
+var numbers = [1,2,3];
+var sum = numbers.reduce(function(current, value) {
+  var importantBusiness = current + 1;
+  return current + value;
+}, 0);
+
+<em>importantBusiness = 42; still! phew.</em>
+</pre>
+</div>
+
+<div>
+    leak-free! the variables <em>current</em> and <em>value</em>
+    are contained within the function, and when we talk about
+    <em>importantBusiness</em>, it refers to the variable in function
+    scope, so the other one isn't affected.
+</div>
+
+<div>
+    having scopes also fixes this problem:
+<pre>
+for (var i = 0; i < 3; i++) {
+    setTimeout(function() {
+       console.log(i);
+    }, 10);
+}
+<em>logs 3, 3, 3</em>
+</pre>
+</div>
+
+<div>
+    voila!
+<pre>
+[0, 1, 2].map(function(i) {
+    setTimeout(function() {
+        console.log(i);
+    }, 10);
+});
+<em>logs 1, 2, 3</em>
+</pre>
+</div>
+
+<div>
+    the value is in the function's scope:
+    it doesn't change after being passed to the function.
+<pre>
+[0, 1, 2].map(function(<em>i</em>) {
+    setTimeout(function() {
+        console.log(<em>i</em>);
+    }, 10);
+});
+<em>logs 1, 2, 3</em>
+</pre>
+</div>
+
+
+<div>
+    it is possible to use a for loop and lock the value of i:
+    this is what we'd usually call a closure
+<pre>
+for (var i = 0; i < 3; i++) {
+    (function(i) {
+        setTimeout(function() {
+           console.log(i);
+        }, 10)
+    })(i);
+}
+<em>logs 1, 2, 3</em>
+</pre>
+</div>
+
+<div>
+    it looks weird and it is weird but it's always an
+    option.
+<pre>
+for (var i = 0; i < 3; i++) {
+    (function(i) {
+        setTimeout(function() {
+           console.log(i);
+        }, 10)
+    })(i);
+}
+<em>logs 1, 2, 3</em>
+</pre>
+</div>
+
+<script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+</body>
+</html>
