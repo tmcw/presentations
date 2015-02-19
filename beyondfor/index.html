@@ -789,11 +789,48 @@ var sum = numbers.reduce(function(current, value) {
 </pre>
 </div>
 
-<div class='bigger'>
+<div>
     leak-free! the variables <em>current</em> and <em>value</em>
     are contained within the function, and when we talk about
     <em>importantBusiness</em>, it refers to the variable in function
     scope, so the other one isn't affected.
+</div>
+
+<div>
+    having scopes also fixes this problem:
+<pre>
+for (var i = 0; i < 3; i++) {
+    setTimeout(function() {
+       console.log(i);
+    }, 10);
+}
+<em>logs 3, 3, 3</em>
+</pre>
+</div>
+
+<div>
+    voila!
+<pre>
+[0, 1, 2].map(function(i) {
+    setTimeout(function() {
+        console.log(i);
+    }, 10);
+});
+<em>logs 1, 2, 3</em>
+</pre>
+</div>
+
+<div>
+    the value is in the function's scope:
+    it doesn't change after being passed to the function.
+<pre>
+[0, 1, 2].map(function(<em>i</em>) {
+    setTimeout(function() {
+        console.log(<em>i</em>);
+    }, 10);
+});
+<em>logs 1, 2, 3</em>
+</pre>
 </div>
 
 <script type='text/javascript'>
