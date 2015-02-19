@@ -20,9 +20,9 @@ em {
 }
 
 a {
-  background: #34d0e7;
-  color:#000;
+  font-family:'CMU Typewriter Text', monospace;
   text-decoration:none;
+  color:yellow;
 }
 
 img {
