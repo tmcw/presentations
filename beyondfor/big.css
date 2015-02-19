@@ -102,3 +102,8 @@ pre.two {
 .deemphasize {
     color:#777;
 }
+
+body.gainsboro {
+    background:gainsboro;
+    color:#000;
+}
