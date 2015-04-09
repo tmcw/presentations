@@ -40,6 +40,24 @@ team member has met that person, worked with them, heard
 about them - and potential way they might fit on the team.
 ```
 
+If someone shows promise, a typical hiring progression goes from
+
+* Quick call, skype, or chat as a first-contact. This is _never a technical interview_:
+  it's to gauge what people are doing currently, interested in doing in the future,
+  and their expectations around work.
+* Set up a 2-6 day onsite at a main office - DC, SF, Bangalore, Peru
+
+The onsite consists of a project that's 'propped up' - heavily explained
+and presented - by a Mapbox employee who is your buddy for that time. The
+projects are real projects that aim to actually go into production at Mapbox:
+we don't have people work on toy software or technical challenges.
+
+During the onsite, we do "show & tells": essentially reverse-interviews
+where people who work at Mapbox talk about what they're working on currently.
+This is to help candidates get a grasp of what our overall goals and style
+is like, as well as giving them time to ask questions and offer their own
+thoughts on what we could improve.
+
 ## Resume Patterns
 
 Common trends in resumes:
