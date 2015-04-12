@@ -82,7 +82,7 @@ Don't reduce yourself to a list of frameworks. This is a scary trend and it's
 unproductive to the hiring process.
 
 At the very least, if you want to think about specifics, think
-about them vertically, not horizontally: in order from least technical
+about them vertically, not horizontally: in order from least applied
 to most is
 
 * Teamwork
