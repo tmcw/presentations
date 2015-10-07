@@ -1,0 +1,68 @@
+body {
+  font-family:'PT Serif';
+  background:#fff;
+  background-size:100%;
+  color:#000;
+  margin:0;
+  padding:0;
+  font-weight:normal;
+}
+
+body * {
+  display:inline-block;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+strike {
+  color:red;
+}
+
+em, a {
+  font-style:normal;
+  color:blue;
+}
+
+quiet {
+  opacity: 0.6;
+}
+
+a {
+  background:#34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:0.5em;
+  line-height:130%;
+  white-space: pre;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
+}
+

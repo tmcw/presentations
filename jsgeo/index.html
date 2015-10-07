@@ -1,0 +1,306 @@
+<!DOCTYPE html><html><head>
+<title>Big</title>
+<meta charset='utf-8' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<script src='big.js'></script>
+<style>
+.tiger { background:url(tiger.png); }
+.osm-qa { background:url(osm-qa.png); }
+.vintage { background:url(vintage.png); }
+.flights { background-image:url(flights.png); }
+.blueprint { background:url(blueprint.png); }
+.fin { background-image:url(fin.gif); }
+.floating-point { background-image:url(floating-point.gif); }
+.introspection { background-image:url(introspection.png); }
+.transition { background-image:url(transition.gif); }
+.grayish { background: #7E807F; }
+h2 { border-bottom: 4px solid #000; }
+h3 { border-bottom: 4px solid #000; width: 100%; }
+</style>
+</head>
+<body>
+
+<div style='background:#000;'><span style='background:#fff;padding:0.5em;margin:0.5em 0;'>How we got here</span>
+<span style='color:#fff;font-size:60%;line-height:110%;'>Tom MacWright
+@tmcw / @Mapbox</span>
+</div>
+
+<div><strong>History</strong>
+<strike>TileMill
+CartoCSS
+Mapbox.js
+Mapbox Studio Classic
+</strike>
+Mapbox GL JS
+Mapbox Studio<notes>
+I've been working on this stuff for a long time, since around 2008. I've seen
+a lot of things come and go. I've worked on projects that took off, and projects
+that never saw the light of day. At this juncture, I'm working on Mapbox Studio
+and Mapbox GL JS as much as I can, and am honestly very optimistic about the
+next few years in mapping.
+
+This would suggest that I should just talk about Mapbox Studio and GL JS
+and how cool they are.
+</notes>
+</div>
+
+<div><strong>Flashy demos</strong>: 0<notes>
+But I'm going to take a guess that you like your demos on your own computer
+rather than a projector, and since you're here you aren't just shopping for
+technology, you're building it. So apologies if you're completely unsold:
+I'm not going to try.
+</notes></div>
+
+<div><strong>Instead</strong>
+The logic, not the end-product</div>
+
+<div data-bodyclass='blueprint'><span style='background:#fff;padding:1em;'><strong>Map rendering</strong>
+Transforming geographical data into representation</span></div>
+
+<div data-bodyclass='blueprint'><span style='background:#fff;padding:1em;'><strong>Why are maps so hard</strong></span></div>
+
+<div><strong>The crux</strong>
+<strike>Fancy file formats
+Styling language syntax</strike><notes>Given all of the hype you see in the mapping
+industry, you might think that these are the parts that matter: that
+vector tiles are fancier and faster and CartoCSS or MapCSS or Mapbox GL Style Spec
+or JavaScript is the thing that unlocks all of this amazing potential</notes>
+</div>
+
+<div><strong>The crux</strong>
+<strike>Mapbox Vector Tiles
+Mapbox GL Style Spec</strike><notes>And, yeah,
+that stuff is cool and we've been working on it a lot, but the axis
+of maps turns elsewhere.</notes>
+</div>
+
+<div><strong>Culling</strong>
+<i>selecting from a large quantity;
+obtaining from a variety of sources</i></div>
+
+<div><strong>See also</strong>
+<i>search, caching, binning</i></div>
+
+<div>The biggest improvement in map performance
+is from what you choose <i>not to draw</i></div>
+
+<div>Unnecessary features, unnecessary details,
+every place in the world other than the
+one you're looking at</div>
+
+<div data-bodyclass='vintage'><span style='background:#fff;padding:0.5em;'>Let's begin</span></div>
+
+<div><small>Phase 1</small>
+<h2>UNTILED WMS</h2>
+<i>Selection</i> by a bounding box &amp; dimensions.
+Everything was generated from scratch.
+<i>Nothing was reused.</i><notes>See http://dev.openlayers.org/examples/wms-untiled.html for
+an example of this</notes>
+</div>
+
+<div><small>Phase 2</small>
+<h2>Google-Style Tiles</h2>
+<i>Selection</i> by tile coordinates.
+Unlike coordinates, tiles are predictable.
+Two users looking at Philadelphia <i>see the same tiles</i>.
+<i>Tiles are reused and cached.</i><notes>These tiles are called XYZ tiles
+nowadays, and OpenStreetMap has the best specification for them: http://wiki.openstreetmap.org/wiki/Slippy_Map
+It's a folksy spec with no real governing body, but it's worked out pretty fine because it's
+so simple.</notes>
+</div>
+
+<div>This was a big deal.
+Without tiles, we would be nowhere.</div>
+
+<div><small>Phase 2.5</small>
+<h2>Tiles and Overlays</h2>
+The era of Leaflet
+- Tiled raster maps for complex base data
+- Vectors atop in SVG, HTML, or Canvas
+
+this is more or less right now
+<notes></notes>
+</div>
+
+<div>Enter stage right: Vector Tiles</div>
+
+<div><quiet>Vector is an overloaded term</quiet>
+there is vector data,
+like GeoJSON or Shapefiles</div>
+
+<div><quiet>Vector is an overloaded term</quiet>
+there is vector rendering,
+like SVG, Canvas, or PostScript</div>
+
+<div data-bodyclass='tiger'><span style='background:#fff;padding:1em;'>Shoutout to PostScript</span><notes>
+No, but seriously, PostScript is a true language nerd's language:
+it's a turing-complete concatenative language that everyone just thinks
+is for printers. It's hella cool
+https://en.wikipedia.org/wiki/PostScript
+</notes></div>
+
+<div>Vector tiles are none of these things</div>
+
+<div><strong>Vector tiles</strong>
+<i>Non-visual, non-geographical efficient tiled data</i>
+</div>
+
+<div><strong>Non-visual</strong>
+Unlike SVG, they don't have style.
+
+They don't have color or width.
+Only points, lines, and polygons.</div>
+
+<div><strong>Non-visual</strong>
+Unlike GeoJSON, they don't have coordinates.
+
+Not latitude or longitude.
+Only pixel offsets within tiles.</div>
+
+<div><strong>Efficient</strong>
+Vector tiles are designed for the whole map.
+Not just an overlay.</div>
+
+<div>{Close loop}<notes>Okay, so I've given the thousand foot description of
+vector tiles: let's return to the phases of mapping within this information
+and see how it connects.</notes></div>
+
+<div><small>Phase 2.75</small>
+<h2>Vector-tile backed raster tiles</h2>
+You see images in your browser that look like normal
+image tiles, but behind the scenes they're rendered
+from vector tiles on the fly.
+</div>
+
+<div>Mapbox did this for a year
+Google did too
+What the heck?
+Why?
+</div>
+
+<div>If you aren't using WebGL,
+why go vector?
+</div>
+
+<div><strong>Culling</strong>
+<i>selecting from a large quantity;
+obtaining from a variety of sources</i><notes>Look at that:
+closing the narrative loop.</div>
+
+<div><h3>WMS</h3>
+- cache nothing
+</div>
+
+<div><h3>Tiles</h3>
+- cache output
+</div>
+
+<div><h3>Vector Tiles</h3>
+- preprocess + cache <strong>input</strong>
+</div>
+
+<div data-bodyclass='osm-qa'><span style='background:#fff;padding:0.2em;border:1px solid #888;'>this is a big deal</span></div>
+
+<div><strong>Drawing is fast</strong>
+<strong>Mapbox GL JS or Mapnik</strong> can redraw
+a map in milliseconds.
+</div>
+
+<div><strong>Culling</strong>
+The milliseconds spent in map rendering are
+centered around <strong>culling</strong>, not drawing.
+</div>
+
+<div><strong>Culling</strong>
+- Querying PostGIS
+- Network latency
+</div>
+
+<div>Vector tiles <em>split culling from drawing</em>
+So drawing can be fast and culling can be cached
+</div>
+
+<div data-bodyclass='flights'><span style='background:#fff;padding:0.2em;'>Phase 3</span></div>
+
+<div><small>Phase 3</small>
+<h2>Vector</h2>
+Vector tiles are visualized directly
+in your browser.
+</div>
+
+<div>Effectively no caching of visual output
+<em>because it's so fast to regenerate</em></div>
+
+<div><strong>IMPORTANT</strong>
+Vector tiles are efficiently encoded:
+versus GeoJSON, they can easily save 50% of filesize</div>
+
+<div>But culling is so much more important</div>
+
+<div>The OSM Planet is 29 gigabytes.
+
+You typically see 0.00172% of it.<notes>Obviously fuzzy numbers, but this is roughly 400kb / 29gb</notes></div>
+
+<div>Postscript: Mapbox Studio<notes>Circling back again, huh<notes></div>
+
+<div><strong>TileMill</strong>
+data to styled raster maps</div>
+
+<div><strong>Mapbox Studio Classic</strong>
+data to vector tiles
+vector tiles to styled raster maps
+</div>
+
+<div><strong>Mapbox Studio</strong>
+styles for vector maps
+</div>
+
+<div>  <strong>Everything changes</strong>
+- floating-point zoom levels
+- animated transitions
+- low-level stylesheets
+- resolution independence
+</div>
+
+<div>all because of vector tiles</div>
+
+<div data-bodyclass='floating-point'><span style='background:#fff;padding:0.2em;'><strong>floating-point zoom levels</strong>
+Because vector tiles can be losslessly transformed</span>
+</div>
+
+<div data-bodyclass='grayish'> <img src='zoom-stop.png' /></div>
+
+<div data-bodyclass='transition'><span style='background:#000;color:#fff;padding:0.2em;'><strong>animated transitions</strong>
+Because re-rendering maps is fast
+</div>
+
+<div><strong>resolution independence</strong>
+Because the same vector &amp; fonts can be
+rendered at any dpi, and we dynamically render
+SVG sprites.</div>
+
+<div data-bodyclass='introspection'><span style='background:#000;color:#fff;padding:0.2em;'><strong>data introspection</strong>
+Because the data actually reaches your browser</div>
+
+<div>"winding down"
+vector tiles are a real change
+to the architecture of web mapping
+</div>
+
+<div>"winding down"
+mapbox vector tiles,
+inspired by many efforts before,
+are currently the most prominent open standard*
+</div>
+
+<div>"winding down"
+see github.com/mapbox for the tech
+</div>
+
+<div data-bodyclass='fin'><span style='background:#fff;padding:0.1em;margin:0.9em;'>fin</span>
+<span style='background:#fff;padding:0.1em;margin:0.9em;'>@tmcw / @mapbox</span>
+</div>
+
+</body>
+</html>
