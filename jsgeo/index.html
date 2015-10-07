@@ -34,9 +34,9 @@ Mapbox Studio Classic
 </strike>
 Mapbox GL JS
 Mapbox Studio<notes>
-I've been working on this stuff for a long time, since around 2008. I've seen
-a lot of things come and go. I've worked on projects that took off, and projects
-that never saw the light of day. At this juncture, I'm working on Mapbox Studio
+I've been working on this stuff for a long time. I've worked on projects
+that took off, and projects that never saw the light of day. At this
+juncture, I'm working on Mapbox Studio
 and Mapbox GL JS as much as I can, and am honestly very optimistic about the
 next few years in mapping.
 
@@ -119,8 +119,12 @@ The era of Leaflet
 - Tiled raster maps for complex base data
 - Vectors atop in SVG, HTML, or Canvas
 
-this is more or less right now
-<notes></notes>
+this is more or less right now<notes>The subtext is that we have vectors already,
+and have had vector rendering in one form or another since the very early days
+(fun fact that the earliest computer monitors were vector, and were super cool).
+But the place where it sits in the mapping world is just short of "actually powering
+a map": tech like SVG and Canvas is pretty neat but not good enough or fast
+enough to render complex base maps.</notes>
 </div>
 
 <div>Enter stage right: Vector Tiles</div>
@@ -156,7 +160,10 @@ Only points, lines, and polygons.</div>
 Unlike GeoJSON, they don't have coordinates.
 
 Not latitude or longitude.
-Only pixel offsets within tiles.</div>
+Only pixel offsets within tiles.<notes>The astute reader might
+point out: but you can unproject those pixels back to geographical coordiantes.
+Indeed you can! But that's not the driving intent of the format: vector
+tiles are designed as a processed data representation, not a raw one.</notes></div>
 
 <div><strong>Efficient</strong>
 Vector tiles are designed for the whole map.
@@ -193,7 +200,10 @@ closing the narrative loop.</div>
 </div>
 
 <div><h3>Tiles</h3>
-- cache output
+- cache output<notes>This caching really happens on lots of levels:
+MBTiles at the first, and then memory caches like memcached on the server level,
+and Cloudfront and Fastly at the CDN level, and finally in the browser.
+Caches on caches.</notes>
 </div>
 
 <div><h3>Vector Tiles</h3>
@@ -215,6 +225,7 @@ centered around <strong>culling</strong>, not drawing.
 <div><strong>Culling</strong>
 - Querying PostGIS
 - Network latency
+- Feature simplification
 </div>
 
 <div>Vector tiles <em>split culling from drawing</em>
@@ -242,10 +253,33 @@ versus GeoJSON, they can easily save 50% of filesize</div>
 
 You typically see 0.00172% of it.<notes>Obviously fuzzy numbers, but this is roughly 400kb / 29gb</notes></div>
 
+<div>In TileMill, to render a single tile,
+
+- Mapnik connects to PostGIS
+- Mapnik queries PostGIS for a bounding box
+- PostGIS asks its R-Tree index for features
+- PostGIS encodes those features into WKB, sends them to Mapnik
+- Mapnik parses WKB into geometries in memory
+- Mapnik reprojects geometries into screen coordinates
+- Mapnik draws the tile</div>
+
+<div>The parts are cached into vector tiles
+
+<strike>- Mapnik connects to PostGIS
+- Mapnik queries PostGIS for a bounding box
+- PostGIS asks its R-Tree index for features
+- PostGIS encodes those features into WKB, sends them to Mapnik
+- Mapnik parses WKB into geometries in memory
+- Mapnik reprojects geometries into screen coordinates</strike>
+- Mapnik draws the tile</div>
+
 <div>Postscript: Mapbox Studio<notes>Circling back again, huh<notes></div>
 
 <div><strong>TileMill</strong>
-data to styled raster maps</div>
+data to styled raster maps<notes>TileMill: remember that? That's a project
+we did on a Knight News grant, a desktop tool for map creation. It was the reason
+CartoCSS got built, and a real cool experience. It's still around as an open
+source project.</notes></div>
 
 <div><strong>Mapbox Studio Classic</strong>
 data to vector tiles
@@ -291,7 +325,8 @@ to the architecture of web mapping
 <div>"winding down"
 mapbox vector tiles,
 inspired by many efforts before,
-are currently the most prominent open standard*
+are currently the most prominent open standard*<notes>troll me about open
+standards, i dare you.</notes>
 </div>
 
 <div>"winding down"

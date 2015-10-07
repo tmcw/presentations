@@ -12,6 +12,13 @@ window.onload = function() {
         }
         e.style.marginTop = (h - e.offsetHeight) / 2 + 'px';
     }
+    function log(n, msg) {
+      if (/PhantomJS/.test(window.navigator.userAgent)) {
+        console.log(msg);
+      } else {
+        console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, msg);
+      }
+    }
     function go(n) {
         big.current = n;
         var e = s[n], t = parseInt(e.getAttribute('data-timeToNext') || 0, 10),
@@ -20,7 +27,7 @@ window.onload = function() {
         for (i = 0; i < s.length; i++) s[i].style.display = 'none';
         e.style.display = 'inline';
         e.focus();
-        for (i = 0; typeof console === 'object' && i < notes.length; i++) console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, notes[i].innerHTML.trim());
+        for (i = 0; typeof console === 'object' && i < notes.length; i++) log(n, notes[i].innerHTML.trim());
         if (e.firstChild && e.firstChild.nodeName === 'IMG') {
             document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
             e.firstChild.style.display = 'none';
