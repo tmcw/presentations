@@ -110,7 +110,9 @@ an example of this</notes>
 &amp;REQUEST=GetMap
 &amp;SRS=EPSG:3A4326
 &amp;BBOX=-32.52,20.03,34.97,53.78
-&amp;WIDTH=768&amp;HEIGHT=384
+&amp;WIDTH=768&amp;HEIGHT=384<notes>untiled wms is what we call nowadays
+just straight-up 'static maps'. it used to be way more common and is pretty
+much the only reliable way to request non-mercator maps.</notes>
 </div>
 
 <div><small>Phase 2</small>
@@ -186,11 +188,17 @@ tiles are designed as a processed data representation, not a raw one.</notes></d
 
 <div><strong>Efficient</strong>
 Vector tiles are designed for the whole map.
-Not just an overlay.</div>
+Not just an overlay.<notes>Shoutouts to Open Science Map, the project that
+created some really early but amazing specs for vector tiles. It takes a really
+really really long time to get the details right on vector tiles, and so it's
+not super surprising that Mapbox's are more or less the only (open) horse
+in the race, but I welcome the eventuality of competitors. As long as they
+actually improve on it, not just rebrand.</notes></div>
 
 <div><strong>Efficient: Protocol Buffers</strong>
 Binary encoding, plus numeric tricks like zig-zag
-encodings, make vector tiles fast</div>
+encodings, make vector tiles fast<notes>props to google for protocol buffers
+and kenton for captnproto and sandstorm - he's doing a good thing for everyone.</notes></div>
 
 <div>but wait! non-geographic? non visual?
 vector tiles are used for all kinds
@@ -273,6 +281,20 @@ centered around <strong>culling</strong>, not drawing.
 - Feature simplification
 </div>
 
+<div><strong>To be clear</strong>
+- Culling ain't compression
+- It is throwing data away
+- This is what you are doing<notes>yep, this is kind of a subtweet of stuff
+like topojson and torque. much love to those specs - they do amazing, fantastic
+things to data that rule, but it's really important that they don't just
+represent the same information in less space - they fundamentally change
+what the information is, at its core, irreversibly</notes>
+</div>
+
+<div>some things don't compress, like openstreetmap ids and coordinates<notes>Fun sidenote:
+in information theory, and cringe at my vast oversimplification, but compressibility
+is the other end of entropy: the more entropy, the less simplicity.</notes><div>
+
 <div>Vector tiles <em>split culling from drawing</em>
 So drawing can be fast and culling can be cached
 </div>
@@ -328,11 +350,15 @@ source project.</notes></div>
 
 <div><strong>Mapbox Studio Classic</strong>
 data to vector tiles
-vector tiles to styled raster maps
+vector tiles to styled raster maps<notes>Yeah, this one's kind of weird
+for us too - it's some parts a stepping-stone and also sort of a vector
+tile processing powertool more similar to tippecanoe than like Mapbox Studio
+https://github.com/mapbox/tippecanoe</notes>
 </div>
 
 <div><strong>Mapbox Studio</strong>
-styles for vector maps
+styles for vector maps<notes>see https://www.mapbox.com/studio for
+the deets on studio</notes>
 </div>
 
 <div>  <strong>Everything changes</strong>
@@ -390,7 +416,10 @@ see github.com/mapbox for the tech
 <div>Bonus goals: QA
 
 Q: Why no animated maps?
-A: No standards
+A: No standards<notes>There are lots and lots of demos of animated data,
+and lots of proposals for heavily-optimized formats, but no unoptimized
+simple formats. We need to just finish the GeoJSON-LD time series spec and
+adopt it.</notes>
 </div>
 
 <div>Bonus goals: QA
@@ -414,9 +443,19 @@ a bad metaphor for maps
 
 <div>Bonus goals: QA
 
+Q: Why did you kill CartoCSS?
+A: JSON won
+</div>
+
+<div>Bonus goals: QA
+
 Q: Why did you kill the code editor?
 A: Preventing mistakes and making
 assurances
+</div>
+
+<div data-bodyclass='fin'><span style='background:#fff;padding:0.1em;margin:0.9em;'>this time for real fin</span>
+<span style='background:#fff;padding:0.1em;margin:0.9em;'>@tmcw / @mapbox</span>
 </div>
 
 </body>
