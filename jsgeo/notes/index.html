@@ -84,7 +84,8 @@ of maps turns elsewhere.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0016.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>untiled wms is what we call nowadays just straight-up &#x27;static maps&#x27;. it used to be way more common and is pretty
+much the only reliable way to request non-mercator maps.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0017.png' /></div>
@@ -146,16 +147,19 @@ tiles are designed as a processed data representation, not a raw one.</div></div
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0029.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>Shoutouts to Open Science Map, the project that created some really early but amazing specs for vector tiles. It takes a really
+really really long time to get the details right on vector tiles, and so it&#x27;s
+not super surprising that Mapbox&#x27;s are more or less the only (open) horse
+in the race, but I welcome the eventuality of competitors. As long as they
+actually improve on it, not just rebrand.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0030.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>props to google for protocol buffers and kenton for captnproto and sandstorm - he&#x27;s doing a good thing for everyone.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0031.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>Okay, so I&#x27;ve given the thousand foot description of vector tiles: let&#x27;s return to the phases of mapping within this information
-and see how it connects.</div></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0032.png' /></div>
@@ -167,11 +171,14 @@ and see how it connects.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0034.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>This probably pushes people in separate directions, right? like half the audience is pumping their fists that their CS educations are finally paying
+off and other half find &#x27;datastructures&#x27; to be an even more intimidating
+word than databases</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0035.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>Look at that: closing the narrative loop.</div></div>
+    <div class="col lg-col-6"><div class='px2'>Okay, so I&#x27;ve given the thousand foot description of vector tiles: let&#x27;s return to the phases of mapping within this information
+and see how it connects.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0036.png' /></div>
@@ -179,9 +186,7 @@ and see how it connects.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0037.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>This caching really happens on lots of levels: MBTiles at the first, and then memory caches like memcached on the server level,
-and Cloudfront and Fastly at the CDN level, and finally in the browser.
-Caches on caches.</div></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0038.png' /></div>
@@ -189,7 +194,7 @@ Caches on caches.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0039.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>Look at that: closing the narrative loop.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0040.png' /></div>
@@ -197,7 +202,9 @@ Caches on caches.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0041.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>This caching really happens on lots of levels: MBTiles at the first, and then memory caches like memcached on the server level,
+and Cloudfront and Fastly at the CDN level, and finally in the browser.
+Caches on caches.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0042.png' /></div>
@@ -221,15 +228,19 @@ Caches on caches.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0047.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>yep, this is kind of a subtweet of stuff like topojson and torque. much love to those specs - they do amazing, fantastic
+things to data that rule, but it&#x27;s really important that they don&#x27;t just
+represent the same information in less space - they fundamentally change
+what the information is, at its core, irreversibly</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0048.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>Fun sidenote: in information theory, and cringe at my vast oversimplification, but compressibility
+is the other end of entropy: the more entropy, the less simplicity.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0049.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>Obviously fuzzy numbers, but this is roughly 400kb / 29gb</div></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0050.png' /></div>
@@ -245,9 +256,7 @@ Caches on caches.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0053.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>TileMill: remember that? That&#x27;s a project we did on a Knight News grant, a desktop tool for map creation. It was the reason
-CartoCSS got built, and a real cool experience. It&#x27;s still around as an open
-source project.</div></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0054.png' /></div>
@@ -255,7 +264,7 @@ source project.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0055.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>Obviously fuzzy numbers, but this is roughly 400kb / 29gb</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0056.png' /></div>
@@ -271,15 +280,19 @@ source project.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0059.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>TileMill: remember that? That&#x27;s a project we did on a Knight News grant, a desktop tool for map creation. It was the reason
+CartoCSS got built, and a real cool experience. It&#x27;s still around as an open
+source project.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0060.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>Yeah, this one&#x27;s kind of weird for us too - it&#x27;s some parts a stepping-stone and also sort of a vector
+tile processing powertool more similar to tippecanoe than like Mapbox Studio
+https://github.com/mapbox/tippecanoe</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0061.png' /></div>
-    <div class="col lg-col-6"><div class='px2'></div></div>
+    <div class="col lg-col-6"><div class='px2'>see https://www.mapbox.com/studio for the deets on studio</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0062.png' /></div>
@@ -291,7 +304,7 @@ source project.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0064.png' /></div>
-    <div class="col lg-col-6"><div class='px2'>troll me about open standards, i dare you.</div></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0065.png' /></div>
@@ -299,6 +312,64 @@ source project.</div></div>
   </div>
   <div class="clearfix py2">
     <div class="col lg-col-6"><img class='border' src='images/page-0066.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0067.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0068.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0069.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0070.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0071.png' /></div>
+    <div class="col lg-col-6"><div class='px2'>troll me about open standards, i dare you.</div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0072.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0073.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0074.png' /></div>
+    <div class="col lg-col-6"><div class='px2'>There are lots and lots of demos of animated data, and lots of proposals for heavily-optimized formats, but no unoptimized
+simple formats. We need to just finish the GeoJSON-LD time series spec and
+adopt it.</div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0075.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0076.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0077.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0078.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0079.png' /></div>
+    <div class="col lg-col-6"><div class='px2'></div></div>
+  </div>
+  <div class="clearfix py2">
+    <div class="col lg-col-6"><img class='border' src='images/page-0080.png' /></div>
     <div class="col lg-col-6"><div class='px2'></div></div>
   </div>
 </div>
