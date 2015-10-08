@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-<title>Big</title>
+<title>JSGeo</title>
 <meta charset='utf-8' />
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
 <link href='big.css' rel='stylesheet' type='text/css' />
@@ -24,6 +24,11 @@ h3 { border-bottom: 4px solid #000; width: 100%; }
 <div style='background:#000;'><span style='background:#fff;padding:0.5em;margin:0.5em 0;'>How we got here</span>
 <span style='color:#fff;font-size:60%;line-height:110%;'>Tom MacWright
 @tmcw / @Mapbox</span>
+</div>
+
+<div>macwright.org/presentations/jsgeo</div>
+
+<div>notes: <a href='http://macwright.org/presentations/jsgeo/notes/'>j.mp/jsgeo</a>
 </div>
 
 <div><strong>History</strong>
@@ -99,6 +104,14 @@ Everything was generated from scratch.
 an example of this</notes>
 </div>
 
+<div>
+<strong>UNTILED WMS</strong>
+&amp;REQUEST=GetMap
+&amp;SRS=EPSG:3A4326
+&amp;BBOX=-32.52,20.03,34.97,53.78
+&amp;WIDTH=768&amp;HEIGHT=384
+</div>
+
 <div><small>Phase 2</small>
 <h2>Google-Style Tiles</h2>
 <i>Selection</i> by tile coordinates.
@@ -108,6 +121,11 @@ Two users looking at Philadelphia <i>see the same tiles</i>.
 nowadays, and OpenStreetMap has the best specification for them: http://wiki.openstreetmap.org/wiki/Slippy_Map
 It's a folksy spec with no real governing body, but it's worked out pretty fine because it's
 so simple.</notes>
+</div>
+
+<div>
+<strong>Google-Style Tiles</strong>
+/6/12/5
 </div>
 
 <div>This was a big deal.
@@ -168,6 +186,10 @@ tiles are designed as a processed data representation, not a raw one.</notes></d
 <div><strong>Efficient</strong>
 Vector tiles are designed for the whole map.
 Not just an overlay.</div>
+
+<div><strong>Efficient: Protocol Buffers</strong>
+Binary encoding, plus numeric tricks like zig-zag
+encodings, make vector tiles fast</div>
 
 <div>{Close loop}<notes>Okay, so I've given the thousand foot description of
 vector tiles: let's return to the phases of mapping within this information
