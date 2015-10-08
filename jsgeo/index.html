@@ -191,6 +191,20 @@ Not just an overlay.</div>
 Binary encoding, plus numeric tricks like zig-zag
 encodings, make vector tiles fast</div>
 
+<div>but wait! non-geographic? non visual?
+vector tiles are used for all kinds
+of data usecases, as you'll see today.</div>
+
+<div>you can unproject a vector tile and
+get geographical data (albeit <em>quantized</em>)
+back</div>
+
+<div>raster tiles are
+<em>facets of a gigantic image</em>
+
+vector tiles are
+<em>facets into a database</em></div>
+
 <div>{Close loop}<notes>Okay, so I've given the thousand foot description of
 vector tiles: let's return to the phases of mapping within this information
 and see how it connects.</notes></div>
@@ -267,7 +281,7 @@ in your browser.
 
 <div><strong>IMPORTANT</strong>
 Vector tiles are efficiently encoded:
-versus GeoJSON, they can easily save 50% of filesize</div>
+they're radically smaller than equivalent GeoJSON</div>
 
 <div>But culling is so much more important</div>
 
