@@ -13,6 +13,9 @@
     - documentation.js cares not about problem domains
   - JSDoc as a center of tensions
     - tension between personal responsibility and political requirement
+      - http://voices.canonical.com/jussi.pakkanen/2012/09/25/the-code-documentation-fallacy/
+      - http://stackoverflow.com/questions/6096649/documenting-node-js-projects/6096709#6096709
+        - "JSDoc is a port of JavaDoc. So basically the documentation assumes classical OOP and that's not suited to JavaScript."
     - tension between JavaScript as polymorphic, flexible language and
       a language with type concepts
       - JavaScript is often taught with a regrettable lack of emphasis on types.
