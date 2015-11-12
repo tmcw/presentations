@@ -7,9 +7,13 @@ window.onload = function() {
     function resize() {
         var w = window.innerWidth, h = window.innerHeight, e = s[big.current];
         e.style.fontSize = h + 'px';
-        for (i = h - 2; i > 0 && (e.offsetWidth > w || e.offsetHeight > h); i -= 2) {
+        function pass(cinch, start) {
+          for (var i = start; i > 0 && (e.offsetWidth > w || e.offsetHeight > h); i -= cinch) {
             e.style.fontSize = i + 'px';
+          }
+          return i + cinch;
         }
+        pass(2, pass(5, pass(10, h - 2)));
         e.style.marginTop = (h - e.offsetHeight) / 2 + 'px';
     }
     function go(n) {
