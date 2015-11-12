@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>documentation.js at NationJS</title>
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<script src='big.js'></script></head><body>
+
+<div><u>documentation</u><br /><br /><l>Tom MacWright<br />@tmcw<br />Mapbox</l><notes>
+Hi, I'm Tom. Usually I write cartography software at Mapbox, but
+I've been spending a lot of time thinking about documentation,
+writing documentation, and creating a system called documentation.js.</notes></div>
+
+<div><span style='color:hsl(0,100%,50%)'>abstract, narrative</span>
+<ul>
+  <li style='color:hsl(40,100%,50%)'>Blog Posts
+  <li style='color:hsl(60,100%,50%)'>Guides
+  <li style='color:hsl(80,100%,50%)'>Examples
+  <li style='color:hsl(100,100%,50%)'>API Docs
+</ul>
+<span style='color:hsl(140,100%,50%)'>concrete, technical</span>
+<notes>documentation is a multifaceted problem, and documentation.js
+is hitting it from one specific angle: API Docs. this sort of information
+lies at the concrete and technical end of the spectrum: while it can
+include lots of natural-language instructions, it is structured primarily
+from the view of the code.</notes>
+</div>
+
+<div>
+  <table>
+    <tr>
+      <td>JS+JSDoc</td>
+      <td style='color:cyan;padding:0 8vh;'>✈</td>
+      <td>HTML<br />JSON<br />MD</td>
+    </tr>
+  </table>
+</div>
+
+<div>
+<pre><doc>/**
+ * Fire event of a given string...
+ *
+ * @param {string} type Event type
+ * @param {Object} [data] Optional data...
+ * @returns {Object} `this`
+ */</doc>
+fire: function(type, data) {</pre>
+</div>
+
+<div>
+<img src='./api-doc-example.png' /><notes>API documentation is a reference
+manual for software: it's concerned with definition as much as explanation.
+</notes>
+</div>
+
+<div>
+API doc generators have fallen out of favor.<br />
+<e>Lots of APIs are documented <u>manually</u> in Markdown.</e>
+</div>
+
+<div>
+<ul>
+  <li>Code <i>is</i> documentation</li>
+  <li>JavaScript is ineffable</li>
+  <li>JSDoc is verbose</li>
+  <li>Requiring docs means bad docs</li>
+</ul><notes>There are lots of alternative views here: many prominent
+library authors will only write manual documentation, and a lot of people
+only write examples, or sometimes no docmentation at all. Documentation is
+as much a cultural issue as a technical one.</notes>
+</div>
+
+<div>
+JavaScript is changing, and so are we.<br />
+<l>It's time for the second coming of documentation generators.</l>
+<notes>But there's a lot that
+informed my decision to pour lots of time into documentation.js, both
+in terms of personal experience and also the changing way how
+the JavaScript community thinks.</notes>
+</div>
+
+<div>
+<nb>Why documentation.js now</nb><br />
+<ul>
+  <li style='color:hsl(40,100%,50%)'>ASTs</li>
+  <li style='color:hsl(60,100%,50%)'>Type systems</li>
+  <li style='color:hsl(80,100%,50%)'>Small modules (ES6!)</li>
+</ul>
+</div>
+
+<div>
+<pink>❤</pink> AST<notes>I'll put it right out there:
+the rise of Abstract Syntax Trees and good parsers for JavaScript is the
+single coolest thing I've seen in the last year.</notes>
+</div>
+
+<div>
+<pink>AST</pink></br />
+a hackable representation of parsed JS
+</div>
+
+<div>
+JavaScript parsing, transforming, <u>analyzing</u>, and writing itself
+</div>
+
+<div>
+Why is this cool?
+</div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @name timesTwo
+ * @type function
+ * @memberof MyClass
+ * @param {number} input a number
+ * @returns {number} times two
+ */</doc>
+</div>
+
+<div>
+<pre><doc> *...
+ */</doc>
+MyClass.timesTwo = function(a) {
+  return a * 2;
+};
+</div>
+
+<div>
+<pre>{
+    "type": "Program",
+    "body": [
+        {
+            "type": "ExpressionStatement",
+            "expression": {
+                "type": "AssignmentExpression",
+                "operator": "=",
+                "left": {
+                    "type": "MemberExpression",
+                    "computed": false,
+                    "object": {
+                        "type": "Identifier",
+                        "name": "MyClass"
+                    },
+                    "property": {
+                        "type": "Identifier",
+                        "name": "timesTwo"
+                    }
+                },
+                "right": {
+                    "type": "FunctionExpression",
+                    "id": null,
+                    "params": [
+                        {
+                            "type": "Identifier",
+                            "name": "a"
+                        }
+                    ],
+                    "defaults": [],
+                    "body": {
+                        "type": "BlockStatement",
+                        "body": [
+                            {
+                                "type": "ReturnStatement",
+                                "argument": {
+                                    "type": "BinaryExpression",
+                                    "operator": "*",
+                                    "left": {
+                                        "type": "Identifier",
+                                        "name": "a"
+                                    },
+                                    "right": {
+                                        "type": "Literal",
+                                        "value": 2,
+                                        "raw": "2"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "generator": false,
+                    "expression": false
+                }
+            }
+        }
+    ],
+    "sourceType": "script"
+}</pre>
+</div>
+
+<div>
+Let's delete some code
+</div>
+
+<div><pre>{
+  "type": <f>"MemberExpression"</f>,
+  "object": {
+    "type": "Identifier",
+    "name": <f>"MyClass"</f>
+  },
+  "property": {
+    "type": "Identifier",
+    "name": "timesTwo"
+  }
+}</pre></div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @name timesTwo
+ * @type function
+ <f>* @memberof MyClass</f>
+ * @param {number} input a number
+ * @returns {number} times two
+ */</doc>
+</div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @name timesTwo
+ * @type function
+ * @param {number} input a number
+ * @returns {number} times two
+ */</doc>
+</div>
+
+<div><pre>...
+  "property": {
+    "type": "Identifier",
+    "name": <f>"timesTwo"</f>
+  }
+},
+"right": {
+  "type": <f>"FunctionExpression"</f>,</pre></div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * <f>@name timesTwo</f>
+ * <f>@type function</f>
+ * @param {number} input a number
+ * @returns {number} times two
+ */</doc>
+</div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @param {number} input a number
+ * @returns {number} times two
+ */</doc>
+</div>
+
+<div>
+<nb>Let's keep going:</nb>
+<nb style='color:hsl(60,100%,50%)'>Type systems!</nb>
+</div>
+
+<div>
+<pre><doc> *...
+ */</doc>
+MyClass.timesTwo = <f>function(a) {</f>
+  return a * 2;
+};
+</div>
+
+<div>
+<pre><doc> *...
+ */</doc>
+<f>function(a: number): number {</f>
+</div>
+
+<div><pre>[{
+  "type": "Identifier",
+  "name": "a",
+  "typeAnnotation": {
+    "type": "TypeAnnotation",
+    "typeAnnotation": {
+      "type": <f>"NumberTypeAnnotation"</f>
+    }
+  }
+}]</pre></div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @param <f>{number}</f> input a number
+ * @returns <f>{number}</f> times two
+ */</doc></pre>
+</div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ *
+ * @param input a number
+ * @returns times two
+ */</doc></pre>
+</div>
+
+<div>
+<pre><doc>/**
+ * Multiply a number by two
+ */</doc></pre>
+</div>
+
+<div>
+VERBOSITY REDUCED
+</div>
+
+<div>
+Shoutout to Babel.js, and Acorn, Esprima, Espree, Doctrine: all
+A+ projects that are moving JS forward.
+</div>
+
+<div>
+Moving on: modules
+</div>
+
+<div>
+Code is modules, documentation isn't.
+</div>
+
+<div>
+DIY "write some stuff in the README" approach becomes more tiresome
+the more you depend on modules.
+</div>
+
+<div>
+Real talk: <nb>I always read the code.</nb>
+</div>
+
+<div>
+Code documentation documentation could be the way forward.
+</div>
+
+<div>
+With ES6 modules, when you type <pre>import foo; foo.bar()</pre>
+we finally <e>know what code you're using</e>.
+</div>
+
+<div>
+what if
+</div>
+
+<div class='white-once'> <img src='intellisense.jpeg' /><notes>
+I'm as much a vim dork as anyone since 1980 or whenever but Intellisense
+is still kind of like a distant glint of light in another dimension saying
+'what if writing code was not basically just writing text'. It's by no means
+as magic as visual coding or really trendy at all, but you really have
+to think about how many times you flip from your text editor to a README
+on GitHub in Chrome, and think about what could be.</notes></div>
+
+<div>documentation.js is getting there: it crawls dependency
+trees, just like browserify or webpack, and can document 'modular frameworks'</div>
+
+<div>for instance: <e>turfjs</e><br /><br />a GIS framework made up of 50+ modules that provide
+1 function each</div>
+
+<div>50 modules
+<span style='color:cyan;padding:0 8vh;'>✈</span>
+all docs in one place</div>
+
+<div>50 modules
+<span style='color:cyan;padding:0 8vh;'>✈</span>
+all docs in one place <em>without writing all of them in one place!</em></div>
+
+<div>standardized docs are good for modularity:
+we can combine docs from different projects!</div>
+
+<div>Unfinished business</div>
+
+<div>How do we make documentation <em>authoring</em> wonderful?
+  <ul>
+    <li>Live-reloading rebuilding docs
+    <li>Great tools for linting
+    <li>Guides for how to write
+    <li>Robustness
+  </ul>
+</div>
+
+<div>
+  There is much to do. But it's already pretty good: try it.
+  <pre>$ npm install -g documentation
+
+$ documentation index.js -f md</pre>
+</div>
+
+<div>
+  fin!
+  <br /><br /><l>Tom MacWright<br />@tmcw<br />Mapbox</l>
+</div>
+
+<script type='text/javascript'>
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4e36eb1ef5a1f53d6f000001');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
+</script>
+
+</body>
+</html>

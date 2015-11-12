@@ -1,5 +1,11 @@
 # documentation.js
 
+Meta
+
+- 10:20am, 25 minutes
+
+Outline
+
 - Why documentation.js?
   - documentation in a modular world
     - turf: many small modules with aggregated docs
