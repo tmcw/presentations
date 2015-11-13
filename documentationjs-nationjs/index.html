@@ -7,7 +7,7 @@
 <link href='big.css' rel='stylesheet' type='text/css' />
 <script src='big.js'></script></head><body>
 
-<div><u>documentation</u><br /><br /><l>Tom MacWright<br />@tmcw<br />Mapbox</l><notes>
+<div><u>documentation.js.org</u><br /><br /><l>Tom MacWright<br />@tmcw<br />Mapbox</l><notes>
 Hi, I'm Tom. Usually I write cartography software at Mapbox, but
 I've been spending a lot of time thinking about documentation,
 writing documentation, and creating a system called documentation.js.</notes></div>
@@ -38,6 +38,13 @@ from the view of the code.</notes>
 </div>
 
 <div>
+<u>JSDoc</u> is both code &amp; a standard.
+<l>
+documentation.js uses the standard, not the code.
+</l>
+</div>
+
+<div>
 <pre><doc>/**
  * Fire event of a given string...
  *
@@ -64,7 +71,7 @@ API doc generators have fallen out of favor.<br />
   <li>Code <i>is</i> documentation</li>
   <li>JavaScript is ineffable</li>
   <li>JSDoc is verbose</li>
-  <li>Requiring docs means bad docs</li>
+  <li>Requirements are bad</li>
 </ul><notes>There are lots of alternative views here: many prominent
 library authors will only write manual documentation, and a lot of people
 only write examples, or sometimes no docmentation at all. Documentation is
@@ -87,6 +94,21 @@ the JavaScript community thinks.</notes>
   <li style='color:hsl(60,100%,50%)'>Type systems</li>
   <li style='color:hsl(80,100%,50%)'>Small modules (ES6!)</li>
 </ul>
+</div>
+
+<div>
+<nb><f>why i work on documentation.js</f></nb>
+nobody else loves documentation generation, so why not me
+</div>
+
+<div>
+<nb><f>why i work on documentation.js</f></nb>
+refreshingly nonspecific to anything at all
+</div>
+
+<div>
+<nb><f>why i work on documentation.js</f></nb>
+ASTs are so cool
 </div>
 
 <div>
@@ -117,7 +139,11 @@ Why is this cool?
  * @memberof MyClass
  * @param {number} input a number
  * @returns {number} times two
- */</doc>
+ */</doc><notes>Here's some verbose JSDoc
+ documentation. It's a lot to write, right?
+ But in a lot of ways, it's reiterating what
+ the code already says. Here's the code that goes
+ under it.</notes>
 </div>
 
 <div>
@@ -129,65 +155,7 @@ MyClass.timesTwo = function(a) {
 </div>
 
 <div>
-<pre>{
-    "type": "Program",
-    "body": [
-        {
-            "type": "ExpressionStatement",
-            "expression": {
-                "type": "AssignmentExpression",
-                "operator": "=",
-                "left": {
-                    "type": "MemberExpression",
-                    "computed": false,
-                    "object": {
-                        "type": "Identifier",
-                        "name": "MyClass"
-                    },
-                    "property": {
-                        "type": "Identifier",
-                        "name": "timesTwo"
-                    }
-                },
-                "right": {
-                    "type": "FunctionExpression",
-                    "id": null,
-                    "params": [
-                        {
-                            "type": "Identifier",
-                            "name": "a"
-                        }
-                    ],
-                    "defaults": [],
-                    "body": {
-                        "type": "BlockStatement",
-                        "body": [
-                            {
-                                "type": "ReturnStatement",
-                                "argument": {
-                                    "type": "BinaryExpression",
-                                    "operator": "*",
-                                    "left": {
-                                        "type": "Identifier",
-                                        "name": "a"
-                                    },
-                                    "right": {
-                                        "type": "Literal",
-                                        "value": 2,
-                                        "raw": "2"
-                                    }
-                                }
-                            }
-                        ]
-                    },
-                    "generator": false,
-                    "expression": false
-                }
-            }
-        }
-    ],
-    "sourceType": "script"
-}</pre>
+{"type":"Program","body":[{"type":"ExpressionStatement","expression":{"type":"AssignmentExpression","operator":"="...
 </div>
 
 <div>
@@ -313,20 +281,47 @@ MyClass.timesTwo = <f>function(a) {</f>
 </div>
 
 <div>
+<nb style='color:hsl(60,100%,50%)'>Type systems</nb>
+and documentation taste great together<notes>And note that,
+no matter how much you use its flexibility in regards to types,
+JavaScript still has them, and they matter. Polymorphic
+methods perform differently, and type coercion is really
+only sometimes the intent of someone who provides a string
+where you need a number.</notes>
+</div>
+
+<div>
 VERBOSITY REDUCED
 </div>
 
 <div>
-Shoutout to Babel.js, and Acorn, Esprima, Espree, Doctrine: all
+Plus! documentation.js transforms its output into a
+Markdown AST and turns that into Markdown with
+<f>mdast</f>!
+</div>
+
+<div>
+<pre>function propertySection(comment) {
+  return !!comment.properties && [
+    u('strong', [u('text', 'Properties')])..</pre>
+</div>
+
+<div>
+JavaScript to documentation.js to Markdown with
+no dreaded string concatenation!
+</div>
+
+<div>
+Shoutout to Babel.js, and Acorn, Esprima, Espree, mdast, Doctrine: all
 A+ projects that are moving JS forward.
 </div>
 
 <div>
-Moving on: modules
+Moving on: <span style='color:hsl(80,100%,50%)'>modules</span>
 </div>
 
 <div>
-Code is modules, documentation isn't.
+Code is modular, documentation isn't.
 </div>
 
 <div>
@@ -378,6 +373,13 @@ we can combine docs from different projects!</div>
 
 <div>Unfinished business</div>
 
+<div>How does documentation culture work?
+  <ul>
+    <li>Network effects of everything-documented</li>
+    <li>Expectation of documentation</li>
+  </ul>
+</div>
+
 <div>How do we make documentation <em>authoring</em> wonderful?
   <ul>
     <li>Live-reloading rebuilding docs
@@ -388,8 +390,11 @@ we can combine docs from different projects!</div>
 </div>
 
 <div>
-  There is much to do. But it's already pretty good: try it.
-  <pre>$ npm install -g documentation
+There is much to do. But it's already pretty good
+</div>
+
+<div>
+<pre>$ npm install -g documentation
 
 $ documentation index.js -f md</pre>
 </div>

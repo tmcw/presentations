@@ -13,7 +13,7 @@ window.onload = function() {
           }
           return i + cinch;
         }
-        pass(2, pass(5, pass(10, h - 2)));
+        pass(2, pass(4, pass(8, h - 2)));
         e.style.marginTop = (h - e.offsetHeight) / 2 + 'px';
     }
     function go(n) {
