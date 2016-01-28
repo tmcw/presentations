@@ -1,0 +1,81 @@
+- Projects
+----------------------------------------
+	- Background
+		- Personal
+			- minute
+				- http://macwright.org/2012/02/15/minute.html
+				- keystrokes
+				- millions of data points
+				- personal data
+				- everyone can use it
+		- Professional
+			- MapBox
+				- Making tools for making pretty things
+				- Products
+					- Carto
+					- mapbox.js
+					- easey
+						- Thinking about maps as context
+						- Thinking about space as 3d
+				- Projects
+					- Afghanistan Election Data
+						- Early project, 2009
+						- Showed the story of inequality
+						- Multiple dimensions, crammed into a page
+					- World Bank data portal
+	- Foursquare people vs land area
+		- Where we started
+			- Basic dot-maps - fourbot
+			- User reports
+		- http://mapbox.com/foursquare-checkins/
+		- There is no perfect map
+		- Who is everyone, and what are they doing?
+		- First show the basic data trackers, talk about malls
+			- Then rankings
+			- Then the question of where is everyone everywhere
+		- OpenStreetMap is the only map you can really use for this
+		- Visualizations
+		- Done
+			- Re-render heatmap
+			- Re-render graphs of distribution
+		- Todo
+			- Hillshading population
+			- How are people like other kinds of creatures as far as distribution
+	- Running maps
+		- http://macwright.org/running/
+		- Importance of this being open-source
+			- People using the scraper
+			- Personal data
+			- Everyone knows where I live
+		- Personal details
+			- The first version was after a weak season of runs
+			- Accountability
+		- Data details
+			- Open Data
+			- Multidimensional data
+			- Time
+			- Heart rate
+			- Distance
+			- Location
+			- Correlation with other factors
+			- What about the aggregates of this kind of data
+	- Superfund
+		- http://macwright.org/superfund/
+		- Things that are close to each other have more to do with each other
+		- What you can make in a weekend
+		- Truth and effects
+	- Round up
+		- What percentage of your time should you spend teaching?
+			- _why's freelance professor
+			- jresig going to khan academy
+			- processing as a teaching tool
+		- How do we learn from each other and build these things faster
+		- Creativity itself will be the measure of art
+		- View source as the future
+		- What are the points of creativity
+			- Colorbrewer is like a paint store
+			- d3
+			- probably too technical
+		- Works in progress as the future
+			- Public repositories
+			- When does art start
