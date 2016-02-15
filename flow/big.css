@@ -1,0 +1,120 @@
+body {
+  font-family:'Circular';
+  background-size:100%;
+  color:#7f8c8d;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#2c3e50;
+}
+
+a {
+  background:#34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+body > div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  line-height:110%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+div.center {
+  text-align:center;
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
+}
+
+.flex-horizontal {
+  display:flex;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 100%;
+  width: 100%;
+}
+
+.flex-vertical {
+  display:flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 100%;
+  width: 100%;
+}
+
+.font-05 {
+  font-weight:normal;
+  font-size: 30%;
+  line-height: 100%;
+}
+
+.font-2 {
+  font-size: 150%;
+  line-height: 100%;
+}
+
+.top-23 {
+  flex: 1;
+  width: 100%;
+  padding:25px;
+}
+
+.v-middle {
+  display:flex;
+  align-items: center;
+}
+
+.top-13 {
+  flex: 1;
+  width: 100%;
+  padding:25px;
+}
+
+.color-a > div:nth-child(1) {
+  background:#FF4F40;
+  color:#fff;
+}
+
+.color-a > div:nth-child(2) {
+  background:#ecf0f1;
+  color:#FF4F40;
+}
+
+.color-b > div:nth-child(1) {
+  background:#8e44ad;
+  color:#fff;
+}
+
+.color-b > div:nth-child(2) {
+  background:#ecf0f1;
+  color:#8e44ad;
+}
+
+.pad-1 {
+  padding: 10%;
+  box-sizing:border-box;
+}
