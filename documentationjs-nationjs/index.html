@@ -12,6 +12,8 @@ Hi, I'm Tom. Usually I write cartography software at Mapbox, but
 I've been spending a lot of time thinking about documentation,
 writing documentation, and creating a system called documentation.js.</notes></div>
 
+<div>documentation.js is an API documentation generator</div>
+
 <div><span style='color:hsl(0,100%,50%)'>abstract, narrative</span>
 <ul>
   <li style='color:hsl(40,100%,50%)'>Blog Posts
@@ -68,9 +70,9 @@ API doc generators have fallen out of favor.<br />
 
 <div>
 <ul>
+  <li>JSDoc is verbose</li>
   <li>Code <i>is</i> documentation</li>
   <li>JavaScript is ineffable</li>
-  <li>JSDoc is verbose</li>
   <li>Requirements are bad</li>
 </ul><notes>There are lots of alternative views here: many prominent
 library authors will only write manual documentation, and a lot of people
@@ -296,6 +298,19 @@ where you need a number.</notes>
 </div>
 
 <div>
+Type systems mean JS is <u>less ineffable</u>
+</div>
+
+<div>
+ASTs mean that JS understands itself
+</div>
+
+<div>
+(PSA: other languages are better at this, and JS is a rough starting
+spot. Read Mary Rose Cook &amp; David Nolen on lisp!)
+</div>
+
+<div>
 VERBOSITY REDUCED
 </div>
 
@@ -307,7 +322,7 @@ Markdown AST and turns that into Markdown with
 
 <div>
 <pre>function propertySection(comment) {
-  return !!comment.properties && [
+  return !!comment.properties &amp;&amp; [
     u('strong', [u('text', 'Properties')])..</pre>
 </div>
 
@@ -375,6 +390,8 @@ all docs in one place <em>without writing all of them in one place!</em></div>
 
 <div>standardized docs are good for modularity:
 we can combine docs from different projects!</div>
+
+<div>BONUS: autogenerating command-line interfaces from documentation: see turf-cli</div>
 
 <div>Unfinished business</div>
 
