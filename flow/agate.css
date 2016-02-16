@@ -72,7 +72,9 @@
 .hljs-comment,
 .hljs-deletion,
 .hljs-code {
-  color: #888;
+  color: #eee;
+  padding: 0.1em;
+  background:#222;
 }
 
 .hljs-regexp,

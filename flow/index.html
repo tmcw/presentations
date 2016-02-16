@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class='top-13 v-middle'>
-      <div>Tom MacWright</div>
+      <div>Tom MacWright <em>@tmcw</em></div>
     </div>
   </div>
 </div>
@@ -42,7 +42,7 @@
     </div>
     <div class='top-13 v-middle'>
       <div>250+ components, complex reducers,
-      complex interactions.</div>
+      complex interactions. in production</div>
     </div>
   </div>
 </div>
@@ -59,21 +59,363 @@
   operators with compatible types.
 </div>
 
-<div class='slide'>
-  <div class='flex-horizontal color-b'>
-    <div class='top-23 font-2 v-middle'>
-      <div class='flex-vertical'>
-        <div>Types</div>
-      </div>
-    </div>
-      <pre class='hljs top-13'>
-<code class='js'>typeof '' === 'string'
+<div class='slide pad-1'>
+  <em>Philosophy</em>
+  Rule of Repair: When you must fail,
+  fail noisily and as soon as possible.
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>// crashes sometimes
+for (var i in j)
+  try {
+    var result = JSON.parse(j[i]);
+  } catch (e) {
+    console.warn('idk lol');
+  }
+</code></pre>
+</div>
+
+<div class='slide pad-1'>
+  <em>But we usually follow the rule of repair</em>
+  Regardless of whether we call it that
+</div>
+
+<div class='slide pad-1'>
+  <em>Linters</em> move <em>syntax</em> errors from
+  the test stage to authoring stage
+</div>
+
+<div class='slide'><img alt='syntastic' src='syntastic.png' /></div>
+
+<div class='slide pad-1'>
+  <em>Unit tests</em> move <em>logic</em> errors from
+  the production stage to test stage
+</div>
+
+<div class='slide'><img alt='mocha' src='mocha.png' /></div>
+
+<div class='slide pad-1'>
+  <em>Integration tests</em> move <em>logic</em> errors from
+  the QA stage to test stage
+</div>
+
+<div class='slide'><img alt='nightwatch' src='nightwatch.png' /></div>
+
+<div class='slide pad-1'>
+  So we already do the rule of repair! The trick
+  is thinking of failure on the time axis.
+</div>
+
+<div class='slide pad-1'>
+  <em>Flow</em> detects <em>type errors</em>
+  before code runs.
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>// js has types
+typeof '' === 'string'
 typeof {} === 'object'
-typeof {} === 'object'
-</code>
-      </pre>
-      </div>
-  </div>
+typeof 1 === 'number'
+</code></pre>
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>// javascript often
+// implicitly converts
+// types
+
+> 'number ' + 5
+'number 5'
+> 5 == '5'
+true</code></pre>
+  <notes>JavaScript type comparison table omitted
+  Most of the things people joke about in JS like type comparison,
+  'crazy' floating point math, etc., are part of the greater
+  language family or lower-level assumptions.
+  Language religiousity is dumb!</notes>
+</div>
+
+<div class='slide pad-1'>
+  So, what does Flow do for me?
+</div>
+
+<div class='slide pad-1'>
+  Let's start with <em>eslint</em>
+</div>
+
+<div class='slide pad-1'>
+  <em>eslint is like JSHint.</em> JSHint mostly nagged us about
+  our indentation and quotes and other style stuff.
+  But eslint has <em>no-undef</em>
+</div>
+
+</div>
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>var b = a</code></pre>
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>var b = a
+^
+ReferenceError: a is not defined</code></pre>
+</div>
+
+<div class='slide pad-1'>
+  <em>Without running the code!</em>
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>var me = { name: 'Tom' }
+
+console.log(me.Name)</code></pre>
+</div>
+
+<div class='slide pad-1'>
+  (⌣_⌣”)
+</div>
+
+<div class='slide pad-1'>
+  Going beyond <em>ReferenceError</em> is harder. Enter Flow
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+var me = { name: 'Tom' }
+console.log(me.Name)
+</code></pre></div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>undef.js:3
+
+3: console.log(me.Name)
+                     ^^ property `Name`.
+                     Property not found in
+3: console.log(me.Name)
+               ^^^^^ object literal
+</code></pre></div>
+
+<div class='slide pad-1'>
+  Using Flow: adding the <em><code>/* @flow */</code></em>
+  comment to the top of the file marks it as part of the
+  Flow universe.
+</div>
+
+<div class='slide pad-1'>
+  You can gradually add annotations to your project. That's what we
+  did. We use <em>are-we-flow-yet</em> to track our progress.
+</div>
+
+<div class='slide pad-1'>
+  The more files that are annotated, the more complete the system
+  becomes.
+</div>
+
+<div class='slide pad-1'>
+  Flow catches:
+  <ul>
+    <li>implicit typecasts
+    <li>referencing null properties
+    <li>ReferenceErrors
+    <li>calling functions with bad arguments
+    <li>problems that reach across module boundaries
+    <li>unsafe access to props
+  </ul>
+</div>
+
+<div data-bodyclass='dark' class='slide w-100 pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+// implicit typecasts
+var casted = 'hello ' * 5
+
+-------------
+
+test.js:3
+3: var casted = 'hello' * 5;
+                ^^^^^^^ string. This type
+                is incompatible with
+3: var casted = 'hello' * 5;
+                ^^^^^^^^^^^ number
+</code></pre></div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+// bad arguments
+function timesTwo(x: number): number {
+  return x * 2
+}
+
+var casted = timesTwo('hello')
+-------------
+
+test.js:7
+7: var casted = timesTwo('hello');
+                ^^^^^^^^^^^^^^^^^ function call
+
+7: var casted = timesTwo('hello');
+                         ^^^^^^^ string. This type is 
+                         incompatible with
+3: function timesTwo(x: number): number {
+                        ^^^^^^ number
+</code></pre></div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+// module boundaries
+
+var fs = require('fs')
+fs.readFileSync(2)
+
+-----
+
+test.js:4
+  4: fs.readFileSync(2);
+        ^^^^^^^^^^^^ call of method `readFileSync`.
+        Function cannot be called on
+
+        declare function
+        readFileSync(filename: string): Buffer;
+                     ^^^^^^^^
+                     intersection: function type(s).
+</code></pre></div>
+
+<div class='slide pad-1'>
+<em>Unsafe access to props in React</em>
+This one's pretty crazy
+</div>
+
+<div class='slide pad-1'>
+  <em>PropTypes are runtime typechecking for React component
+  props.</em> In development mode, they cause an incorrect
+  or missing prop to show a warning.
+</div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+
+// propTypes enforcement
+var MyComponent = React.createClass({
+  propTypes: {
+    onClick: React.PropTypes.func
+  },
+  click() {
+    this.props.onClick('hi')
+  },
+  render() {
+    return (&lt;button onClick={this.click}&gt;
+      hi
+    &lt;/button&gt;);
+  }
+});
+</code></pre></div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>
+test.js:10
+ 10:     this.props.onClick('hi');
+         ^^^^^^^^^^^^^^^^^^^^^^^^ call of method `onClick`.
+         Function cannot be called on possibly undefined value
+
+  7:     onClick: React.PropTypes.func
+                  ^^^^^^^^^^^^^^^^^^^^ undefined
+</code></pre></div>
+
+<div class='slide pad-1'>
+  But wait, there's more!
+</div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>/* @flow */
+
+var React = require('react');
+var MyComponent = require('./test');
+
+var App = React.createClass({
+  render() {
+    return (<blink>&lt;MyComponent /&gt;</blink>);
+  }
+});
+
+module.exports = App;
+</code></pre></div>
+
+<div data-bodyclass='dark' class='slide pad-05 hljs'>
+<pre><code class='js'>
+requirer.js:8
+  8:     return (&lt;MyComponent /&gt;);
+                 ^^^^^^^^^^^^^^^ React element `MyComponent`
+
+  6:   propTypes: {
+       ^^^^^^^^^ property `onClick`. Property not found in.
+                See: test.js:6
+
+  8:     return (&lt;MyComponent /&gt;);
+                 ^^^^^^^^^^^^^^^ type parameter `Props` of React
+                                 element `MyComponent`
+</code></pre></div>
+
+<div class='slide pad-1'>
+  Flow shines for <em>refactoring</em>: change a function to
+  take a string instead of a number and <em>instantly identify
+  all the usages that need updating</em>
+</div>
+
+<div class='slide pad-1'>
+  Okay, so <em>Flow is magic</em>.
+  But all power comes at a price
+  <ul>
+    <li>Type annotations
+    <li>Syntax extension
+    <li>No Windows support
+  </ul>
+</div>
+
+<div class='slide pad-1'>
+  Type Annotations
+  <pre class='hljs'><code>function foo(x: number): number {}</code></pre>
+  Flow can't infer all types. Unless it's painfully obvious
+  that a function needs a number, you're going to have to tell it.
+</div>
+
+<div class='slide pad-1'>
+  <em class='normal'>Yet another JavaScript syntax extension</em>: your eslint,
+  babel, and node code is all going to have to deal with
+  Flow annotations, unless you use comments.
+</div>
+
+<div class='slide pad-1'>
+  <em class='normal'>Yet another JavaScript parser</em>
+  Flow supports a lot of fancy JavaScript syntax, but not 100%.
+  Nothing really supports 100% anymore.
+</div>
+
+<div class='slide pad-1'>
+  <em>ES6 will soon be transpiler-free</em>. Flow &amp; JSX?
+  Not so much.
+</div>
+
+<div class='slide pad-1'>
+  <em>No Windows support (yet).</em>
+  Written in OCaml, binaries available for
+  OSX &amp; Linux. 
+</div>
+
+<div class='slide pad-1'>
+  Versus TypeScript?
+</div>
+
+<div class='slide pad-1'>
+  TypeScript has <em>a huge library of annotations
+    in the StronglyTyped organization</em>
+</div>
+
+<div class='slide pad-1'>
+  <em>TypeScript</em> is written in TypeScript, not OCaml
+</div>
+
+<div class='slide pad-1'>
+  We chose <em>Flow</em> because of compatibility
+  with Babel &amp; React and its fast pace of development
 </div>
 
 <script type='text/javascript'>

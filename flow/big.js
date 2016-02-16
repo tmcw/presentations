@@ -9,12 +9,13 @@ window.onload = function() {
     e.style.fontSize = h + 'px';
     e.style.height = 'auto';
     function pass(cinch, start) {
+      e.style.fontSize = start + 'px';
       for (var i = start; i > 0 && (e.offsetWidth > w || e.offsetHeight > h); i -= cinch) {
         e.style.fontSize = i + 'px';
       }
-      return i + cinch;
+      return i + cinch * 2;
     }
-    pass(2, pass(5, pass(10, h - 2)));
+    pass(1, pass(2, pass(10, h - 2)));
     e.style.height = h + 'px';
   }
   function go(n) {

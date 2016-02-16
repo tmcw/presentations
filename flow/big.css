@@ -7,6 +7,8 @@ body {
   font-weight:bold;
 }
 
+.normal { font-weight: normal; }
+
 h1, h2, h3, p {
   margin:0;
 }
@@ -96,7 +98,7 @@ notes {
 
 .color-a > div:nth-child(1) {
   background:#FF4F40;
-  color:#fff;
+  color:#ECF0F1;
 }
 
 .color-a > div:nth-child(2) {
@@ -106,7 +108,7 @@ notes {
 
 .color-b > div:nth-child(1) {
   background:#8e44ad;
-  color:#fff;
+  color:#ECF0F1;
 }
 
 .color-b > div:nth-child(2) {
@@ -114,7 +116,41 @@ notes {
   color:#8e44ad;
 }
 
+.pad-05 {
+  padding: 5%;
+  box-sizing:border-box;
+}
+
 .pad-1 {
   padding: 10%;
   box-sizing:border-box;
+}
+
+.dark {
+  background:#333333;
+}
+
+pre code {
+  font-family: "Input Mono";
+  font-weight:normal;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+blink {
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
