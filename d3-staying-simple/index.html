@@ -1,0 +1,202 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family:'Avenir';
+  background:#000;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+strike {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+code {
+  font-family:'M+ 1m', Consolas, monospace;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+a {
+  background:#34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+body > div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:10%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+notes {
+    display:none;
+}
+/* normally not good, but ok in context of full screen directional navigation */
+:focus {
+    outline: 0;
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+  var s = document.querySelectorAll('body > div'), ti, i;
+  var notes = [];
+  for (i = 0; i < s.length; i++) {
+    s[i].setAttribute('tabindex', 0);
+    var noteElements = s[i].getElementsByTagName('notes');
+    notes.push([]);
+    while (noteElements.length) {
+      var note = noteElements[0];
+      notes[i].push(note.innerHTML.trim());
+      note.parentNode.removeChild(note);
+    }
+  }
+  if (!s.length) return;
+  var big = window.big = { current: 0, forward: fwd, reverse: rev, go: go, length: s.length };
+  function resize() {
+    var w = window.innerWidth, h = window.innerHeight, e = s[big.current];
+    e.style.fontSize = h + 'px';
+    function pass(cinch, start) {
+      for (var i = start; i > 0 && (e.offsetWidth > w || e.offsetHeight > h); i -= cinch) {
+        e.style.fontSize = i + 'px';
+      }
+      return i + cinch;
+    }
+    pass(2, pass(5, pass(10, h - 2)));
+    e.style.marginTop = (h - e.offsetHeight) / 2 + 'px';
+  }
+  function go(n) {
+    big.current = n;
+    for (i = 0; typeof console === 'object' && i < notes[n].length; i++) console.log('%c%s: %s', 'padding:5px;font-family:serif;font-size:18px;line-height:150%;', n, notes[n][i]);
+    var e = s[n], t = parseInt(e.getAttribute('data-time-to-next') || 0, 10);
+    document.body.className = e.getAttribute('data-bodyclass') || '';
+    for (i = 0; i < s.length; i++) s[i].style.display = 'none';
+    e.style.display = 'inline';
+    e.focus();
+    if (e.firstChild && e.firstChild.nodeName === 'IMG') {
+      document.body.style.backgroundImage = 'url("' + e.firstChild.src + '")';
+      e.firstChild.style.display = 'none';
+      if ('classList' in e) e.classList.add('imageText');
+    } else {
+      document.body.style.backgroundImage = '';
+      document.body.style.backgroundColor = e.style.backgroundColor;
+    }
+    if (ti !== undefined) window.clearInterval(ti);
+    if (t > 0) ti = window.setTimeout(fwd, t * 1000);
+    resize();
+    if (window.location.hash !== n) window.location.hash = n;
+    document.title = e.textContent || e.innerText;
+  }
+  document.onclick = function(e) { if (e.target.tagName !== 'A') go(++big.current % s.length); };
+  function fwd() { go(Math.min(s.length - 1, ++big.current)); }
+  function rev() { go(Math.max(0, --big.current)); }
+  document.onkeydown = function(e) {
+    if (e.which === 39 || e.which === 34 || e.which === 40) fwd();
+    if (e.which === 37 || e.which === 33 || e.which === 38) rev();
+  };
+  document.ontouchstart = function(e) {
+    var x0 = e.changedTouches[0].pageX;
+    document.ontouchend = function(e2) {
+      var x1 = e2.changedTouches[0].pageX;
+      if (x1 - x0 < 0) fwd();
+      if (x1 - x0 > 0) rev();
+    };
+  };
+  function parse_hash() {
+    return Math.max(Math.min(s.length - 1,
+      parseInt(window.location.hash.substring(1), 10)), 0);
+  }
+  if (window.location.hash) big.current = parse_hash() || big.current;
+  window.onhashchange = function() {
+    i = parse_hash();
+    if (i !== big.current) go(i);
+  };
+  window.onresize = resize;
+  go(big.current);
+};
+</script></head><body>
+<div>react and d3: an approach that stays simple</div>
+<div>Tom = engineer at Mapbox, building applications, visualizations, standards</div>
+<div>Tom = open source zealot, building big, documentation.js, simple-statistics</div>
+<div>Tom = d3 enthusiast, worked on iD, one of the largest d3 applications</div>
+<div>What to do about visualizations in the React era</div>
+<div>tl;dr: Use JSX instead of the d3 selection API and keep everything else.</div>
+<div>Modern frameworks are ground-up: build your whole page with them, on server and client</div>
+<div>Modern frameworks are <strike>ground-up</strike>: all-in, they work best when they control everything</div>
+<div>Quick history to d3</div>
+<div>Stage 1: <em>books</em></div>
+<div><img src='semiology-graphics.jpg' /></div>
+<div>Semiology of Graphics, Jacques Bertin 1967, established principles of visualizations</div>
+<div>Semiology of Graphics: how do color, light, form, convey information?</div>
+<div><img src='grammar-graphics.jpg' /></div>
+<div>Grammar of Graphics, Leland Wilkinson 2006, established how computer graphics could be made out of <em>small composable parts</em></div>
+<div>Grammar of Graphics: basically Semiology of Graphics of Computers</div>
+<div>What do these books have to do with d3?</div>
+<div>Semiology of Graphics ⇢ Grammar of Graphics ⇢ ggplot ⇢ Prefuse ⇢ d3</div>
+<div>These are the <em>opposite of HighCharts</em>, and not just because of trendy branding</div>
+<div>Visualization via <em>Composition</em></div>
+<div>d3 has no <code>d3.lineChart()</code></div>
+<div>It has scales and colors and <em>super low-level parts</em> that you combine</div>
+<div>Okay, let's get to corrections</div>
+<div>1: d3 has very little to do with SVG</div>
+<div>2: you don't need to use d3's data joins when you have React's</div>
+<div>3: typing is almost never the problem</div>
+<div>4: everyone starts by copy &amp; pasting examples</div>
+<div>So let's get to the statement:</div>
+<div>Bringing d3 into the React world should <em>not</em> mean higher-level abstractions</div>
+<div>Never ever <pre>&lt;LineChart data={foo} /&gt;</pre></div>
+<div>The <em>magic</em> of d3 is that it is not dependent on higher-level abstractions</div>
+<div>It is in the magic long line of visualization with composition, with small interchangeable, fully customizable parts</div>
+<div>Use React for putting things on the page</div>
+<div>use d3 for visualization-specific, <em>DOM-independent</em> utils</div>
+<div>So d3.append('svg') just becomes <code>&lt;svg&gt;</code></div>
+<div>I can state that <em>doesn't suck</em> because we do it (Mapbox Analytics, our internal reports)</div>
+<div>Avoiding pitfalls: no more componentDidUpdate hooks</div>
+<div>Avoiding pitfalls: don't have to resort to <code>__data__</code> for d3 and React extension for React-land</div>
+<div>Avoiding pitfalls: you don't have to use refs</div>
+<div>Avoiding pitfalls: server-rendering can <em>work</em> with charts!</div>
+<div>Avoiding pitfalls: never get stuck with some part of a chart that you can't customize through a 'wrapper'</div>
+<div><em>What about animations?</em></div>
+<div>In React,
+  <ul>
+    <li>react-motion is awesome</li>
+    <li>if you're already using react-motion, using d3's transitions mean you have two clocks</li>
+    <li>having two clocks or two ticks is almost always a bad thing™</li>
+</ul></div>
+<div>...</div>
+<div>I don't know if I expect this to become popular, but I expect it to be the way of the pros</div>
+<div>d3 abstractions are like kittens</div>
+<div>c3, dc.js, nvd3, recharts, graphene, plottable, xcharts, mozaik, react-d3, react-d3-components</div>
+<div>This list will get longer, but should it?</div>
+<div>Abstractions keep having less expressive power than d3 itself, keep having assumptions you don't want</div>
+<div>...</div>
+<div>The catch</div>
+<div>There's always a catch</div>
+<div>d3 <em>does</em> have some SVG-specific stuff: <em>axes and behaviors</em></div>
+<div>Luckily, rebuilding them is pretty straightforward! They just use the existing d3 API.</div>
+<div><pre>| Fin</pre></div>
+<div>Questions?</div>
+<div>Reader version: macwright.org/archive (search for d3)</div>
