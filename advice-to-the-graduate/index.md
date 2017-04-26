@@ -58,20 +58,33 @@ This is to help candidates get a grasp of what our overall goals and style
 is like, as well as giving them time to ask questions and offer their own
 thoughts on what we could improve.
 
-## Resume Patterns
+Throughout this process, the goal is to determine whether there is a match. 
+This cuts both ways and a poor hiring decision is painful for all involved.
+Don't feel bad if you aren't hired - if it is a bad fit then we are probably
+doing you a favor by not extending an offer.
+
+## Resumes
+
+Your resume has a single purpose: to entice a prospective employer to 
+contact you about an open position. Write with that focus and eliminate 
+anything that you don't think will help achieve that goal.
+
+### Resume Patterns
 
 Common trends in resumes:
 
 * Wall of text
 * Bullet points only
 * One sentence
+* Focus on nouns like job titles and technologies
 
 The most successful resume type is
 
 * 1-4 paragraphs of straightforward prose
 * Bullet points for skills, links, and experience
+* Action verbs
 
-## Lists
+### Lists
 
 Learning specific skills at a bootcamp sets your perspective in a certain
 way. Basically after struggling with some framework and some language
@@ -93,7 +106,7 @@ to most is
 * Patterns
 * Frameworks
 
-## Code as Resume
+### Code as Resume
 
 Demos as resumes are a good idea but **not just because they are code**. Your
 code can be great, but there are red flags I see every day.
@@ -122,7 +135,7 @@ A GitHub page always has structure: there is
 
 **your project should have all of these**.
 
-## Experiences
+### Experiences
 
 People have stories: they're works in progress. Too often resumes are flat,
 as if you've always written Ruby on Rails and when you're hired somewhere
