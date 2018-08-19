@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>MICA</title>
+	</head>
+<body>
+
+<h1>MICA</h1>
+
+<h2>Introduction</h2>
+
+<p>Hi, I&#39;m Tom and I work mostly with maps. I know that many of your projects have to do with maps, and there&#39;s pretty much everything to talk about, so I&#39;ll just talk about some of the things that make maps fascinating to me.</p>
+
+<h2>How to think of maps</h2>
+
+<p>So, when understanding a thing, I like to have a basic metaphor of what it means, of how it&#39;s framed. So you might understand bar charts as skyscrapers or think about apps as stories.</p>
+
+<p>But the metaphor that initially stood for maps for me was something like a spreadsheet: you have up, down, left, and right, and data in it. Or at least a chart - you have the same directions and draw some visual data through it. In your projects, maps might serve as drawings - not necessarily informational but at least trying to evoke something.</p>
+
+<p>But I think there&#39;s a third way to understand what they are that&#39;s really interesting. If you consider that</p>
+
+<blockquote>
+<p>maps are pictures that are assumed to be truthy</p>
+</blockquote>
+
+<p>And take seriously the idea that something can really truly be <strong>truthy</strong>, let&#39;s think about what that means in the context of maps.</p>
+
+<p>So: how do you see the world truthfully? Let&#39;s say: how can you see the world, as a whole, in the most accurate way?</p>
+
+<p>Well, of course - you will need to go out into space and look at it, of course.</p>
+
+<p>It&#39;s pretty expensive, and there are clouds, but there&#39;s also another big drawback. Can anyone spot it?</p>
+
+<p>Yep: you can only see one side at a time. So really you might need a spaceship, and a really big mirror or two. And a big flashlight, since the other side will be dark.</p>
+
+<p>Astute eyes would have noticed that if you search for &#39;earth from space&#39; you&#39;ll get numerous photos of the Western Hemisphere. Take that as you will.</p>
+
+<p>But anyway: the weird thing about maps is that the fundamental construction of them is a sort of trick in an underappreciated way. What you&#39;re really seeing is more like cubism or the patterns to make a dress - raw ingredients meant to be shaped around a form.</p>
+
+<p>So: what matters to you? Well, remember that the transformation of places on earth to places on a map is a choice. The technical name for it is a &quot;projection&quot;, but it&#39;s a very freeform choice with infinite answers. You can project the world into a blanket, or cut it along the antimeridian instead of the equator.</p>
+
+<p>Project it yourself was a true exporation of this idea - unlocking that assumption into something where you can simply feed numbers into an equation and produce anything your heart desires.</p>
+
+<p><a href="http://www.macwright.org/demo/up/">http://www.macwright.org/demo/up/</a></p>
+
+<p>One interesting experiment that I did here after doing a little traveling was that I wanted to show movement over time without requiring animation or color. So instead of transforming latitude and longitude into a map, I isolated longitude and replaced latitude with time. This way you can see short journeys to Denver and San Francisco and explore the data in a way that&#39;s relatively simple.</p>
+
+<h2>Visual Encodings</h2>
+
+<p>Of course, transforming data in space is only one element of mapmaking, and what will make your work engaging is the addition of personal and narrative data.</p>
+
+<p>Let me break it to you easy: visualization is hard.</p>
+
+<p>The point is to improve upon tables.</p>
+
+<p>Unfortunately, it&#39;s easy to make messy, inaccurate, or crowded charts that are worse than tables.</p>
+
+<p>Saying &quot;make clean beautiful visualizations&quot; is tantamount to saying &quot;do a good job&quot; so I hope I can give you something a little more useful.</p>
+
+<p>The best way to build a visualization is to picture yourself having a budget of visual encodings.</p>
+
+<p>Define some terms.</p>
+
+<p>Visual encodings are fundamental, universal ways of conveying information, and not just in the realm of visualization.</p>
+
+<p>Basically, all the stuff eyes understand.</p>
+
+<p>Non-map visualizations have it easy. Raw tabular data, like stock prices or disease rates can be distilled down into a single, strong signal, and the real challenge is to make your fonts look okay and don&#39;t overthink it.</p>
+
+<p>But maps, from the start, eat position and area encodings. A lot of times they already have symbols, text, color - they&#39;re saturated with data. This is a problem.</p>
+
+<p>In rare instances, you can try to take some signals back, or to kind of subvert the meaning.</p>
+
+<p>Cartograms are one example - while keeping some idea of position - you can more or less tell which country is Spain here - they distort area to represent something other than land area.</p>
+
+<p>Once in a blue moon, we&#39;ll subvert position as well. This is a rather experimental map I made of countries sorted and repositioned by projected land area. You can see the issue, of course - our understanding of countries is a mix of position and shape, so the signal loss here is significant.</p>
+
+<p>But most maps either add a new encoding or overload an existing one. You might start from this - a semi-true-color image of North America - and first you need to strip it down. Basically, you remove the encoding you want to use so that you can replace it. So, state lines. And then you add data. Such is the way of visualization. Compromises like these are the bread and butter of cartographers - all things hide much more than they show.</p>
+
+<p>You can also add new encodings, but do so at your own risk - it&#39;s easy to end up with an image that requires a double-take where it should be immediately familiar.</p>
+
+<h2>Data</h2>
+
+<p>We&#39;ve talked visualization, let&#39;s talk data. Specifically, this thing called &#39;geo&#39; data. Now I know that you&#39;re not coming from the code side, but it&#39;s important to have a friendly relationship with the underpinnings, so we&#39;re going to take a look.</p>
+
+<p>Let&#39;s open up geojson.io in your web browsers. Simply: on the left, a map, on the right, code. Not much code yet, because you haven&#39;t started.</p>
+
+<p>Now I want you to click on the point icon, and you&#39;ll notice that your cursor acquires a little point following it around. Click on the map to place that point.</p>
+
+<p>Now look at the right side of the page: code has appeared. This code is geo data - it is a computer-friendly description of your newly placed point. If you scan the line, you&#39;ll see it&#39;s called a <code>Point</code>. Now, if you look for the word <code>&quot;coordinates&quot;</code>, you&#39;ll see a bracket, a number, a comma, and another number.</p>
+
+<p>Let&#39;s do two things. First, zoom into the map where you see your point. So that you&#39;re at street level or so. Now move your cursor to the first number after coordinates, at the very end of the number, and delete the last digit. Keep on deleting digits and you&#39;ll see the point drifting incrementally larger bits. This is how precision works. When you&#39;ve deleted all the digits, type in a new number and see the point move. You&#39;re making geographic data!</p>
+
+<p>Okay, so that, of course, isn&#39;t all for geographic data. There are also lines and polygons. Delete your point by clicking on it and then clicking remove. Then draw a line, see the code it produces, and draw a polygon, and the same.</p>
+
+<h2>Transformations</h2>
+
+<p>So, let&#39;s talk about visualization again. The numbers you just edited were longitude &amp; latitude, that your web browser transformed into x &amp; y coordinates on your monitor. Some of the attributes in that data became visualized bits of the icon and line and area you saw.</p>
+
+<p>These transformations are flexible. Let&#39;s see that first-hand.</p>
+
+<p>This is a data source of airports. I&#39;ve hooked up the sliders to parts of the transformation from data to your screen.</p>
+
+<p>This is an interactive choropleth so you can see how the linkage between attributes and colors is flexible. Drag the handles to change which data gets which color, or choose a different color scheme.</p>
+
+<p>To give a quick example, here&#39;s a visualization I made a while ago of my runs - the width and opacity of the line is heart rate, and lines are composited on top of each other. To make this happen, I had to transform points into lines by connecting them in time, and then lines into polygons by expanding them out in each direction according to heart rate.</p>
+
+</body>
+</html>

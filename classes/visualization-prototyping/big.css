@@ -1,0 +1,65 @@
+body {
+  font-family: 'Baskerville', 'Times New Roman', serif;
+  background:#fff;
+  background-size:100%;
+  color:#000;
+  margin:0;
+  padding:0;
+}
+
+small {
+  font-size:40%;
+  line-height:40%;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+p {
+    line-height:130%;
+}
+
+em, a {
+  color:#a00;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0px;
+  left:0px;
+  padding:15%;
+  line-height:97%;
+}
+
+div.center {
+  text-align:center;
+}
+
+div.imageText {
+  text-shadow:0px 0px 5px rgba(0,0,0,0.2);
+}
+
+strong {
+  font-size:150%;
+  color:#222;
+  font-weight: bold;
+  font-family: 'Bodoni 72', 'Baskerville', 'Times New Roman', serif;
+}
+
+.white {
+  background:#fff;
+  line-height:130%;
+}

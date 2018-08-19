@@ -1,0 +1,385 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'canvas' ]
+2 info using npm@2.1.5
+3 info using node@v0.10.33
+4 verbose node symlink /usr/local/bin/node
+5 warn package.json visualization-prototyping@1.0.0 No repository field.
+6 silly cache add args [ 'canvas', null ]
+7 verbose cache add spec canvas
+8 silly cache add parsed spec { raw: 'canvas',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'canvas',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 verbose addNamed canvas@*
+10 silly addNamed semver.valid null
+11 silly addNamed semver.validRange *
+12 silly addNameRange { name: 'canvas', range: '*', hasData: false }
+13 verbose mapToRegistry name canvas
+14 verbose mapToRegistry uri https://registry.npmjs.org/canvas
+15 verbose addNameRange registry:https://registry.npmjs.org/canvas not in flight; fetching
+16 verbose request on initialization, where is /canvas
+17 verbose request after pass 1, where is /canvas
+18 verbose request url raw /canvas
+19 verbose request resolving registry [ 'https://registry.npmjs.org/', './canvas' ]
+20 verbose request after pass 2, where is https://registry.npmjs.org/canvas
+21 verbose request no auth needed
+22 info attempt registry request try #1 at 15:33:36
+23 verbose request id 3afd320edd57b6f1
+24 verbose etag "5CU8O0HVRTIXOOV4MLT3ICTZ5"
+25 http request GET https://registry.npmjs.org/canvas
+26 http 304 https://registry.npmjs.org/canvas
+27 silly registry.get cb [ 304,
+27 silly registry.get   { date: 'Mon, 27 Oct 2014 19:33:37 GMT',
+27 silly registry.get     server: 'Apache',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     'last-modified': 'Mon, 27 Oct 2014 19:33:37 GMT',
+27 silly registry.get     'cache-control': 'max-age=60',
+27 silly registry.get     etag: '"5CU8O0HVRTIXOOV4MLT3ICTZ5"',
+27 silly registry.get     age: '0',
+27 silly registry.get     'x-served-by': 'cache-atl6223-ATL',
+27 silly registry.get     'x-cache': 'HIT',
+27 silly registry.get     'x-cache-hits': '1',
+27 silly registry.get     'x-timer': 'S1414438417.290990,VS0,VE22',
+27 silly registry.get     vary: 'Accept',
+27 silly registry.get     'content-length': '0',
+27 silly registry.get     'keep-alive': 'timeout=10, max=50',
+27 silly registry.get     connection: 'Keep-Alive' } ]
+28 verbose etag https://registry.npmjs.org/canvas from cache
+29 silly addNameRange number 2 { name: 'canvas', range: '*', hasData: true }
+30 silly addNameRange versions [ 'canvas',
+30 silly addNameRange   [ '0.0.1',
+30 silly addNameRange     '0.0.2',
+30 silly addNameRange     '0.0.3',
+30 silly addNameRange     '0.0.4',
+30 silly addNameRange     '0.0.5',
+30 silly addNameRange     '0.0.6',
+30 silly addNameRange     '0.0.7',
+30 silly addNameRange     '0.0.8',
+30 silly addNameRange     '0.1.0',
+30 silly addNameRange     '0.2.0',
+30 silly addNameRange     '0.2.1',
+30 silly addNameRange     '0.3.0',
+30 silly addNameRange     '0.3.1',
+30 silly addNameRange     '0.3.2',
+30 silly addNameRange     '0.3.3',
+30 silly addNameRange     '0.4.0',
+30 silly addNameRange     '0.4.1',
+30 silly addNameRange     '0.4.2',
+30 silly addNameRange     '0.4.3',
+30 silly addNameRange     '0.5.0',
+30 silly addNameRange     '0.5.1',
+30 silly addNameRange     '0.5.2',
+30 silly addNameRange     '0.5.3',
+30 silly addNameRange     '0.5.4',
+30 silly addNameRange     '0.6.0',
+30 silly addNameRange     '0.7.0',
+30 silly addNameRange     '0.7.1',
+30 silly addNameRange     '0.7.2',
+30 silly addNameRange     '0.7.3',
+30 silly addNameRange     '0.8.0',
+30 silly addNameRange     '0.8.1',
+30 silly addNameRange     '0.8.2',
+30 silly addNameRange     '0.8.3',
+30 silly addNameRange     '0.9.0',
+30 silly addNameRange     '0.10.0',
+30 silly addNameRange     '0.10.1',
+30 silly addNameRange     '0.10.2',
+30 silly addNameRange     '0.10.3',
+30 silly addNameRange     '0.11.0',
+30 silly addNameRange     '0.11.1',
+30 silly addNameRange     '0.11.2',
+30 silly addNameRange     '0.11.3',
+30 silly addNameRange     '0.12.0',
+30 silly addNameRange     '0.12.1',
+30 silly addNameRange     '0.13.0',
+30 silly addNameRange     '0.13.1',
+30 silly addNameRange     '1.0.0',
+30 silly addNameRange     '1.0.1',
+30 silly addNameRange     '1.0.2',
+30 silly addNameRange     '1.0.3',
+30 silly addNameRange     '1.0.4',
+30 silly addNameRange     '1.1.0',
+30 silly addNameRange     '1.1.1',
+30 silly addNameRange     '1.1.2',
+30 silly addNameRange     '1.1.3',
+30 silly addNameRange     '1.1.4',
+30 silly addNameRange     '1.1.5',
+30 silly addNameRange     '1.1.6' ] ]
+31 verbose addNamed canvas@1.1.6
+32 silly addNamed semver.valid 1.1.6
+33 silly addNamed semver.validRange 1.1.6
+34 silly cache afterAdd canvas@1.1.6
+35 verbose afterAdd /Users/tmcw/.npm/canvas/1.1.6/package/package.json not in flight; writing
+36 verbose afterAdd /Users/tmcw/.npm/canvas/1.1.6/package/package.json written
+37 silly install resolved [ { name: 'canvas',
+37 silly install resolved     description: 'Canvas graphics API backed by Cairo',
+37 silly install resolved     version: '1.1.6',
+37 silly install resolved     author: { name: 'TJ Holowaychuk', email: 'tj@learnboost.com' },
+37 silly install resolved     contributors: [ [Object], [Object], [Object] ],
+37 silly install resolved     keywords:
+37 silly install resolved      [ 'canvas',
+37 silly install resolved        'graphic',
+37 silly install resolved        'graphics',
+37 silly install resolved        'pixman',
+37 silly install resolved        'cairo',
+37 silly install resolved        'image',
+37 silly install resolved        'images',
+37 silly install resolved        'pdf' ],
+37 silly install resolved     homepage: 'https://github.com/learnboost/node-canvas',
+37 silly install resolved     repository: { type: 'git', url: 'git://github.com/learnboost/node-canvas' },
+37 silly install resolved     scripts: { test: 'make test', install: 'node-gyp rebuild' },
+37 silly install resolved     dependencies: { nan: '~1.2.0' },
+37 silly install resolved     devDependencies: { express: '3.0', jade: '0.28.1', mocha: '*', should: '*' },
+37 silly install resolved     engines: { node: '>= 0.6.0' },
+37 silly install resolved     main: './lib/canvas.js',
+37 silly install resolved     gypfile: true,
+37 silly install resolved     gitHead: '138abe9aa30b75e8406ceddd9177bff20ac44ceb',
+37 silly install resolved     bugs: { url: 'https://github.com/learnboost/node-canvas/issues' },
+37 silly install resolved     _id: 'canvas@1.1.6',
+37 silly install resolved     _shasum: 'd84b088f3bcd3840fe14977cd3625f5fe89f81ee',
+37 silly install resolved     _from: 'canvas@*',
+37 silly install resolved     _npmVersion: '1.4.21',
+37 silly install resolved     _npmUser: { name: 'tootallnate', email: 'nathan@tootallnate.net' },
+37 silly install resolved     maintainers: [ [Object], [Object], [Object], [Object] ],
+37 silly install resolved     dist:
+37 silly install resolved      { shasum: 'd84b088f3bcd3840fe14977cd3625f5fe89f81ee',
+37 silly install resolved        tarball: 'http://registry.npmjs.org/canvas/-/canvas-1.1.6.tgz' },
+37 silly install resolved     directories: {},
+37 silly install resolved     _resolved: 'https://registry.npmjs.org/canvas/-/canvas-1.1.6.tgz',
+37 silly install resolved     readme: 'ERROR: No README data found!' } ]
+38 info install canvas@1.1.6 into /Users/tmcw/src/classes/visualization-prototyping
+39 info installOne canvas@1.1.6
+40 verbose installOne of canvas to /Users/tmcw/src/classes/visualization-prototyping not in flight; installing
+41 verbose lock using /Users/tmcw/.npm/_locks/canvas-4de5884f61f8b691.lock for /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+42 silly install write writing canvas 1.1.6 to /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+43 silly cache addNamed cb canvas@1.1.6
+44 verbose unbuild node_modules/canvas
+45 verbose gentlyRm vacuuming /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+46 verbose tar unpack /Users/tmcw/.npm/canvas/1.1.6/package.tgz
+47 verbose tar unpacking to /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+48 verbose gentlyRm vacuuming /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+49 silly gunzTarPerm modes [ '755', '644' ]
+50 silly gunzTarPerm extractEntry package.json
+51 silly gunzTarPerm extractEntry .npmignore
+52 silly gunzTarPerm extractEntry index.js
+53 silly gunzTarPerm extractEntry History.md
+54 silly gunzTarPerm extractEntry Makefile
+55 silly gunzTarPerm extractEntry Readme.md
+56 silly gunzTarPerm extractEntry binding.gyp
+57 silly gunzTarPerm extractEntry .gitmodules
+58 silly gunzTarPerm extractEntry install
+59 silly gunzTarPerm extractEntry lib/bindings.js
+60 silly gunzTarPerm extractEntry lib/canvas.js
+61 silly gunzTarPerm extractEntry lib/context2d.js
+62 silly gunzTarPerm extractEntry lib/image.js
+63 silly gunzTarPerm extractEntry lib/jpegstream.js
+64 silly gunzTarPerm extractEntry lib/pixelarray.js
+65 silly gunzTarPerm extractEntry lib/pngstream.js
+66 silly gunzTarPerm extractEntry src/Image.h
+67 silly gunzTarPerm extractEntry src/Canvas.cc
+68 silly gunzTarPerm extractEntry src/CanvasGradient.cc
+69 silly gunzTarPerm extractEntry src/CanvasGradient.h
+70 silly gunzTarPerm extractEntry src/CanvasPattern.cc
+71 silly gunzTarPerm extractEntry src/CanvasPattern.h
+72 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.cc
+73 silly gunzTarPerm extractEntry src/CanvasRenderingContext2d.h
+74 silly gunzTarPerm extractEntry src/FontFace.cc
+75 silly gunzTarPerm extractEntry src/FontFace.h
+76 silly gunzTarPerm extractEntry src/Image.cc
+77 silly gunzTarPerm extractEntry src/Canvas.h
+78 silly gunzTarPerm extractEntry src/ImageData.cc
+79 silly gunzTarPerm extractEntry src/ImageData.h
+80 silly gunzTarPerm extractEntry src/JPEGStream.h
+81 silly gunzTarPerm extractEntry src/PNG.h
+82 silly gunzTarPerm extractEntry src/PixelArray.cc
+83 silly gunzTarPerm extractEntry src/PixelArray.h
+84 silly gunzTarPerm extractEntry src/Point.h
+85 silly gunzTarPerm extractEntry src/closure.h
+86 silly gunzTarPerm extractEntry src/color.cc
+87 silly gunzTarPerm extractEntry src/color.h
+88 silly gunzTarPerm extractEntry src/init.cc
+89 silly gunzTarPerm extractEntry .travis.yml
+90 silly gunzTarPerm extractEntry util/cairo_include.sh
+91 silly gunzTarPerm extractEntry util/has_cairo_freetype.sh
+92 silly gunzTarPerm extractEntry util/has_lib.sh
+93 silly gunzTarPerm extractEntry util/lib_lookup.sh
+94 info preinstall canvas@1.1.6
+95 silly prepareForInstallMany adding nan@~1.2.0 from canvas dependencies
+96 silly cache add args [ 'nan@~1.2.0', null ]
+97 verbose cache add spec nan@~1.2.0
+98 silly cache add parsed spec { raw: 'nan@~1.2.0',
+98 silly cache add   scope: null,
+98 silly cache add   name: 'nan',
+98 silly cache add   rawSpec: '~1.2.0',
+98 silly cache add   spec: '>=1.2.0 <1.3.0',
+98 silly cache add   type: 'range' }
+99 verbose addNamed nan@>=1.2.0 <1.3.0
+100 silly addNamed semver.valid null
+101 silly addNamed semver.validRange >=1.2.0 <1.3.0
+102 silly addNameRange { name: 'nan', range: '>=1.2.0 <1.3.0', hasData: false }
+103 verbose mapToRegistry name nan
+104 verbose mapToRegistry uri https://registry.npmjs.org/nan
+105 verbose addNameRange registry:https://registry.npmjs.org/nan not in flight; fetching
+106 verbose request on initialization, where is /nan
+107 verbose request after pass 1, where is /nan
+108 verbose request url raw /nan
+109 verbose request resolving registry [ 'https://registry.npmjs.org/', './nan' ]
+110 verbose request after pass 2, where is https://registry.npmjs.org/nan
+111 verbose request no auth needed
+112 info attempt registry request try #1 at 15:33:37
+113 verbose etag "4QHBB3KM0BSFWQGU7N2BM6J49"
+114 http request GET https://registry.npmjs.org/nan
+115 http 304 https://registry.npmjs.org/nan
+116 silly registry.get cb [ 304,
+116 silly registry.get   { date: 'Mon, 27 Oct 2014 19:33:37 GMT',
+116 silly registry.get     server: 'Apache',
+116 silly registry.get     via: '1.1 varnish',
+116 silly registry.get     'last-modified': 'Mon, 27 Oct 2014 19:33:37 GMT',
+116 silly registry.get     'cache-control': 'max-age=60',
+116 silly registry.get     etag: '"4QHBB3KM0BSFWQGU7N2BM6J49"',
+116 silly registry.get     age: '0',
+116 silly registry.get     'x-served-by': 'cache-atl6232-ATL',
+116 silly registry.get     'x-cache': 'HIT',
+116 silly registry.get     'x-cache-hits': '1',
+116 silly registry.get     'x-timer': 'S1414438417.623276,VS0,VE1',
+116 silly registry.get     vary: 'Accept',
+116 silly registry.get     'content-length': '0',
+116 silly registry.get     'keep-alive': 'timeout=10, max=50',
+116 silly registry.get     connection: 'Keep-Alive' } ]
+117 verbose etag https://registry.npmjs.org/nan from cache
+118 silly addNameRange number 2 { name: 'nan', range: '>=1.2.0 <1.3.0', hasData: true }
+119 silly addNameRange versions [ 'nan',
+119 silly addNameRange   [ '0.3.0-wip',
+119 silly addNameRange     '0.3.0-wip2',
+119 silly addNameRange     '0.3.0',
+119 silly addNameRange     '0.3.1',
+119 silly addNameRange     '0.3.2',
+119 silly addNameRange     '0.4.0',
+119 silly addNameRange     '0.4.1',
+119 silly addNameRange     '0.4.2',
+119 silly addNameRange     '0.4.3',
+119 silly addNameRange     '0.4.4',
+119 silly addNameRange     '0.5.0',
+119 silly addNameRange     '0.5.1',
+119 silly addNameRange     '0.5.2',
+119 silly addNameRange     '0.6.0',
+119 silly addNameRange     '0.7.0',
+119 silly addNameRange     '0.7.1',
+119 silly addNameRange     '0.8.0',
+119 silly addNameRange     '1.0.0',
+119 silly addNameRange     '1.1.0',
+119 silly addNameRange     '1.1.1',
+119 silly addNameRange     '1.1.2',
+119 silly addNameRange     '1.2.0',
+119 silly addNameRange     '1.3.0' ] ]
+120 verbose addNamed nan@1.2.0
+121 silly addNamed semver.valid 1.2.0
+122 silly addNamed semver.validRange 1.2.0
+123 silly cache afterAdd nan@1.2.0
+124 verbose afterAdd /Users/tmcw/.npm/nan/1.2.0/package/package.json not in flight; writing
+125 verbose afterAdd /Users/tmcw/.npm/nan/1.2.0/package/package.json written
+126 silly install resolved [ { name: 'nan',
+126 silly install resolved     version: '1.2.0',
+126 silly install resolved     description: 'Native Abstractions for Node.js: C++ header for Node 0.8->0.12 compatibility',
+126 silly install resolved     main: 'include_dirs.js',
+126 silly install resolved     repository: { type: 'git', url: 'git://github.com/rvagg/nan.git' },
+126 silly install resolved     contributors: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
+126 silly install resolved     license: 'MIT',
+126 silly install resolved     bugs: { url: 'https://github.com/rvagg/nan/issues' },
+126 silly install resolved     homepage: 'https://github.com/rvagg/nan',
+126 silly install resolved     _id: 'nan@1.2.0',
+126 silly install resolved     dist:
+126 silly install resolved      { shasum: '9c4d63ce9e4f8e95de2d574e18f7925554a8a8ef',
+126 silly install resolved        tarball: 'http://registry.npmjs.org/nan/-/nan-1.2.0.tgz' },
+126 silly install resolved     _from: 'nan@>=1.2.0 <1.3.0',
+126 silly install resolved     _npmVersion: '1.4.3',
+126 silly install resolved     _npmUser: { name: 'rvagg', email: 'rod@vagg.org' },
+126 silly install resolved     maintainers: [ [Object] ],
+126 silly install resolved     directories: {},
+126 silly install resolved     _shasum: '9c4d63ce9e4f8e95de2d574e18f7925554a8a8ef',
+126 silly install resolved     _resolved: 'https://registry.npmjs.org/nan/-/nan-1.2.0.tgz',
+126 silly install resolved     readme: 'ERROR: No README data found!' } ]
+127 info install nan@1.2.0 into /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+128 info installOne nan@1.2.0
+129 verbose installOne of nan to /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas not in flight; installing
+130 verbose lock using /Users/tmcw/.npm/_locks/nan-010e7fe7ee21c3a9.lock for /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+131 silly install write writing nan 1.2.0 to /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+132 silly cache addNamed cb nan@1.2.0
+133 verbose unbuild node_modules/canvas/node_modules/nan
+134 verbose gentlyRm vacuuming /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+135 verbose tar unpack /Users/tmcw/.npm/nan/1.2.0/package.tgz
+136 verbose tar unpacking to /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+137 verbose gentlyRm vacuuming /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+138 silly gunzTarPerm modes [ '755', '644' ]
+139 silly gunzTarPerm extractEntry package.json
+140 silly gunzTarPerm extractEntry README.md
+141 silly gunzTarPerm extractEntry LICENSE
+142 silly gunzTarPerm extractEntry include_dirs.js
+143 silly gunzTarPerm extractEntry .dntrc
+144 silly gunzTarPerm extractEntry build/config.gypi
+145 silly gunzTarPerm extractEntry nan.h
+146 info preinstall nan@1.2.0
+147 silly install resolved []
+148 verbose about to build /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+149 info build /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+150 verbose linkStuff [ false,
+150 verbose linkStuff   false,
+150 verbose linkStuff   false,
+150 verbose linkStuff   '/Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules' ]
+151 info linkStuff nan@1.2.0
+152 verbose linkBins nan@1.2.0
+153 verbose linkMans nan@1.2.0
+154 verbose rebuildBundles nan@1.2.0
+155 info install nan@1.2.0
+156 info postinstall nan@1.2.0
+157 verbose unlock done using /Users/tmcw/.npm/_locks/nan-010e7fe7ee21c3a9.lock for /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas/node_modules/nan
+158 verbose about to build /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+159 info build /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+160 verbose linkStuff [ false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   false,
+160 verbose linkStuff   '/Users/tmcw/src/classes/visualization-prototyping/node_modules' ]
+161 info linkStuff canvas@1.1.6
+162 verbose linkBins canvas@1.1.6
+163 verbose linkMans canvas@1.1.6
+164 verbose rebuildBundles canvas@1.1.6
+165 verbose rebuildBundles [ 'nan' ]
+166 info install canvas@1.1.6
+167 verbose unsafe-perm in lifecycle true
+168 info canvas@1.1.6 Failed to exec install script
+169 verbose unlock done using /Users/tmcw/.npm/_locks/canvas-4de5884f61f8b691.lock for /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+170 verbose stack Error: canvas@1.1.6 install: `node-gyp rebuild`
+170 verbose stack Exit status 1
+170 verbose stack     at ChildProcess.<anonymous> (/usr/local/lib/node_modules/npm/lib/utils/lifecycle.js:212:16)
+170 verbose stack     at ChildProcess.emit (events.js:98:17)
+170 verbose stack     at maybeClose (child_process.js:756:16)
+170 verbose stack     at Process.ChildProcess._handle.onexit (child_process.js:823:5)
+171 verbose pkgid canvas@1.1.6
+172 verbose cwd /Users/tmcw/src/classes/visualization-prototyping
+173 error Darwin 14.0.0
+174 error argv "node" "/usr/local/bin/npm" "install" "canvas"
+175 error node v0.10.33
+176 error npm  v2.1.5
+177 error code ELIFECYCLE
+178 error canvas@1.1.6 install: `node-gyp rebuild`
+178 error Exit status 1
+179 error Failed at the canvas@1.1.6 install script.
+179 error This is most likely a problem with the canvas package,
+179 error not with npm itself.
+179 error Tell the author that this fails on your system:
+179 error     node-gyp rebuild
+179 error You can get their info via:
+179 error     npm owner ls canvas
+179 error There is likely additional logging output above.
+180 verbose exit [ 1, true ]
+181 verbose unbuild node_modules/canvas
+182 info preuninstall canvas@1.1.6
+183 info uninstall canvas@1.1.6
+184 verbose unbuild rmStuff canvas@1.1.6 from /Users/tmcw/src/classes/visualization-prototyping/node_modules
+185 info postuninstall canvas@1.1.6
+186 verbose gentlyRm vacuuming /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+187 silly gentlyRm purging /Users/tmcw/src/classes/visualization-prototyping/node_modules/canvas
+188 silly gentlyRm removing /Users/tmcw/src/classes/visualization-prototyping/node_modules
+189 silly gentlyRm quitting because other entries in /Users/tmcw/src/classes/visualization-prototyping

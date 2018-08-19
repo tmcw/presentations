@@ -1,0 +1,111 @@
+<!DOCTYPE html><html><head>
+<title>Big</title>
+<meta charset='utf-8' />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<link href='big.css' rel='stylesheet' type='text/css' />
+<script src='big.js'></script></head><body>
+<div><em>mapping as a way to talk about the world</em><br /><small>PPOL 646 / Tom MacWright</small></div>
+<div><code>bit.ly/ppol-646</code></div>
+
+<div>
+    visualization is the game of <em>compressing</em> and <em>amplifying</em> data
+</div>
+
+<div><img src='thick-book.jpg' />
+    <span class='white'>with a one-page budget</span>
+</div>
+
+<div><img src='explained-in-one.png' /></div>
+
+<div>so, without further adieu: <em>how to visualize geographic information</em></div>
+
+<div>؟explained in one slideshow¿</div>
+
+<div>a budget of <strong>visual encodings</strong></div>
+<div><img src='encodings.gif' /></div>
+
+<div><img src='bar-chart.png' /><span class='light'>length</span></div>
+<div><img src='pie-chart.png' /><span class='light'>area</span></div>
+<div><img src='scatterplot.gif' /><span class='light'>position</span></div>
+<div><img src='heatmap.png' /><span class='light'>color</span></div>
+
+<div><img src='position-area.png' />maps eat <em>position</em> and <em>area</em> right off the bat</div>
+<div>sometimes, but rarely, we take them back</div>
+<div><img src='warped-map.png' /><span class='white'>warped</span></div>
+<div><img src='sorted-map.png' /><span class='white'>sorted</span></div>
+<div>most maps <em>add</em> a new encoding or <em>overload</em> an existing encoding</div>
+<div><img src='us-satellite.jpg' /></div>
+<div><img src='us-satellite.jpg' /><span class='white'>- color</span></div>
+<div><img src='us-gray.jpg' /></div>
+<div><img src='us-gray.jpg' /><span class='white'>+ color</span></div>
+<div><img src='us-choropleth.png' /></div>
+<div><img src='us-choropleth.png' /><span class='white'>visualization</span></div>
+<div>combine encodings at your own risk</div>
+<div><img src='leaflet-dvf.png' /></div>
+
+<div>so rule #1: you are on a budget, spend visual attention wisely.</div>
+
+<div>wisely</div>
+
+<div>sorts of failure</div>
+
+<div>#1 'the species of chartjunk'</div>
+
+<div><img src='lie-pie.jpg' /></div>
+<div><img src='lie-pie.jpg' /><span class='light'>not data</span></div>
+
+<div><img src='chartjunk-china.jpg' /></div>
+<div><img src='chartjunk-china.jpg' /><span class='light'>absolutes and rates</span></div>
+
+<div><img src='random-scale.png' /></div>
+<div><img src='random-scale.png' /><span class='light'>non-linear scale for linear data</span></div>
+
+<div><img src='bad-choropleth.gif' /></div>
+<div><img src='bad-choropleth.gif' /><span class='light'>absolutes and rates</span></div>
+<div><img src='bad-height.gif' /></div>
+
+<div><img src='bad-choropleth2.png' /><span class='light'># of WTA players</span></div>
+<div><img src='good-choropleth2.png' /></div>
+
+<div>#2 'the accidental lie'</div>
+
+<div>bad color schemes</div>
+<div><img src='rainbow.jpg' /><span class='light'>hate the rainbow</span></div>
+<div><img src='bad-rainbow.jpg' /></div>
+
+<div><img src='red-green.png' /></div>
+<div><img src='red-green-colorblind.png' /></div>
+<div><img src='red-green-colorblind.png' /><span class='light'>5% of all males</span></div>
+
+<div>#3 'the unavoidable lie'</div>
+
+<div>projections: necessarily imperfect, but don't ignore them</div>
+<div><img src='map-projections.png' /></div>
+<div><img src='bad-mercator.png' /></div>
+<div><img src='good-mercator.png' /></div>
+<div><img src='mercator-tissot.png' /></div>
+
+<div>gerrymandering &amp; the modifiable areal unit theorem</div>
+<div>It affects results when point-based measures of spatial phenomena (e.g. population density) are aggregated into districts. The resulting summary values (e.g. totals, rates, proportions) are influenced by the choice of district boundaries.</div>
+<div><img src='gerrymandering.png' /></div>
+<div><img src='gerrymandering.png' /><span class='light'>gerrymandering</span></div>
+<div><img src='gerrymandering.png' /><span class='light'>gerrymandering <em>everything</em></span></div>
+<div><img src='district.png' /></div>
+<div>cultural units, like districts and states, are not necessarily <em>geographic units</em></div>
+
+<div>#4 how to avoid</div>
+<div>colors: use colorbrewer</div>
+<div>colorblindness: test in color oracle</div>
+<div>types: follow mapmakers-cheatsheet</div>
+<div>general: ask for help</div>
+
+<div>gerrymandering: making maps of official units - no way to avoid</div>
+<div>gerrymandering: otherwise, heatmap</div>
+<div><img src='black-white.png' /><span class='light'>kriging &amp; heatmaps</span></div>
+<div>"Designed to be relatively homogeneous units with respect to population characteristics, economic status, and living conditions at the time of establishment, census tracts average about 4,000 inhabitants."</div>
+<div><img src='census-tract.jpg' /></div>
+
+<div>let's make a map</div>
+
+</body>
+</html>
